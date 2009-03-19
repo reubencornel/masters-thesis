@@ -1,0 +1,112 @@
+% NCSU thesis template updated by Eric Adles to include required
+% changes as per thesis editor March 27, 2007.  Changes I made
+% will be prefaced with my initials: EA
+
+% NCSU thesis template updated by Jason Brinkley to include required
+% changes as per thesis editor August 2008.  Changes I made
+% will be prefaced with my initials: JSB
+
+%Other changes and suggestions made by Terry Byron - NCSU Statistics
+
+\documentclass[11pt]{ncsuthesis3}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{mathrsfs}
+\usepackage{appendix}
+
+
+% ,graphicx,lscape,dectab,harvard} %latex2e
+% \input \path psfig.sty %an excellent utility for including figures-Terry
+
+\setlength\topskip{24pt}
+
+\pagestyle{plain} %{empty} to get Appendix without page number
+
+\newcommand{\nullset}[0]{\varnothing}
+% re-enable italics -- they ARE allowed!
+% \renewcommand{\em}[0]{}   % disable italics because they're not allowed!
+% \newcommand{\ctt}[0]{}
+\newcommand{\ctt}[0]{\tt}
+
+
+% EA - If you only want to compile certain files
+% you can use the '\includeonly' command which
+% specifies which \include files to compile.
+% Just list all of your files and comment out
+% the ones you don't want to compile.
+
+%\includeonly{
+%front,
+%Chapter1,
+%Chapter2,
+%appendix1,
+%}
+
+
+\begin{document}
+
+
+% EA - Front matter
+\include{front}
+
+% EA - Chapter Introduction
+\include{Chapter1}
+
+% EA - Chapter Theory
+\include{Chapter2}
+% \nocite{*}
+
+% EA - 'unsrt' == write bibliography entries as
+% they occur in the text as opposed to alphabetically.
+
+% JSB - Some bib. examples from my thesis were left here.
+
+\bibliographystyle{unsrt}
+\begin{thebibliography}{99}
+\setlength{\baselineskip}{0.1in}
+\bibitem{cb02}
+Casella, G. and Berger, R.L. (2002)
+\newblock {\it Statistical Inference, Second Edition.}
+Duxbury Press, Belmont, CA.
+
+\bibitem{t06}
+Tsiatis, A.A. (2006)
+\newblock {\it Semiparametric Theory and Missing Data.}
+Springer, New York.
+
+\end{thebibliography}
+
+
+%==================================================
+% EA - The following is a hack to get a single page with
+% 'Appendices' written on it as specified by
+% NCSU's thesis guide.
+\newpage
+
+\vspace{0.2in}
+
+
+\appendix
+% JSB - This next command  is to add an appendix to the table of contents.
+\addappheadtotoc
+
+\begin{center}
+{\Huge{\bf Appendices}}
+\end{center}
+% End of hack to get 'Appendices'
+% written on a separate page
+%===================================================
+
+% EA - of course include your appendix file
+\include{appendix1}
+\end{document}
