@@ -3,41 +3,132 @@
 
 %Things to talk about here
 
+\section {Cognitive Architectures}
+\label{introCogArch}
 % Introduce cognitive modelling
 The study of the human mind has been one of the largest and most
 laborious enterprises undertaken by man. This study has encompassed many
 centuries and has attracted interest from some of the most brilliant
-philosophers and scientists human kind has had to offer, such as
+philosophers and scientists human kind has had to offer such as
 Aristotle, Plato, Descartes and more recently Allen Newell, Marvin
 Minksy. 
 
 %% Introduce computer science into the picture
 %%  Introduce the various ways by which we have tried to under stand
-With the advent of computers researchers attempted to use the superior
-processing power of the computers to simulate the working of the
-mind. Some reseachers attempted to use a purely connectionist model to
-represent the working of the human mind(CITE ROSENBLATT). Where as
-others, such as Newell and Anderson attempted to use the manipulations of symbols
-to represent the same. 
-
+The advent of computers allowed researchers to use the superior
+processing power to simulate the working of the
+mind. Some researchers attempted to use a purely connectionist model to
+%TODO: Cite Rosenblatt
+represent the working of the human mind. Where as
+others, such as Newell and Anderson attempted to use the manipulations
+of symbols partially relying on an underlying connectionist model to
+represent the same.  
 
 %% Introduce cognitive modeling 
-
 % Introduce the need for architectures
 Despite large advances made towards understanding the principles of
-the human mind in the field of psychology, there was little to show
+the human mind in the field of psychology during the 70s, there was little to show
 except for micro theories, such as Fitts law and the Power law of
-practice, etc. As Newell suggests in his book (cite unified theories
-of cognition) that these theories fail to provide a complete
-representation of 
+%TODO: cite unified theories of cognition here..
+practice, etc. Newell argues in his book (cite unified theories
+of cognition) that the aim of psychology is to provide a framework
+that would help explain and predict the behavior of the human mind, and although micro
+theories are useful in explaining certain phenomena they do not provide a
+framework that explains and predicts the behavior of the human
+mind. He advocates the need for a comprehensive theory that would fill
+in this void and attempts to do so by providing a framework called SOAR. 
+%TODO: cite unified theories of cognition here..
 
-It was during this period that Newell advocated for
-architectures that would help represent the 
+Another cognitive architecture was introduced by John Anderson from
+the Carnegie Mellon University. He was working on a framework that
+tried to provide a working model of the 
+human memory called ACT*. As this work progressed, new modules to
+represent motor and visual faculties were added to this
+framework. This later came to be known as ACT-PM then ACT-R. 
+
+\section {Collaboration}
+% Talk about collaboration
+%% In Collaboration we can also talk about ...
+%% 
+Computer networks allowed researchers
+to investigate the ability to use computers to help people collaborate
+with one another. The original idea was to use computers to replace
+physical apparatus such as white boards in meeting rooms (cite Colab). 
+Researchers discovered paradigms that could be used for to support
+collaborations such as, synchronous and asynchronous collaboration. As
+more work was done in this field the tools such as PREP(cite Issues in
+design computer support for co-authoring and commenting.) a tool that
+supported interaction between authors and commentors,
+Cognoter(Theory and practice of a colab-orative tool) a tool that
+provided a framework to help the decision making process, etc.
+
+Despite these strides in the area of computer supported collaborative
+work, researchers in the cognitive modeling community 
+shared models through means of conferences, summer schools and
+personal websites. The objective of my research is to provide a
+collaborative environment where cognitive scientists can share
+models, I describe this further in the following section and chapters.
+
+\section{Contributions}
+
+%Talking about contributions
+% What are the contributions
+% 1) Describe the fact that we are providing a collaborative
+% environment
+I would like to start this section by acknowledging that the overall
+direction for the research was provided by 
+Dr. St. Amant. The aim of this project is to provide a collaborative
+environment for researchers who develop computational representations
+of their work. This is achieved by allowing researchers to access
+ACT-R on top of a web based framework where they can create 
+and share model. The benefits of this project are:
+%    The advantages of this are 
+%    -- a) We are providing an environment with a complete setup 
+%       b) Collaboration - sharing of knowledge
+%       c) Hardware resources
+
+\begin{itemize}
+\item We provide a software environment completely setup and ready for
+  use. As a result researcher can get to work with out being concerned
+  about issues regarding software dependencies.
+\item We attempt to foster collaboration in the cognitive modeling
+  community. Researchers can build models and these can be accessed by
+  other individuals and groups, and can be modified and shared back.
+\item By providing a centralized system hardware resources can be
+  shared across a large number of users. This would make it inexpenive
+  to run and be of use to research groups that cannot invest in
+  hardware.
+\item Since users store their models on a centralized
+  system it acts as a repository for models that can be used to
+  learn about cognitive modeling.
+\end{itemize}
 
 
-% Talk about the fact that there is no collaboration between researchers
+% 2) The means used to achieve this. 
+% TODO cite the minsky paper.
+%   Using frames...
+%      The advantages of this.
+I used frames(cite the minsky paper) to achieve collaboration
+. A frame is a data structure consisting of slots, where each
+slot can either be another frame or an instance of data. Apart from
+achieving a means to provide collaboration, this data structure lets
+us represent models in a structured manner. This opens up a number of
+avenues for research, the first one that does come to mind is the
+ability to mine models to find patterns in different models and
+hence build up a more complete picture of human cognition.
+
+% Talk About the fact that there is no collaboration between researchers
 % Talk about the difficulties with this 
-
 
 % Introduce what this research intends achieve and perhaps the long
 % term goals of the project.
+
+\section{Thesis Organization}
+In Chapter 2 I discuss cognitive architectures and the features of
+various cognitive modeling 
+architectures. Chapter 3 attempts to describe the field of computer supported
+collaborative work. Chapter 4 aims to provide an overview of the
+biobike system. Chapter 5 describes the implementation of the
+system. In chapter 6 I describe how I solved the problem of a synonym
+crossword using this system. We conclude this with a discussion of the
+limitations of this system and the future work for this system.
