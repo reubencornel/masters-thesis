@@ -19,3 +19,4 @@ The folder contains the following:
 
 4. For those of you using Texmaker I have also included an english dictionary file en_US.
 
+5. To build the thesis type "make all" at the command prompt
