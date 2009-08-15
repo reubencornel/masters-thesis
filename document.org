@@ -1,0 +1,80 @@
+* Thesis                  :THESIS:
+** Chapter 2
+The quest to understand the working of the human mind has spanned
+many centuries starting with Plato when he asked, as in the words of
+Noam Chomsky citing Bertrand Russell, ``How comes is that human beings
+whose contacts of the world are brief, personal and limited, are
+nevertheless able to know as much as they do.'' \cite{Bogdan:1993aa}
+
+Cognitive science brings together the varied disciplines of
+psychology, neuroscience, computer science, linguistics and philosophy in an
+attempt to answer the above question, using information processes as a
+means to emulate the algorithms and processes of the human
+mind. Psychology, especially cognitive psychology contributes theories
+on cognitive capacities, information processing capabilities and
+perhaps most importantly it tries to provide hypothesis that theorize
+about the overall picture of the human mind. Neuroscience, the study
+of the nervous system,  provides a frame of reference against which
+theories developed in cognitive science can be validated since it
+deals with the brain at the lowest level. Secondly, it provides  knowledge
+for developing an alternative architecture of the mind. Computer
+Science contributes to the enterprise knowledge representation which is
+used to develop theories to represent the way knowledge is stored;
+artificial intelligence which is used to analyse and create methods
+for problem solving; the theory of computation which is used as a
+means to develop representations for cognitive
+architectures.
+
+The objective of this chapter is three-fold; firstly it aims
+to provide a very brief introduction to the human cognitive
+architecture from both the cognitivist and
+emergent\cite{DBLP:journals/tec/VernonMS07} perspective. Secondly
+it discusses cognitive architecture in general and finally goes on
+to compare some currently widely used cognitive architectures.
+
+*** The nature of cognition
+
+Any attempt to deal with the architecture of cognition has to answer
+the following questions.
+
+\begin{itemize}
+\item How is procedural and declarative knowledge acquired, and
+represented? When solving problems the human mind has the ability to
+retrieve and apply previously stored knowledge to the problem; for
+example consider solving a calculus based integration problem, we are
+able to retrieve standard representations of the forms of equations
+and apply it to the problem to simplify it and solve it. Hence this
+question is one of the questions that is central to understanding
+cognition.
+\item How do various processes act on this knowledge and how do they
+achieve the effect they intend to achieve? This question is
+significant because its answer explains the techniques of deduction
+and inference we use to solve
+problems on an everyday basis; this could be as simple and routine as diagnosing a
+light bulb is not working and replace it, or perhaps the techniques we
+use when solving a crossword puzzle.
+% TODO WORK ON THIS
+\item How can these processes and structures be manifested in the real
+world? This is summarized best by Bogdan\cite{Bogdan:1993aa}
+\begin{quote}
+It takes a real system, made of physical bits and pieces, to 
+instantiate cognitive structures and processes and run the program of 
+cognition.
+\end{quote}
+
+\end{itemize}
+
+
+These questions reflect the the rationalist approach towards cognitive
+science as indicated by rationalist thinkers such as Descartes and
+Leibniz \cite{Bogdan:1993aa} that was characterized ever since with a
+deep analysis and explanation of every level of cognition.
+
+**** Classical approach
+***** Newells criteria
+**** Connectionist approach
+*** Cognitive Architectures
+*** ACT-R
+*** SOAR
+*** EPIC
+    
