@@ -1,0 +1,26 @@
+The architectures I could probably consider
+
+Atlantis
+Theo
+Prodigy
+ICARUS
+RALPH-MEA
+EPIC
+Entropy Reduction Engine
+Adaptive Intelligent Systems
+ACT-R
+Homer
+Teton
+Subsumption Architecture
+	    
+Concepts I would have to compare
+
+The Areas of cognition they are trying to address
+Problem Solving
+Generality
+Planning
+Reasoning and Inference
+Memory
+Goal
+Cognitive Approaches i.e. Symbolic / Connectionist
+Programming Environment
