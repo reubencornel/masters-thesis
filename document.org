@@ -101,7 +101,7 @@ system. In chapter 6 I describe how I solved the problem of a synonym
 crossword using this system. We conclude this with a discussion of the
 limitations of this system and the future work for this system.
 
-** The nature of cogition
+** A survey of Cognitive Architectures
 \label{The_nature_of_cognition}
 
 The quest to understand the working of the human mind has spanned
@@ -270,13 +270,11 @@ that is core to the way we communicate with each other.
 it serves as proof that a given theory is congruous with actual
 computations in the brain.
 \end{itemize}
-
-
-
+*** Paradigms of Cognition
 **** Classical approach
-***** Newells criteria
 **** Connectionist approach
 *** Cognitive Architectures
 *** ACT-R
 *** SOAR
 *** EPIC
+    
