@@ -1,4 +1,106 @@
-* Thesis                  :THESIS:
+* Thesis 							     :THESIS:
+** Introduction
+*** Cognitive Architectures
+\label{introCogArch}
+The study of the human mind has been one of the largest and most
+laborious enterprises undertaken by man. This study has encompassed many
+centuries and has attracted interest from some of the most brilliant
+philosophers and scientists human kind has had to offer such as
+Aristotle, Plato, Descartes and more recently Allen Newell, Marvin
+Minksy. 
+
+The advent of computers allowed researchers to use the superior
+processing power to simulate the working of the
+mind. Some researchers attempted to use a purely connectionist model to
+%TODO: Cite Rosenblatt
+represent the working of the human mind. Where as
+others, such as Newell and Anderson attempted to use the manipulations
+of symbols partially relying on an underlying connectionist model to
+represent the same.  
+
+%% Introduce cognitive modeling 
+% Introduce the need for architectures
+Despite large advances made towards understanding the principles of
+the human mind in the field of psychology during the 70s, there was little to show
+except for micro theories, such as Fitts law and the Power law of
+%TODO: cite unified theories of cognition here..
+practice, etc. Newell argues in his book \cite{Newell:1990aa} that the aim of psychology is to provide a framework
+that would help explain and predict the behavior of the human mind, and although micro
+theories are useful in explaining certain phenomena they do not provide a
+framework that explains and predicts the behavior of the human
+mind. He advocates the need for a comprehensive theory that would fill
+in this void and attempts to do so by providing a framework called SOAR. 
+%TODO: cite unified theories of cognition here..
+
+Another cognitive architecture was introduced by John Anderson from
+the Carnegie Mellon University. He was working on a framework that
+tried to provide a working model of the 
+human memory called ACT*. As this work progressed, new modules to
+represent motor and visual faculties were added to this
+framework. This later came to be known as ACT-PM then later ACT-R. 
+*** Collaboration
+Computer networks allowed researchers
+to investigate the ability to use computers to help people collaborate
+with one another. The original intention was to use computers to replace
+physical apparatus such as white boards in meeting rooms (cite Colab). 
+Researchers discovered paradigms that could be used for to support
+collaborations such as, synchronous and asynchronous collaboration. As
+more work was done in this field the tools such as PREP(cite Issues in
+design computer support for co-authoring and commenting.) a tool that
+supported interaction between authors and commentors,
+Cognoter(Theory and practice of a colab-orative tool) a tool that
+provided a framework to help the decision making process, etc.
+
+Despite these strides in the area of computer supported collaborative
+work, researchers in the cognitive modeling community 
+shared models through means of conferences, summer schools and
+personal websites. The objective of my research is to provide a
+collaborative environment where cognitive scientists can share
+models, I describe this further in the following section and chapters.
+*** Contributions
+I would like to start this section by acknowledging that the overall
+direction for the research was provided by 
+Dr. St. Amant. The aim of this project is to provide a collaborative
+environment for researchers who develop computational representations
+of their work. This is achieved by allowing researchers to access
+ACT-R on top of a web based framework where they can create 
+and share model. The benefits of this project are:
+
+\begin{itemize}
+\item We provide a software environment completely setup and ready for
+  use. As a result researcher can get to work with out being concerned
+  about issues regarding software dependencies.
+\item We attempt to foster collaboration in the cognitive modeling
+  community. Researchers can build models and these can be accessed by
+  other individuals and groups, and can be modified and shared back.
+\item By providing a centralized system hardware resources can be
+  shared across a large number of users. This would make it inexpenive
+  to run and be of use to research groups that cannot invest in
+  hardware.
+\item Since users store their models on a centralized
+  system it acts as a repository for models that can be used to
+  learn about cognitive modeling.
+\end{itemize}
+
+I used frames \cite{Minsky1974a} to achieve collaboration
+. A frame is a data structure consisting of slots, where each
+slot can either be another frame or an instance of data. Apart from
+achieving a means to provide collaboration, this data structure lets
+us represent models in a structured manner. This opens up a number of
+avenues for research, the first one that does come to mind is the
+ability to mine models to find patterns in different models and
+hence build up a more complete picture of human cognition.
+*** Thesis Organization
+
+In Chapter 2 I discuss cognitive architectures and the features of
+various cognitive modeling 
+architectures. Chapter 3 attempts to describe the field of computer supported
+collaborative work. Chapter 4 aims to provide an overview of the
+biobike system. Chapter 5 describes the implementation of the
+system. In chapter 6 I describe how I solved the problem of a synonym
+crossword using this system. We conclude this with a discussion of the
+limitations of this system and the future work for this system.
+
 ** The nature of cogition
 \label{The_nature_of_cognition}
 
@@ -44,20 +146,20 @@ the following questions.
 represented?
 \item How do various processes act on this knowledge and how do they
 achieve the effect they intend to achieve?
-% TODO WORK ON THIS
+#% TODO WORK ON THIS
 \item How can these processes and structures be manifested in the real
 world?
 \end{itemize}
 
-%# WARNING:CH2: ---
-%# WARNING:CH2: Have ignored the faculties of perception, would that be a
-%# WARNING:CH2: problem? The point is that I am abstracting away faculties
-%# WARNING:CH2: because I believe they are problems that need to be
-%# WARNING:CH2: sepately with out connection to the main project
-%# WARNING:CH2: ---
+# WARNING:CH2: ---
+# WARNING:CH2: Have ignored the faculties of perception, would that be a
+# WARNING:CH2: problem? The point is that I am abstracting away faculties
+# WARNING:CH2: because I believe they are problems that need to be
+# WARNING:CH2: sepately with out connection to the main project
+# WARNING:CH2: ---
 
-%# TODO:CH2: Describe that each question is a set of solutions and not
-%# TODO:CH2:  a single solution, due to the complex nature of the mind.
+# TODO:CH2: Describe that each question is a set of solutions and not
+# TODO:CH2:  a single solution, due to the complex nature of the mind.
 
  When solving problems the human mind has the ability to
 retrieve and apply previously stored knowledge to the problem; for
@@ -73,7 +175,7 @@ everyday basis; this could be as simple and routine as diagnosing a
 light bulb is not working and replace it, or perhaps the techniques we
 use when solving a crossword puzzle. 
 
-%# TODO: CH2: Work on this section.
+# TODO: CH2: Work on this section.
 This is summarized best by Bogdan \cite{Bogdan:1993aa}
 
 \begin{quote}
@@ -82,23 +184,28 @@ instantiate cognitive structures and processes and run the program of
 cognition.
 \end{quote}
 
-These questions provide us with a very general framework of the results to
-be provided by cognitive science. Newell in his book \emph{The
-Unified Theories of Cognition} \cite{Newell:1990aa} and in \cite{Newell1980135} describes the
-study of the working of the mind as a problem of satisfying the
-``Conjunction of constraints on the nature of mind like systems.'' He
-describes the 
-characteristics of what is to be expected of any system that proposes
-to implement a model of human cognition. The purpose of listing
-these criteria is to elaborate on how the questions above map
-into real cognitive systems. These criteria have
-been listed below, have been referenced from
-\cite{CambridgeJournals:207162} and \cite{Newell:1990aa}.
+These questions provide us with a very general framework of the
+results to be provided by cognitive science. Newell in his book
+\emph{The Unified Theories of Cognition} and in
+\cite{Newell1980135} describes the study of the working of the mind as
+a problem of satisfying the ``Conjunction of constraints on the nature
+of mind like systems.'' He describes the characteristics of what is to
+be expected of any theory that claims to propose a model of human
+cognition. Newell mentions that this list is not comprehensive, but in
+the view of Anderson \& Lebiere it can used to provide a broad
+framework against which all theories that claim to explain the human
+mind can be tested.
+ 
+
+These criteria have been listed below, have been referenced from
+\cite{CambridgeJournals:207162} and \cite{Newell:1990aa}. The purpose
+of listing these criteria below is to explain as to what the study of
+the mind would require.
 
 \begin{itemize}
 \item Behave flexibly as a function of the environment: At first
 glance this statement describes that the nature of human cognition
-%#TODO: CH2: Choose good word
+# TODO: CH2: Choose good word
 is <CHOOSE A RIGHT WORD>. Newell did make it clear that he was referring
 to the view that a cognitive system can be viewed as an instance of a
 universal computer, specifically a turing machine, despite its occasional
@@ -106,24 +213,64 @@ failings and lack of infinite memory. He further explains that this
 view does not indicate the inablity to perform special operations, for
 example, vision. He explains that like computers with special
 processing units the cognitive system can be made up of special
-purpose systems that specialize in a certain task. The solution to
-this question would like within the set of solutions to the first
-question. 
+purpose systems that specialize in a certain task. As an example
+consider the example of chemist they are able to perform congnitive
+tasks that are relates to their field and they are also able to drive
+their car. This 
+
+# The solution to this question would like within the set of solutions to the first question. 
 
 \item Operate in real time: A system that models cognition should be
 able to explain the reason as to how we are able to perform cognitive
 tasks at the speed humans do. This criteria is important because if a
-system is not able to explain this then it leaves a void in the 
+system is not able to explain it could lead us to wrong assumptions
+about how humans think.
 
-%Exhibit rational adapative behaviour
-%Use knowledge about the environment
-%Behave predictably and gracefully in the face of the
-%Integrate diverseUse natural
-%Exhibits self awareness and a sense of
-%Learn from its
-%Arise through
-%Be realizable with in the brain.
+
+\item Exhibit rational adapative behaviour: It must be able to explain
+this because humans perform computations and those computations, as in the words of
+Newell\cite{Newell:1990aa}, are for ``the service of goals and
+rationally related to obtaining things that let the organism survive
+and propagate.''
+
+\item Display dynamic behaviour: Humans operate in an
+environment that is ever changing. They draw in this
+information from their environment and act on it appropriately. For
+example, if you are driving your car and at that moment a deer decides
+to sprint in front of your car, you would hit the brakes. 
+
+\item Integrate diverse knowledge: HELP REQUIRED HERE. Did not
+understand what was being said in the papers to clearly explain what
+is happening
+
+\item Exhibits a sense of consciousness: Newell could not
+point out to the direct relation between consciousness and human
+cognition but he did mention it as one of the criteria in his tests of
+human cognition. An interpretation of this as taken from
+\cite{CambridgeJournals:207162} is that Newell was asking us to pick
+out criteria for this test and the authors of that paper point towards
+using sections from a volume titled ``Scientific approaches to
+Consciousness".
+
+\item Learning from the environment: This point should be self
+evident, we gain new knowledge from the world around us. But then
+the type of learning itself should be based on whether it can learn based on
+semantic memory, skill, priming and conditioning.
+# DOUBT: CH2: Should I reference The A&L paper or the paper to which these guys
+# DOUBT: CH2:  refer to?
+
+\item Arise through evolution: HELP NEEDED HERE AGAIN.
+
+\item Use of Natural language: Any theory that claims to decipher human
+cognition must be able to explain as to how we are able to comprehend
+what we listen, understand what we speak because this is a function
+that is core to the way we communicate with each other.
+
+\item Be realizable with in the brain: This point is critical because
+it serves as proof that a given theory is congruous with actual
+computations in the brain.
 \end{itemize}
+
 
 
 **** Classical approach
@@ -133,4 +280,3 @@ system is not able to explain this then it leaves a void in the
 *** ACT-R
 *** SOAR
 *** EPIC
-    
