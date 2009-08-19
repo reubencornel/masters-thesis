@@ -146,7 +146,7 @@ the following questions.
 represented?
 \item How do various processes act on this knowledge and how do they
 achieve the effect they intend to achieve?
-#% TODO WORK ON THIS
+# TODO:CH2: WORK ON THIS
 \item How can these processes and structures be manifested in the real
 world?
 \end{itemize}
@@ -270,11 +270,42 @@ that is core to the way we communicate with each other.
 it serves as proof that a given theory is congruous with actual
 computations in the brain.
 \end{itemize}
-*** Paradigms of Cognition
-**** Classical approach
-**** Connectionist approach
+*** Approaches towards explaining cognition
+    There are many theories on the nature of cognition each of them
+    taking a position on what constitutes cognitive functions and how
+    they are carried out. But these approches can be bifurcated into
+    two groups, that is, approaches that adhere to the
+    \emph{cognitivist approach}\cite{DBLP:journals/tec/VernonMS07},
+    these are theories that view cognition to comprise of a number of
+    information processing processes and those that stick to the
+    \emph{emergent approach}, that believe that treat cogntion as
+    'symbolic, rational, encapsulated, structured and
+    algorithmic'[CITE REFERENCE].
+# TODO:CH2:Cite reference above. 
+
+    The goal of objective of this section is to explore these points
+    of view and conclude by bringing out differences between these
+    disparate points of view, after which we examine a number of
+    cognitive architectures in detail.
+**** The Cognitivist view
+# main point
+     The cognitivist perspective views human cognition as a set of
+     information processes working over a set of representations that
+     point to the actual knowledge which may be stored else where,
+     vis-\'{a}-vis symbols. The knowledge derived from these
+     computations can be stored and used later to improve the
+     reasoning of the system. The cognitivist views the function of
+     perception is to generate an appropriate representation of the
+     the world around the system which the system uses to
+     reason. \cite{DBLP:journals/tec/VernonMS07}. 
+
+# Describe models and how stuff is represented
+
+# describe draw back
+**** The Connectionist approach
 *** Cognitive Architectures
-*** ACT-R
-*** SOAR
-*** EPIC
-    
+**** ACT-R
+**** SOAR
+**** EPIC
+*** Challenges facing cognitive architectures
+   
