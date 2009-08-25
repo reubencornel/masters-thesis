@@ -141,9 +141,11 @@ to compare some currently widely used cognitive architectures.
 Any attempt to deal with the architecture of cognition has to answer
 the following questions.
 
+#(for the first bullet point)There are more basic questions than that, how can knowledge be
+# categorized.  Are there different kinds of knowledge
 \begin{itemize}
-\item How is procedural and declarative knowledge acquired, and
-represented?
+\item What is knowledge and how can it be categorized?
+\item How is knowledge acquired and represented?
 \item How do various processes act on this knowledge and how do they
 achieve the effect they intend to achieve?
 # TODO:CH2: WORK ON THIS
@@ -239,9 +241,15 @@ information from their environment and act on it appropriately. For
 example, if you are driving your car and at that moment a deer decides
 to sprint in front of your car, you would hit the brakes. 
 
-\item Integrate diverse knowledge: HELP REQUIRED HERE. Did not
-understand what was being said in the papers to clearly explain what
-is happening
+\item Integrate diverse knowledge: Humans acquire knowledge from
+diverse sources and are able to integrate them. For example consider a
+computer programmer working the in the banking industry. He can go to
+school to obtain knowledge of the working of the finance industry. He
+can use this knowledge along with his knowledge of computers science
+to write programs for the industry. Here we see that our fictitious
+programmer integrating knowledge, unlike expert systems where
+knowledge is vertical and cannot be integrated as easily.
+# that, expert systems 
 
 \item Exhibits a sense of consciousness: Newell could not
 point out to the direct relation between consciousness and human
@@ -259,7 +267,13 @@ semantic memory, skill, priming and conditioning.
 # DOUBT: CH2: Should I reference The A&L paper or the paper to which these guys
 # DOUBT: CH2:  refer to?
 
-\item Arise through evolution: HELP NEEDED HERE AGAIN.
+\item Arise through evolution: It is understood that the algorithms we
+use today are those that have arisen naturally over a period of time,
+hence any cognitive architecture should be able to learn and improve
+the algorithms that it has been given (?)
+# There are some algorithms, The algorithm have to come gradually, has
+# to get to them step by ste, the algorithm should have arisen
+# naturally by natural and unsupervised means.
 
 \item Use of Natural language: Any theory that claims to decipher human
 cognition must be able to explain as to how we are able to comprehend
@@ -274,38 +288,91 @@ computations in the brain.
     There are many theories on the nature of cognition each of them
     taking a position on what constitutes cognitive functions and how
     they are carried out. But these approches can be bifurcated into
-    two groups, that is, approaches that adhere to the
-    \emph{cognitivist approach}\cite{DBLP:journals/tec/VernonMS07},
-    these are theories that view cognition to comprise of a number of
-    information processing processes and those that stick to the
-    \emph{emergent approach}, that believe that treat cogntion as
-    'symbolic, rational, encapsulated, structured and
-    algorithmic'[CITE REFERENCE].
+    approaches that adhere to the \emph{cognitivist
+    approach}\cite{DBLP:journals/tec/VernonMS07}, these are theories
+    that view cognition as information processes manipulating symbols
+    and those that stick to the \emph{emergent approach}, that believe
+    that treat cogntion as 'symbolic, rational, encapsulated,
+    structured and algorithmic'[CITE REFERENCE].
 # TODO:CH2:Cite reference above. 
-
+    
     The goal of objective of this section is to explore these points
     of view and conclude by bringing out differences between these
     disparate points of view, after which we examine a number of
     cognitive architectures in detail.
 **** The Cognitivist view
-# main point
+     
      The cognitivist perspective views human cognition as a set of
      information processes working over a set of representations that
      point to the actual knowledge which may be stored else where,
-     vis-\'{a}-vis symbols. The knowledge derived from these
-     computations can be stored and used later to improve the
-     reasoning of the system. The cognitivist views the function of
-     perception is to generate an appropriate representation of the
-     the world around the system which the system uses to
-     reason. \cite{DBLP:journals/tec/VernonMS07}. 
+     vis-\'{a}-vis symbols. These information processes are said to be
+     purposeful, contentful, representational and can be described
+     formally\cite{103009}. Knowledge derived from these computations
+     can be stored and used later to improve the reasoning of the
+     system. The cognitivist views the function of perception is to
+     generate an appropriate representation of the the world around
+     the system which the system uses to reason
+     \cite{DBLP:journals/tec/VernonMS07}.
 
-# Describe models and how stuff is represented
-
-# describe draw back
+     The task of building models in cognitivist system is generally
+     done by a programmer. Which is good in a way that these
+     representations and structures can be viewed and interpreted by
+     humans. But it may also ``bias the system'' and constrain it to an
+     idealized cognitive environment. As a result this cause
+     problems when the system does have to stray away from this
+     requirements, this gap between perception, which is in
+     interpretation of reality, and actual reality begin to
+     widen. This would then have to be filled in with more programmer
+     knowledge to close this ``semantic
+     gap''\cite{DBLP:journals/tec/VernonMS07}. 
+     
 **** The Connectionist approach
+# Talk about how connection ism differs from cognitivist point of view
+# That is talk about differences in the in teh under lying philosophy
+
+#Once that is done talk about how models are represented and the
+#problems with them.
+
+     Until the 1980s the cognitivist viewpoint was the primary means
+     of explaining the nature of human cognition. Interest in
+     self-organizing systems led to an area of research that advocated
+     the view that human cognition is made up of smaller units that
+     rearrange themselves as the system acquires a skill or recognizes
+     a change in its environment. This approach to understanding is
+     known as the \emph{emergent approach}\cite{DBLP:journals/tec/VernonMS07}.
+     
+     Although there are multiple methods are used to in the area of
+     emergent systems, I will describe only the emergent systems from
+     the connectionist view point. The basic feature in a
+     connectionist system is a connectionist network. A connectionist
+     network is made up of a number of simple computational units that
+     communicate with each other with via connections. These
+     connections are capable of carrying only simple
+     information.
+
+     
+     The computational units are arranged in a number of hierarchial
+     layers. These networks can be arranged into two basic configurations
+     namely \emph{feed forward} networks and \emph{recurrent}
+     networks. 
+
+     Feed forward networks(Fig \ref{ASCA_AFFN}) are those networks in
+     which information flows in one direction only, that is from the
+     input nodes to the hidden nodes(if they exist) and then to the
+     output nodes. 
+
+     \begin{figure}[htp]
+     \centering
+     \includegraphics[width=80mm]{FeedForwardNetwork.eps}
+     \caption{A feed forward network}
+     \label{ASCA_AFFN}
+     \end{figure}
+     
+     
 *** Cognitive Architectures
 **** ACT-R
 **** SOAR
 **** EPIC
 *** Challenges facing cognitive architectures
    
+    
