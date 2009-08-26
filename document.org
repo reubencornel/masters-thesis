@@ -339,27 +339,34 @@ computations in the brain.
      the view that human cognition is made up of smaller units that
      rearrange themselves as the system acquires a skill or recognizes
      a change in its environment. This approach to understanding is
-     known as the \emph{emergent approach}\cite{DBLP:journals/tec/VernonMS07}.
+     known as the \emph{emergent approach}
+     \cite{DBLP:journals/tec/VernonMS07}.
      
      Although there are multiple methods are used to in the area of
-     emergent systems, I will describe only the emergent systems from
-     the connectionist view point. The basic feature in a
-     connectionist system is a connectionist network. A connectionist
-     network is made up of a number of simple computational units that
-     communicate with each other with via connections. These
-     connections are capable of carrying only simple
-     information.
+     emergent systems, I will describe only connectionist view
+     point. Connectionism defined by Medler in \cite{Medler98abrief}
+     as ``a theory of information that uses parallel processing of
+     sub-symbols, using statistical properties instead of logical
+     rules to transform information'' rather than rules as used in
+     classical cognitivist systems.
 
+     The basic feature in a connectionist system is a connectionist
+     network. A connectionist network is made up of a number of simple
+     computational units that communicate with each other with via
+     connections. These connections are capable of carrying only
+     simple information.
      
-     The computational units are arranged in a number of hierarchial
-     layers. These networks can be arranged into two basic configurations
-     namely \emph{feed forward} networks and \emph{recurrent}
-     networks. 
+     The computational units in a connectionist system are arranged in
+     a number of hierarchical layers. These layers are the input
+     layer, the hidden layer, the output layer. The input layer These
+     networks can be arranged into two basic configurations namely
+     \emph{feed forward} networks and \emph{recurrent} networks.
 
      Feed forward networks(Fig \ref{ASCA_AFFN}) are those networks in
      which information flows in one direction only, that is from the
-     input nodes to the hidden nodes(if they exist) and then to the
-     output nodes. 
+     input layer to the hidden layers(if they exist) and then to the
+     output layer. Recurrent networks are those networks that have
+     loops and hence backward connections
 
      \begin{figure}[htp]
      \centering
@@ -368,7 +375,34 @@ computations in the brain.
      \label{ASCA_AFFN}
      \end{figure}
      
+     Connectionist models learn by adjusting the weights on the
+     individual computational units. This implies that learning in
+     connectionist models can be viewed more as a skill building
+     exercise, rather than an exercise in knowledge acquistion as in
+     the case of the congitivist approaches
+     \cite{DBLP:journals/tec/VernonMS07}.
      
+     The main attractions of connectionist models is that it provides
+     a means to provide neural plausibility\cite{103009} to theories
+     of cognitive science because of its ability to simulate the
+     massively parallel processing in the brain and also its ability
+     to learn by adjusting weights. It is also attractive because it
+     provides cognitive plausbility by allowing problems to be studied
+     using simpler mechanisms, they could help in studying the
+     processes underlying the processes of pattern-recognition and
+     memory retrival and the ability to apply soft constraints when
+     representing schematic knowledge.
+
+     Despite these attractions connectionist models find it difficult
+     to explain the ability of the human mind to to integrate diverse
+     knowledge from various sources, the ability to use pre-existing
+     knowledge and the ability to respond with in the time constraints
+     that humans do.
+
+     
+
+     
+ 
 *** Cognitive Architectures
 **** ACT-R
 **** SOAR
