@@ -1,0 +1,269 @@
+\documentclass[notes]{beamer}
+\usepackage{graphicx}
+\usepackage{url}
+
+% You should run 'pdflatex' TWICE, because of TOC issues.
+
+% Rename this file.  A common temptation for first-time slide makers is to name it something like ``my_talk.tex'' or ``john_doe_talk.tex'' or even ``discrete_math_seminar_talk.tex''.  You really won't like any of these titles the second time you give a talk.  Try naming your tex file something more descriptive, like ``riemann_hypothesis_short_proof_talk.tex''.  Even better (in case you recycle 99% of a talk, but still want to change a little, and retain copies of each), how about ``riemann_hypothesis_short_proof_MIT-Colloquium.2000-01-01.tex''?
+
+\mode<presentation>
+{
+  % A tip: pick a theme you like first, and THEN modify the color theme, and then add math content.
+  % Warsaw is the theme selected by default in Beamer's installation sample files.
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%% THEME
+  %\usetheme{AnnArbor}
+  %\usetheme{Antibes}
+  %\usetheme{Bergen}
+  %\usetheme{Berkeley}
+  %\usetheme{Berlin}
+  %\usetheme{Boadilla}
+  %\usetheme{boxes}
+  %\usetheme{CambridgeUS}
+  %\usetheme{Copenhagen}
+  %\usetheme{Darmstadt}
+  %\usetheme{default}
+  %\usetheme{Dresden}
+  %\usetheme{Frankfurt}
+  %\usetheme{Goettingen}
+  %\usetheme{Hannover}
+  %\usetheme{Ilmenau}
+  %\usetheme{JuanLesPins}
+  %\usetheme{Luebeck}
+  %\usetheme{Madrid}
+  %\usetheme{Malmoe}
+  %\usetheme{Marburg}
+  %\usetheme{Montpellier}
+  %\usetheme{PaloAlto}
+  %\usetheme{Pittsburgh}
+  %\usetheme{Rochester}
+  %\usetheme{Singapore}
+  %\usetheme{Szeged}
+  \usetheme{Warsaw}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%% COLOR THEME
+  %\usecolortheme{albatross}
+  %\usecolortheme{beetle}
+  %\usecolortheme{crane}
+  \usecolortheme{default}
+  %\usecolortheme{dolphin}
+  %\usecolortheme{dove}
+  %\usecolortheme{fly}
+  %\usecolortheme{lily}
+  %\usecolortheme{orchid}
+  %\usecolortheme{rose}
+  %\usecolortheme{seagull}
+  %\usecolortheme{seahorse}
+  %\usecolortheme{sidebartab}
+  %\usecolortheme{structure}
+  %\usecolortheme{whale}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%% OUTER THEME
+  %\useoutertheme{default}
+  %\useoutertheme{infolines}
+  %\useoutertheme{miniframes}
+  %\useoutertheme{shadow}
+  %\useoutertheme{sidebar}
+  %\useoutertheme{smoothbars}
+  %\useoutertheme{smoothtree}
+  %\useoutertheme{split}
+  %\useoutertheme{tree}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%% INNER THEME
+  %\useinnertheme{circles}
+  %\useinnertheme{default}
+  %\useinnertheme{inmargin}
+  %\useinnertheme{rectangles}
+  %\useinnertheme{rounded}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \setbeamercovered{transparent} % or whatever (possibly just delete it)
+  % To change behavior of \uncover from graying out to totally invisible, can change \setbeamercovered to invisible instead of transparent. apparently there are also 'dynamic' modes that make the amount of graying depend on how long it'll take until the thing is uncovered.
+
+}
+
+
+% Get rid of nav bar
+\beamertemplatenavigationsymbolsempty
+
+% Use short top
+%\usepackage[headheight=12pt,footheight=12pt]{beamerthemeboxes}
+%\addheadboxtemplate{\color{black}}{
+%\hskip0.3cm
+%\color{white}
+%\insertshortauthor \ \ \ \ 
+%\insertframenumber \ \ \ \ \ \ \ 
+%\insertsection \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \insertsubsection
+%\hskip0.3cm}
+%\addheadboxtemplate{\color{black}}{
+%\color{white}
+%\ \ \ \ 
+%\insertsection
+%}
+%\addheadboxtemplate{\color{black}}{
+%\color{white}
+%\ \ \ \ 
+%\insertsubsection
+%}
+
+% Insert frame number at bottom of the page.
+\usefoottemplate{\hfil\tiny{\color{black!90}\insertframenumber}} 
+
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+
+\usepackage{times}
+\usepackage[T1]{fontenc}
+
+\title{Talk Title}
+\subtitle{Subtitle}
+
+\author{Speaker}
+
+\institute{Institute}
+
+\date{Date}
+
+\subject{Talks}
+
+\def\defn#1{{\color{red} #1}}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents
+\end{frame}
+
+\section{Section 1}
+
+\subsection{Subsection 1}
+
+\begin{frame}
+\frametitle{Sums of the form $\sum_{i=1}^\infty a_i$ and convergence}
+
+Preliminary things that we must cover before going on:
+
+\begin{columns}
+
+\column{0.5\textwidth}
+
+Working inside a column...
+
+\begin{block}{Blocks default to blue}
+\begin{itemize}
+\item Itemize
+\item Itemize
+\end{itemize}
+\end{block}
+
+\begin{alertblock}{Alert Blocks are red (by default)}
+\begin{enumerate}
+\item Enumerate
+\item Enumerate
+\end{enumerate}
+\end{alertblock}
+
+\column{0.5\textwidth}
+
+\hyperlink{post_equalities}{\beamergotobutton{Skip rest of $\mathbb{R}^{n+1}$}}
+
+This is a precursor to studying \defn{integrals}:
+\begin{equation*}
+\int_a^b f(x)\ dx
+\end{equation*}
+
+\begin{exampleblock}{Example blocks for green}
+\begin{equation}
+\sum_{i=1}^\infty \frac1{n^2} = \frac\pi6
+\end{equation}
+\end{exampleblock}
+
+\pause\uncover{
+  This is a pause/uncover...\footnote{Use them for ``animation'' effect.}
+}
+
+%\includegraphics[width=2in]{example.jpg} 
+
+\end{columns}
+
+\end{frame}
+
+\subsection{Subsection 2}
+
+\begin{frame}
+\frametitle{Themes and TOC Space-Budgeting Issues}
+
+\hypertarget{post_equalities}{}
+
+A comment: I put all of these generically-named sections and subsections so that you can see what the different themes do to them.  If you happen to have a lot of sections and subsections (for example), then the Warsaw theme tends to take up a lot of space at the top.
+\begin{itemize}
+\item You can uncomment some code I have near the top that will just show the CURRENT section/subsection
+\item Or, if you don't like that, try using a theme that has the TOC run down a left-hand or right-hand column.  What you lose horizontally, you gain vertically.
+\end{itemize}
+
+\end{frame}
+
+\subsection{Subsection 3}
+
+\begin{frame}
+\frametitle{On Frame Titles}
+
+Good form apparently dictates that frames are supposed to have a title.  Titles should be informative.  ``Proof of Riemann Hypothesis'' beats ``Proof'' as a frame title (just in case an audience member zoned out at some point).
+
+\end{frame}
+
+\section{Section 2}
+
+\subsection{Subsection 1}
+
+\begin{frame}
+\frametitle{Using {\tt only}, {\tt overprint} and {\tt pause uncover}}
+
+These are the things that ``animate'' beamer, giving it flexibility over other\only<2->{, lesser} packages.  Try advancing forward.
+
+\pause\uncover{Example of trig identity manipulations:}
+
+\pause\uncover{
+$\sin^{\only<1-3>{(3-1)}\only<4->{2}} \theta + \cos^2 \only<1-4>{(4\theta - 3\theta)}\only<5->{\theta} \only<6->{= 1}$
+}
+
+%The difference between \only and \uncover is that things marked \only don't take up space unless they're visible, but things marked \uncover take up space even when they're invisible.
+
+
+\end{frame}
+
+\section{Section 3}
+
+\subsection{Subsection 1}
+
+\begin{frame}
+\frametitle{S3/Ss1}
+\end{frame}
+
+%%%%% Thanks page
+\begin{frame}
+\frametitle{Thanks!!}
+\vskip20pt
+
+\begin{center}
+{\bf \color{alert} Thanks for your attention!}
+\end{center}
+
+\vskip20pt
+
+\begin{center}
+Slides for this talk will be available at:\\
+\url{http://www.math.university.edu/~speaker}
+\vskip12pt
+\end{center}
+
+\titlepage
+\end{frame}
+
+\end{document}

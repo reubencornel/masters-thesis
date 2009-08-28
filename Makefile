@@ -25,6 +25,10 @@ thesis.bbl: thesis.bib thesis.aux
 thesis.aux: thesis.tex
 	latex thesis
 
+presentation: Presentation.tex
+	latex Presentation.tex
+	latex Presentation.tex
+
 clean:
 	-rm *.aux
 	-rm *.log
