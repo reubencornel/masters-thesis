@@ -33,10 +33,10 @@ information processing.
 
 The objective of this chapter is three-fold.  Firstly it aims to
 provide a very brief introduction to the human cognitive architecture
-from both the cognitivist and
-emergent~\cite{DBLP:journals/tec/VernonMS07} perspectives.  Secondly
-it discusses cognitive architecture in general.  Finally it goes on to
-compare some currently and  widely used cognitive architectures.
+from both the cognitivist and emergent
+\cite{DBLP:journals/tec/VernonMS07} perspectives.  Secondly it
+discusses cognitive architecture in general.  Finally it goes on to
+compare some currently and widely used cognitive architectures.
 
 \section{The nature of cognition}
 \label{nature_Of_Cognition}
@@ -53,31 +53,35 @@ the following questions.
 
   Although the nature of knowledge has been studied over many
   millennia we are still not certain of its characteristics. Here I
-  will describe what Brachman and Levesque in
-  \cite{brachman-levesque:2004a} talk about the nature of knowledge.
+  will briefly describe what Brachman and Levesque in
+  \cite{brachman-levesque:2004a} have to say about the nature of knowledge.
   They describe as one perspective of knowledge as a function that
   maps a knower to a proposition. A proposition is a statement that
   determines the truth value of the belief of the knower. But they
-  also acknowledge that not all knowledge is of this form.
+  also acknowledge that not all knowledge is of this form, for example
 
-\item \emph{How is knowledge acquired and represented?} 
+\item \emph{How is knowledge acquired, represented and utilized?} When
+  solving problems the human mind has the ability to retrieve and
+  apply previously stored knowledge to the problem; for example,
+  consider solving a calculus based integration problem.  We are able
+  to retrieve standard representations of the forms of equations and
+  apply them to the problem to simplify it and solve it.   Issues
+    of knowledge retrieval and application are central to
+  understanding cognition.
+
 \item How do various processes act on this knowledge and how do they
-  achieve the effect they intend to achieve?
+  achieve the effect they intend to achieve?  These two areas are
+  significant because of their relationship to the techniques of
+  deduction and inference that we use to solve problems on an everyday
+  basis, inferences as simple and routine as when we diagnose a faulty
+  light, or the more complex techniques we use when solving a
+  crossword puzzle.
+
 \item How can these processes and structures be manifested in the real
   world?
 \end{itemize}
 
-When solving problems the human mind has the ability to retrieve and
-apply previously stored knowledge to the problem; for example,
-consider solving a calculus based integration problem.  We are able to
-retrieve standard representations of the forms of equations and apply
-them to the problem to simplify it and solve it.  {\bf Issues of
-  knowledge retrieval and application are} central to understanding
-cognition.  These two areas are significant because of their
-relationship to the techniques of deduction and inference that we use
-to solve problems on an everyday basis, inferences as simple and
-routine as when we diagnose a faulty light, or the more complex
-techniques we use when solving a crossword puzzle.
+
 
 $<$ NEEDS REVIEW $>$
 
@@ -100,9 +104,7 @@ cognition.
 
 $<$ END OF REVIEW $>$
 
-These questions {\bf We've lost track here of which questions you
-  mean; you've only discussed the second one, which creates a lack of
-  balance.  ---RSA} provide us with a very general framework of the
+These questions provide us with a very general framework of the
 results to be provided by cognitive
 science. Newell~\cite{,Newell1980135} describes the study of the
 working of the mind as a problem of satisfying the ``Conjunction of
@@ -120,7 +122,6 @@ the mind would require.
 
 \begin{itemize} 
 
-\item $<$ NEEDS REVIEW $>$
 
 \item Behave flexibly as a function of the environment: At first
 glance this statement may seem frivolous, as it seems to imply that
@@ -136,8 +137,6 @@ specialize in a certain task. As an example consider the example of
 chemist they are able to perform congnitive tasks that are relates to
 their field and they are also able to drive their car. 
 
-\item $<$ END OF REVIEW $>$
-
 
 \item Operate in real time: A system that models cognition should be
 able to explain the reason as to how we are able to perform cognitive
@@ -152,16 +151,13 @@ Newell\cite{Newell:1990aa}, are for ``the service of goals and
 rationally related to obtaining things that let the organism survive
 and propagate.''
 
-\item $<$ NEEDS REVIEW: IS THE EXAMPLE VALID? $>$
 \item Display dynamic behaviour: Humans operate in an
 environment that is ever changing. They draw in this
 information from their environment and act on it appropriately. For
 example, if you are driving a car and at that moment a deer decides
 to sprint in front of the car, you would hit the brakes. 
 
-\item $<$ END OF REVIEW $>$
 
-\item $<$ NEEDS REVIEW: NEW SECTION $>$
 \item Integrate diverse knowledge: Humans acquire knowledge from
 diverse sources and are able to integrate them. For example consider a
 computer programmer working in the banking industry. He can go to
@@ -170,7 +166,6 @@ can use this knowledge along with his knowledge of computers science
 to write programs for the industry. Here we see that our fictitious
 programmer integrating knowledge, unlike expert systems where
 knowledge is vertical and cannot be integrated as easily.
-\item $<$ END OF REVIEW $>$
 
 \item Exhibits a sense of consciousness: Newell could not point out to
   the direct relation between consciousness and human cognition but he
@@ -178,11 +173,7 @@ knowledge is vertical and cannot be integrated as easily.
   cognition. One interpretation of
   this~\cite{CambridgeJournals:207162} is that Newell was asking us to
   pick out criteria for this test and the authors of that paper point
-  towards using sections from a volume titled ``Scientific approaches
-  to Consciousness''.  {\bf In general, the academic style in computer
-    science is not to name specific books or papers in the text, but
-    generally only to cite them, such even if the citations were left
-    out, the text would be readable and would make sense.  ---RSA}
+  towards using sections from \cite{Cohen:1996aa}
 
 \item Learning from the environment: This point should be self
 evident, we gain new knowledge from the world around us. But then
