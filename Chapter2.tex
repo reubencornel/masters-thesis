@@ -336,13 +336,12 @@ cognitive architecture and we will also look at some sample cognitive
 architectures.
 
 % Define and explain what is needed from a cognitive architecture.
-\subsection{Review of Cognitive architectures}
+\section{Survey of cognitive architectures}
 
 This section I will describe a number of popular cognitive
 architectures that are currently in use. I will later compare them
 based on a number of criteria that reflect the functions that a
 congitive architecture is supposed to perform.
-
 
 % General template
 % Describe architecure
@@ -353,7 +352,55 @@ congitive architecture is supposed to perform.
 %   Abilities of perception
 %      Auditory, Visual
 
-\subsubsection{ACT-R}
+\subsection{ACT-R}
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=100mm]{ACTRArch.eps}
+  \caption{The architecture of ACT-R 5.0\cite{anderson_jr-etal:2004a}}
+  \label{ACTR_ARCH}
+\end{figure}
+
+
+
+% Describe architecure
+
+% Architecture Background
+ACT-R was developed by Anderson et. al. \cite{anderson_jr-etal:2004a}
+at Carnegie Mellon University to validate results performed by in the
+area of cognitive psychology. ACT-R's origins lie in an attempt by
+Anderson and Bower to describe a theory that explained the working of
+memory called Human Associative Memory(HAM)\cite{AndersonBower73}. HAM
+eventually grew into ACT\cite{Anderson76} which in due course evolved
+into ACT-R\cite{Anderson83}.
+
+% Describe the architecture given in the picture.
+ACT-R consists of a set of core modules. These modules aim to
+represent various constituent regions of the brain. The operation of
+these modules is coordinated by a central production system. This
+system can identify patterns and make changes to the contents of
+buffers. The organization of these modules can be seen in figure
+\ref{ARTR_ARCH}. I describe each of these modules below.
+
+\begin{itemize}
+\item {\bf Visual Module}: This module provides ACT-R with the capability of
+  identifying objects visually.
+\item {\bf Manual Module}: This module provides ACT-R with the ability to
+  perform motor actions.
+\item {\bf Intentional Module}: This module helps ACT-R simulate the
+  ability to keep track of current goals.
+\item {\bf Retrieval Module}: This module implements the mechanism to
+  retrieve chunks of information from the declarative memory.
+\end{itemize}
+
+
+
+%   Knowledge representation, 
+%      short term memory, long term memory, Goals,
+%   Mechanics of cognition
+%      Means of planning, Learning
+%   Abilities of perception
+%      Auditory, Visual, Motor
 
 
 % The motor perceptual system
@@ -363,10 +410,14 @@ congitive architecture is supposed to perform.
 % The approach taken was to model the basic timeing behaviour of those
 % systems in an approximate form. The model the timing behaviour,
 % input and output behaviours.
-\subsubsection{SOAR}
-\subsubsection{EPIC}
-\subsubsection{CLARION}
-\subsubsection{Subsumption Architecture}
+
+
+% Vision is  
+
+\subsection{SOAR}
+\subsection{EPIC}
+\subsection{CLARION}
+\subsection{Subsumption Architecture}
 
 \subsection{Criteria for comparison}
 
