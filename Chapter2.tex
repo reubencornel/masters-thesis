@@ -380,7 +380,7 @@ represent various constituent regions of the brain. The operation of
 these modules is coordinated by a central production system. This
 system can identify patterns and make changes to the contents of
 buffers. The organization of these modules can be seen in figure
-\ref{ARTR_ARCH}. I describe each of these modules below.
+\ref{ACTR_ARCH}. I describe each of these modules below.
 
 \begin{itemize}
 \item {\bf Visual Module}: This module provides ACT-R with the capability of
@@ -393,12 +393,46 @@ buffers. The organization of these modules can be seen in figure
   retrieve chunks of information from the declarative memory.
 \end{itemize}
 
-
-
 %   Knowledge representation, 
 %      short term memory, long term memory, Goals,
+In ACT-R information stored in human memory like phone numbers, words,
+etc. are stored in chunks. Chunks can either be declared at the start
+of the model or are created during the execution of the model. Chunks
+represent information stored in the declarative memory. The
+probability and the speed with which a chunk might be retrieved is
+controlled by its activation. This is defined by the equation
+
+\begin{equation}
+  A_i = B_i + \sum_j W_j S_{ij}
+\end{equation}
+
+Where $A_i$: is the activation level of the chunk, $B_i$: is the base
+level activation of the chunk, $W_j$ is the attentional weighting of
+the elements of the current goal and $S_{ij}$ represents the strengths
+of associations from elements j to chunk i.
+
 %   Mechanics of cognition
 %      Means of planning, Learning
+The production system is the $<$CHOOSE WORD$>$ that controls the
+coordination between various modules, this is done through selecting
+the appropriate production and firing it. Though there may be a number
+of competeing productions the one with the highest utility is
+selected.  The utility of a production is defined by 
+
+\begin{equation}
+  U_i = P_iG - C_i
+\end{equation}
+
+where $P_i$ is the probability that the if production $i$ is selected
+that the goal $G$ will be achieved. $C_i$ defines the cost to
+completing the goal. This is estimated in the amount of time left to
+complete the goal. 
+
+ACT-R learns through a process of production compilation
+\cite{oai:CiteSeerPSU:518586}. It attempts to teach successive pairs
+of productions and tries to unify them into a single production. But
+Anderson mentions that this breaks down when the productions consist
+directives to the visual-motor modules.
 %   Abilities of perception
 %      Auditory, Visual, Motor
 
