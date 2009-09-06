@@ -1,6 +1,7 @@
 \chapter{A survey of Cognitive Architectures}
 \label{The_nature_of_cognition}
-
+\newcommand{\soar}{\small SOAR\ }
+\newcommand{\actr}{\small ACT-R\ }
 The quest to understand the working of the human mind has spanned
 many centuries starting with Plato when he asked, as in the words of
 Noam Chomsky citing Bertrand Russell, ``{\bf How is it that human beings,
@@ -362,17 +363,16 @@ congitive architecture is supposed to perform.
 \end{figure}
 
 
-
 % Describe architecure
 
 % Architecture Background
-ACT-R was developed by Anderson et. al. \cite{anderson_jr-etal:2004a}
+\actr was developed by Anderson et. al. \cite{anderson_jr-etal:2004a}
 at Carnegie Mellon University to validate results performed by in the
-area of cognitive psychology. ACT-R's origins lie in an attempt by
+area of cognitive psychology. \actr's origins lie in an attempt by
 Anderson and Bower to describe a theory that explained the working of
 memory called Human Associative Memory(HAM)\cite{AndersonBower73}. HAM
-eventually grew into ACT\cite{Anderson76} which in due course evolved
-into ACT-R\cite{Anderson83}.
+eventually grew into {\small ACT}\cite{Anderson76} which in due course evolved
+into \actr\cite{Anderson83}.
 
 % Describe the architecture given in the picture.
 ACT-R consists of a set of core modules. These modules aim to
@@ -437,20 +437,108 @@ directives to the visual-motor modules.
 
 %   Abilities of perception
 %      Auditory, Visual, Motor
-
-
 % The motor perceptual system
 % The act-r motor perceptual system is essentially borrowed of the
 % EPIC system.
+
+The ACT-R motor-perceptual system is modeled after EPIC
+(executive-process/interactive-control). The perception of vision is
+provided by the visual module, which itself consists of two modules
+the visual-location module and visual-object module. The
+visual-location module helps the visual module to focus its attention
+to a location in the visual field specified by the buffer. The
+visual-object module holds information about the object in the visual
+field. Motor control is provided by the manual module. ACT-R also has
+rudimentary auditory and vocal modules\cite{anderson_jr-etal:2004a}.
+
 
 % The approach taken was to model the basic timeing behaviour of those
 % systems in an approximate form. The model the timing behaviour,
 % input and output behaviours.
 
-
-% Vision is  
-
 \subsection{SOAR}
+
+% Describe architecture background
+\soar is a general cognitive architecture proposed originally by Allen
+Newell in \cite{Newell:1990aa,27702} when he argued for the need for
+psychology to deal with human cognition as a whole, rather than in
+form of micro strategies. The major ideas\cite{Lewis:2001aa} that
+define the characteristics of \soar are:
+
+% Describe the motivations behind SOAR, the technical ideas that
+% constitute 
+\begin{itemize}
+\item \emph{Physical symbol systems}: \soar is a physical symbol
+  system. Physical symbols systems are a class of system that are
+  capable of manipulating symbols and according to the \emph{physical
+    symbol system hypothesis}\cite{Newell1980135} are capable of
+  demonstrating intelligent and flexible behavior.
+\item \emph{Search in problem spaces}: \soar achieves cognition based
+  on a \emph{search of problem spaces} and is supported by a
+  \emph{recognize-decide-act} control structure. This is because
+  Newell believed that human cognition was a result of a search of a
+  problem space. This is known as the \emph{problem space
+    hypothesis}\cite{162585}. 
+\item \emph{Continuous, impasse driven learning}: \soar learns by
+  a technique called \emph{chunking}. This topic is explained in
+  detail below.
+
+
+\end{itemize}
+
+%   Knowledge representation, 
+%      short term memory, long term memory, Goals,
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=100mm]{soar.eps}
+  \caption{Soar Architecture\cite{Jill-Fain-Lehman:2006aa}}
+  \label{SOAR_ARCH}
+\end{figure}
+
+According to the \soar theory human memory is composed to two separate
+memories;long term memories, stores information for a long period of
+time, and the working memory, stores information required for the task
+currently at hand. 
+
+Long term memory(LTM) stores information that is used to store
+information that can be applied a number of instances of tasks. LTM is
+composed of three memories: procedural memory, semantic memory and
+episodic memory. Procedural memory stores information about how a task
+is supposed to be carried out, for example it would store information
+about task such as changing a light bulb, looking up a word in the
+dictionary, etc. Semantic memory is used to store information related
+to facts about the environment in which the agent operates, for
+example in an environment where the agent is trying to replace a light
+it would know that a light consists of a filament etc. Episodic memory
+stores information about specific incidents along with contextual
+information, $<$ \textsc{Think of a good example} $>$. Information
+stored in the procedural memory is accessed more frequently than
+information from either the semantic or episodic memories and this
+information directly controls the behavior of the agent. 
+
+All information in the LTM is stored in the form of
+\emph{productions}. A production consists of a set of conditions and a
+set of corresponding actions. Productions provide control information
+for the application of operators on a candidate state in the Working
+Memory. Productions perform four different roles: three knowledge
+retrieval problem solving functions and a state elaboration
+function. The knowledge retrieval functions are operator proposal,
+operator comparison and operator
+application\cite{Laird:2006aa}. Productions in \soar are fired in
+parallel with out conflict resolution unlike \actr that has a conflict
+resolution mechanism to select between competing productions.
+
+%   Mechanics of cognition
+%      Means of planning, Learning
+
+% Describe searching in a space, impasses, subgoaling, creation of new states
+% Give an overview of chunking
+
+%   Abilities of perception
+%      Auditory, Visual
+
+% Give a general over view of the input and output capabilities
+
 \subsection{EPIC}
 \subsection{CLARION}
 \subsection{Subsumption Architecture}
