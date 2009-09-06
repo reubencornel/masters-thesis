@@ -33,4 +33,4 @@ clean:
 	-rm *.aux
 	-rm *.log
 	-rm *.blg
-	-rm *.lot *.lof *.ps *.pdf *.dvi *.toc *.bbl
+	-rm *.lot *.lof *.dvi *.toc *.bbl
