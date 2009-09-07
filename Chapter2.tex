@@ -462,30 +462,38 @@ rudimentary auditory and vocal modules\cite{anderson_jr-etal:2004a}.
 \soar is a general cognitive architecture proposed originally by Allen
 Newell in \cite{Newell:1990aa,27702} when he argued for the need for
 psychology to deal with human cognition as a whole, rather than in
-form of micro strategies. The major ideas\cite{Lewis:2001aa} that
+form of micro strategies. The major ideas\cite{Lewis:2001aa, 27702} that
 define the characteristics of \soar are:
 
 % Describe the motivations behind SOAR, the technical ideas that
 % constitute 
 \begin{itemize}
-\item \emph{Physical symbol systems}: \soar is a physical symbol
-  system. Physical symbols systems are a class of system that are
-  capable of manipulating symbols and according to the \emph{physical
-    symbol system hypothesis}\cite{Newell1980135} are capable of
-  demonstrating intelligent and flexible behavior.
-\item \emph{Search in problem spaces}: \soar achieves cognition based
-  on a \emph{search of problem spaces} and is supported by a
-  \emph{recognize-decide-act} control structure. This is because
-  Newell believed that human cognition was a result of a search of a
-  problem space. This is known as the \emph{problem space
-    hypothesis}\cite{162585}. 
-\item \emph{Continuous, impasse driven learning}: \soar learns by
-  a technique called \emph{chunking}. This topic is explained in
-  detail below.
-
-
+\item \emph{Physical symbol system hypothesis} : General intelligence
+  can be realized with a symbolic system\cite{Newell1980135}.
+\item \emph{Goal structure hypothesis}: Control of general
+  intelligence is maintained by a symbolic goal system
+\item \emph{Uniform elementary-representation hypothesis}: There is a
+  single representation for declarative knowledge.
+\item \emph{Problem space hypothesis}: problem spaces are the
+  fundamental organizational unit of all goal directed behaviour.
+\item \emph{Production system hypothesis}: Production systems are the
+  appropriate encoding for long term knowledge.
+\item \emph{Universal sub-goaling hypothesis}: Any decision can be an
+  object of goal-oriented attention.
+\item \emph{Automatic sub-goaling hypothesis}: All goals arise
+  dynamically in response to impasses and are generated automatically
+  by the archtecture.
+\item \emph{Control-knowledge hypothesis}: Any decision can be
+  controlled by indefinite amounts of knowledge and both domain
+  dependent and independent.
+\item \emph{Weak-method hypothesis}: The weak methods form the basic
+  methods of intelligence.$<$\textsc{Do a bit of background reading$>$}.
+\item \emph{Weak-method emergence hypothesis}: The weak method arise
+  directly from the system responding based on its knowledge of the
+  task.
+\item \emph{Uniform learning hypothesis}: Goal-based chunking is the
+  general learning mechanism.
 \end{itemize}
-
 %   Knowledge representation, 
 %      short term memory, long term memory, Goals,
 According to the \soar theory human memory is composed to two separate
@@ -551,10 +559,31 @@ be seen in figure \ref{SOAR_ARCH}.
 %   Mechanics of cognition
 %      Means of planning, Learning
 % Describe searching in a space, impasses, subgoaling, creation of new states
-\soar believes that cognition is flexible and goal driven, learning
-is a continuous experience that arises from experience. 
+The \soar theory believes that cognition is flexible and goal driven,
+learning is a continuous experience that arises from experience. This
+is realized as a search in a problem space supported by a
+\emph{recognize-decide-act} control structure\cite{Lewis:2001aa}. The
+recognize phase consists of firing all productions that are relevant
+to the phase which results in addition of new content to the working
+memory. The decide phase makes a decision about what the system should
+do next. If all the processes of the decide step converge to a
+decision then that decision is placed in the working memory with the
+assertion that this decision would be the next step. The act phase
+involes actually realizing the step. 
 % Give an overview of chunking
  
+Occasionally during the decision phase it is possible that the
+preferences might be incomplete or inconsistent. Such a situtation is
+called an \emph{impasse}. In an event that an impasse is detected a
+substate of the current state is created whose goal is to resolve the
+inconsistency. New productions are produced as a result of this
+problem solving activity. The conditions of the new productions
+conists information about the the state of working memory before the
+impasse and the actions consists of the new memory obtained from
+resolving the impasse. If a similar situation is encountered in the
+future the conditions are matched and the corresponding actions are
+executed.  This process is called \emph{chunking} and this is how
+\soar obtains knowledge when solving a specific problem.
 %   Abilities of perception
 %      Auditory, Visual
 $<$ \textsc{The \soar architecture does not describe its perceptual
