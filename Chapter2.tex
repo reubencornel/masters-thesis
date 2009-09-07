@@ -488,13 +488,6 @@ define the characteristics of \soar are:
 
 %   Knowledge representation, 
 %      short term memory, long term memory, Goals,
-\begin{figure}[htp]
-  \centering
-  \includegraphics[width=100mm]{soar.eps}
-  \caption{Soar Architecture\cite{Jill-Fain-Lehman:2006aa}}
-  \label{SOAR_ARCH}
-\end{figure}
-
 According to the \soar theory human memory is composed to two separate
 memories;long term memories, stores information for a long period of
 time, and the working memory, stores information required for the task
@@ -528,15 +521,44 @@ application\cite{Laird:2006aa}. Productions in \soar are fired in
 parallel with out conflict resolution unlike \actr that has a conflict
 resolution mechanism to select between competing productions.
 
+\emph{Preference Memory} is used to decide which operator is the best in the
+given circumstance.  Preferences in the memory are used to compare a
+selected set of operators with one another in an attempt to pick up
+the best operator. Actions in productions are instrumental in creating
+productions. These remain active as long as the production is deem
+suitable for the situtation and are removes once the production is not
+valid.
+
+\emph{Working Memory}(WM) describes memory that hold information
+related to the task that is currently being executed. This includes
+states and sub-states created to solve the problem, operators that are
+applicable to the current states and Working memory elements(WME) that
+hold specific information about a specific identifier. Elements in the
+working memory are created by the action of productions, a state
+created as a result of an \emph{impasse}, $<$ ASK FOR EXPLANATION
+POINT three from paper $>$ or because of the action of external IO
+systems. Information from the working memory is removed only when it
+becomes irrelevant to the existing situtation. This architecture can
+be seen in figure \ref{SOAR_ARCH}.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=100mm]{soar.eps}
+  \caption{Soar Architecture\cite{Jill-Fain-Lehman:2006aa}}
+  \label{SOAR_ARCH}
+\end{figure}
+
 %   Mechanics of cognition
 %      Means of planning, Learning
-
 % Describe searching in a space, impasses, subgoaling, creation of new states
+\soar believes that cognition is flexible and goal driven, learning
+is a continuous experience that arises from experience. 
 % Give an overview of chunking
-
+ 
 %   Abilities of perception
 %      Auditory, Visual
-
+$<$ \textsc{The \soar architecture does not describe its perceptual
+  motor facilities in detail. What do I write about that?} $>$
 % Give a general over view of the input and output capabilities
 
 \subsection{EPIC}
