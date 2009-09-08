@@ -2,6 +2,7 @@
 \label{The_nature_of_cognition}
 \newcommand{\soar}{\small SOAR\ }
 \newcommand{\actr}{\small ACT-R\ }
+\newcommand{\epic}{\small EPIC\ }
 The quest to understand the working of the human mind has spanned
 many centuries starting with Plato when he asked, as in the words of
 Noam Chomsky citing Bertrand Russell, ``{\bf How is it that human beings,
@@ -586,11 +587,102 @@ executed.  This process is called \emph{chunking} and this is how
 \soar obtains knowledge when solving a specific problem.
 %   Abilities of perception
 %      Auditory, Visual
+
 $<$ \textsc{The \soar architecture does not describe its perceptual
   motor facilities in detail. What do I write about that?} $>$
+
 % Give a general over view of the input and output capabilities
 
 \subsection{EPIC}
+% Describe architecure
+The Executive-Process/Interactive-Control(\epic) system attempts to
+take on the challenge of developing a theory for cognition from a
+different perspective. The \epic architecture believes that human
+cognition is constrained by the physiological aspects of the human
+rather than its cognitive machinery. The motivations for developing
+this architecture are:
+
+\begin{itemize}
+\item \emph{To analyze a cognitive system that is tied closely to its
+    perceptual-motor faculties}: Most cognitive architectures around
+  the time when \epic was developed represented human cognition as
+  being \emph{disembodied}. They represented it as a system that
+  perceived the environment and directly acted on it without
+  considering the limitation and interactions between of intermediate
+  perceptual-motor systems and the cognitive systems.
+\item \emph{Study models that simulated both performance and
+    cognition}: The authors were interested in studying the field of
+  human attention and performance from the computational modeling
+  paradigm and hence further the state of this psychological theory.
+\item \emph{Study the role of executive processes and performance in
+    environment that require execution of multiple tasks}: From the
+  cognitive modeling perspective a executive process is one that
+  controls all other cognitive processes. The authors intended to
+  study this aspect of  cognition. They assert that the
+  best way to do so is to study human performance in a environment
+  that entails execution of multiple tasks. They assert that human
+  cognitive capability is constrained only by the physical
+  limitations.  
+\end{itemize}
+% Motivation
+
+%   Knowledge representation, 
+%      short term memory, long term memory, Goals,
+The architecture of \epic is shown in figure \ref{EPIC_ARCH} $<$
+\textsc{Think of a better way to start this paragraph}.
+
+The \epic architecture uses separate memories to store procedural
+information, such as production rules and separate memory to store
+formal knowledge. The working memory consists of two 'amodal' types of
+information one of them stores control information such as information
+pertaining to goals and steps with in the current procedure. The
+second memory is called ``general WM'' that is used to store
+miscellaneous task information. The \epic architecture does not make
+any assumptions about decay, capacities and representational
+properties of the working memory\cite{citeulike:3439185}. 
+
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=100mm]{EPIC.eps}
+  \caption{The architecture of EPIC\cite{citeulike:3439185}}
+  \label{EPIC_ARCH}
+\end{figure}
+%   Mechanics of cognition
+%      Means of planning, Learning
+Like \soar the \epic architecture executes its productions in the form
+of decision cycle where each decision cycle lasts for a period of
+50ms. The cycle starts with obtaining inputs from its perceptual
+processors. The production system then fires all productions whose
+conditions match the contents of working memory and will execute their
+corresponding actions. The actions of the action items is restricted
+to adding and removing items from the working memory to send a command
+to the motor processor.
+
+%   Abilities of perception
+%      Auditory, Visual
+The \epic architecture claims to model perceptual and motor facilities
+with great accuracy. The perceptual and motor modules that interface
+with the world are known as processors. Both perceptual and motor
+processor can function in parallel. Perceptual processors simulate
+the working of human perceptual facilities, these include visual
+processors and auditory processors. The motor processors deal
+performing action that affect the environment, some examples of motor
+processors are the manual motor processor, vocal motor processor and
+oculomotor processor. 
+
+The visual processor is used to identify visual objects in the
+environment. The visual processor maintains information which objects
+are visible and what their properties. The auditory processor accepts
+auditory input and outputs a representation of auditory events. These
+events fade away after a certain period of time(4s). To represent the
+sequential order of speech the auditory processor adds tags to the
+inputs in sequence to indicate the next and previous words.
+
+The motor processors require two distinct phases to execute a motor
+command. These are the preparation phase and the execution phase. 
+
+
 \subsection{CLARION}
 \subsection{Subsumption Architecture}
 
