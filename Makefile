@@ -18,6 +18,7 @@ thesis.dvi: thesis.tex Chapter1.tex Chapter2.tex Chapter3.tex Chapter4.tex Chapt
 	latex thesis.tex
 	latex thesis.tex
 	latex thesis.tex
+	scp thesis.dvi rfcornel@sequoia.csc.ncsu.edu:Sites
 
 thesis.bbl: thesis.bib thesis.aux
 	bibtex thesis

@@ -1,8 +1,10 @@
-\chapter{A survey of Cognitive Architectures}
+%-*- mode:latex; mode: auto-fill; mode: flyspell -*-
+.\chapter{A survey of Cognitive Architectures}
 \label{The_nature_of_cognition}
 \newcommand{\soar}{\small SOAR\ }
 \newcommand{\actr}{\small ACT-R\ }
 \newcommand{\epic}{\small EPIC\ }
+\newcommand{\clarion}{\small CLARION\ }
 The quest to understand the working of the human mind has spanned
 many centuries starting with Plato when he asked, as in the words of
 Noam Chomsky citing Bertrand Russell, ``{\bf How is it that human beings,
@@ -686,21 +688,56 @@ processor into a set of movement features that are characterize the
 movement. The execution phase begins after the preparation phase has
 completed its task. The movement features remain in the processor's
 memory as a result future movements that require to perform the same
-action are performed faster. \textsc{Isn't this a form of learning by
-  itself?}. The manual processor represents physical movements like
-pressing keys, moving fingers and hands to another location etc. The
-vocal motor is used to create utterances of speech. The oculomotor
-processor controls the movement of the eyes.
-
+action are performed faster. The manual processor represents physical
+movements like pressing keys, moving fingers and hands to another
+location etc. The vocal motor is used to create utterances of
+speech. The oculomotor processor controls the movement of the eyes.
+ 
 
 \subsection{CLARION}
-\subsection{Subsumption Architecture}
+% General background
+\clarion (Connectionist Learning with Adaptive Rule Induction ON-line)
+\cite{journals/cogsci/SunMP01} was developed with two major
+motivations. 
+
+\begin{itemize}
+\item \emph{Study of low-level skill acquisition}: Sun et. al. in
+  \cite{journals/cogsci/SunMP01} defines low-level cognitive skills as\textsc{Readup about low-level
+    skills}. They cite reactive sequential decision making as an
+  instance of low-level cognitive skill. In such a task the agent
+  would have to pick an action to achieve an objective based on the
+  information available based on a given instant.
+\item \emph{Model learning that does not require a large amount of
+    priori knowledge}: Sun et. al. state that the process of learning
+  in situations where agents are given the required amount of
+  knowledge which they convert into procedural skill is considerably
+  different from a situation where the agent is not provided with
+  enough priori knowledge. The authors suggest that in such cases the
+  learning that occurs if of ``bottom-up'' nature. The study of this
+  area is an objective for the \clarion project.
+\end{itemize}
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=130mm]{CLARION.eps}
+  \caption{The architecture of EPIC\cite{citeulike:3439185}}
+  \label{EPIC_ARCH}
+\end{figure}
+
+% Describe architecture 
+
+% This system cannot be described in the given format, it makes sense to
+
+% 1) Describe the various sub systems
+
+% 2) Describe the memory structures
 
 \subsection{Criteria for comparison}
-
-
+Create a table here with the x axis being having the names of the
+cognitive architectures. And the y axis having the criteria.
 
 % Things to be concerned about
+%    Type of system: Symbolic, Connectionist or both
 % 1) Perception: How an architecture gets its input
 % 2) Memory: How is memory represented
 % 3) Goals: How goals are represented and solved
@@ -717,13 +754,6 @@ processor controls the movement of the eyes.
 % 19) Mapping to the brain
 
 
-% Architectures to compare
-
-% CLARION
-% SOAR
-% EPIC
-% ACT-R
-% Subsumption
 \section{Challenges facing cognitive architectures}
 
 %Summarise this section
@@ -804,13 +834,15 @@ out very clearly by Langley et. al. in \cite{citeulike:4182324}
 %them. This project is a step in exploring how models can be shared
 %and reused.
 
-% from an engineering stand point if it would ease development if we
-% re use would help ease of development 
-
 From an engineering standpoint a cognitive modeller essentially
-building intelligent agents and in quite a number of cases work done
-by one researcher can be reused elsewhere by someone else. The
-advantages of providing such a system would be
+building intelligent agents by writing programs on a framework that
+postulates a theory of cognition. There are situations where sometimes
+code between a number of models may be shared either by the same
+person or by some one else at some other location. As of now the only
+way this information is shared is only through means of summer
+schools, websites etc. As a result the cognitive modeling community
+does not have a place where information can be shared centrally. It
+does not have a system where 
 
 % Quicker development times
 % Lesser bugs
