@@ -719,23 +719,70 @@ motivations.
 
 \begin{figure}[htp]
   \centering
-  \includegraphics[width=130mm]{CLARION.eps}
-  \caption{The architecture of EPIC\cite{citeulike:3439185}}
-  \label{EPIC_ARCH}
+  \includegraphics[width=110mm]{CLARION.eps}
+  \caption{The architecture of CLARION\cite{citeulike:3439185}}
+  \label{CLARION_ARCH}
 \end{figure}
 
 % Describe architecture 
+\clarion advocates that cognitive systems are two-level
+architectures. That is a top level that encodes explicit knowledge
+such as production rules, explicitly mentioned prior knowledge. The
+lower-level is used to store implicit knowledge, such as memory
+associations in the form of neural networks. \clarion consists of four
+major sub-systems, these are described below the schematic of the same
+can be seen in figure \ref{CLARION_ARCH}.
+% This system cannot be described in the given format, it makes sense
+% to
 
-% This system cannot be described in the given format, it makes sense to
+The action centered sub-system is perhaps the most important component
+of the system. Its functions include calculating the quality of
+various actions given the current scenario, choosing an appropriate
+action for the situation, performing the action and observing the
+change in the state and updating the Q-values for various action-state
+values in the lower level and update the rule network in the upper
+level of the action centered sub-system using a rule extraction and
+refinement algorithm. The lower level of the action centered
+sub-system also holds sensory information, working memory items and
+information from the goal structure\cite{Sun:2003aa}.
 
-% 1) Describe the various sub systems
+The Non-Action-Centered is used to represent general information about
+the real world. A back propagation algorithm is used establish
+relationships between various pairs of inputs and outputs. The
+Non-Action-Centered subsystem can also apply similarities based
+reasoning apart from associative rules. 
 
-% 2) Describe the memory structures
+In the real world cognition is driven by the environment around them,
+it also depends on the underlying motivation of the agent. \clarion
+attempts to study the underlying motivation that drive the
+actions that an agent intends to achieve. This area of cognition is
+modeled and studied using the Motivational and meta-cognitive
+sub-system. It aims to study the processes of motivation and cognition
+are represented\cite{Sun:2003aa}. It aims to explain what makes one
+path of more attractive than the other. 
+
+
 
 \subsection{Criteria for comparison}
-Create a table here with the x axis being having the names of the
-cognitive architectures. And the y axis having the criteria.
+In this section I will provide a table that compares various
+integrated cognitive architectures on various parameters. The
+parameters have been selected based on the reasoning in \cite{CambridgeJournals:207162}.
 
+\begin{longtable}{lrrrr}
+  \hline
+  Parameters & ACT-R & EPIC & SOAR & CLARION \\
+  \hline
+  Memory & & & & \\
+  Goals  & & & & \\
+  Problem Solving  & & & & \\
+  Planning  & & & & \\
+  Learning   & & & & \\
+  Meta Processing   & & & & \\
+  Perception & & & & \\
+  Natural language understanding & & & & \\
+  Mapping to the brain$<$Select better name$>$ & & & & \\
+  \hline
+\end{longtable}
 % Things to be concerned about
 %    Type of system: Symbolic, Connectionist or both
 % 1) Perception: How an architecture gets its input
