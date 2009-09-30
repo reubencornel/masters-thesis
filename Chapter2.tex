@@ -763,26 +763,59 @@ path of more attractive than the other.
 
 
 
+
 \subsection{Criteria for comparison}
 In this section I will provide a table that compares various
 integrated cognitive architectures on various parameters. The
-parameters have been selected based on the reasoning in \cite{CambridgeJournals:207162}.
+parameters have been selected based on the reasoning in
+\cite{CambridgeJournals:207162}.
 
-\begin{longtable}{lrrrr}
+\begin{sidewaystable}[h]
+  \centering
+\caption{Comparison of various cognitive architectures}
+  \begin{tabular}{p{3cm}p{4cm}p{4cm}p{4cm}p{4cm}}
   \hline
   Parameters & ACT-R & EPIC & SOAR & CLARION \\
   \hline
-  Memory & & & & \\
-  Goals  & & & & \\
-  Problem Solving  & & & & \\
-  Planning  & & & & \\
-  Learning   & & & & \\
-  Meta Processing   & & & & \\
-  Perception & & & & \\
-  Natural language understanding & & & & \\
-  Mapping to the brain$<$Select better name$>$ & & & & \\
-  \hline
-\end{longtable}
+  & & & &\\
+  Representation of knowledge in the memory & Knowledge represented as chunks. Memory consist of a
+  working memory and long term memory.& Long term and short term
+  memory where information was stored as productions in long term
+  memory & Knowledge in both the short term and long term memory
+  represented as production rules& Procedural at the bottom level and
+  declarative at the top  \\
+  & & & &\\
+  Goals  & Maintained by the goal buffer & Priority based task
+  deferment \cite{Pew:1998aa}& Represented as states & Goal stack or list \\
+  & & & &\\
+  Problem Solving  & Based on selection and execution of production
+  and the underlying neural network.& Problem solving based on &Search
+  of the solution space& Combination of calculated Q-Values and rules\\
+  & & & &\\
+  Planning  & Creation of sub-goals&General planning & Selection of
+  productions that leads the system closer to achieving its
+  goals. &Search through the Q-Value space \\
+  & & & &\\
+  Learning   & Production compilation&No learning & Learning through
+  chunking & Reinforcement learning and rule extraction \\
+  & & & &\\
+  Perception & Provides vision and auditory faculties through the
+  relevant buffers& Perceptual processors for auditory, visual and
+  tactile faculties & \textsc{Do not remember reading anything
+    specific} & Input in terms of dimension/value pairs\\
+  & & & &\\
+  Motor & Provides motor control through the manual and vocal modules&
+  manual, vocal and oculo-motor processors
+  & \textsc{Do not remember reading anything specific}&\\
+  & & & &\\
+  Mapping to the brain$<$Select better name$>$ & Study currently on
+  that maps regions of the brain to specific modules& No mapping& No
+  mapping& based on neural network but no reference to the brain anatomy\cite{Chong:2007aa} \\
+  & & & &\\
+
+\end{tabular}
+\end{sidewaystable}
+
 % Things to be concerned about
 %    Type of system: Symbolic, Connectionist or both
 % 1) Perception: How an architecture gets its input
@@ -800,6 +833,7 @@ parameters have been selected based on the reasoning in \cite{CambridgeJournals:
 % 18) Reusability
 % 19) Mapping to the brain
 
+%\vspace{5cm}
 
 \section{Challenges facing cognitive architectures}
 
@@ -807,8 +841,7 @@ parameters have been selected based on the reasoning in \cite{CambridgeJournals:
 This section attempts to provide a brief a explanation to the nature
 of human cognition. It also surveys a number of cognitive
 architectures and attempts to provide a brief overview of the state of
-the art in the area of cognitive architectures. 
-
+the art in the area of cognitive architectures.
 
 % Say though all this work there are still some open issues, cite the
 % paper and describe the issues.
@@ -816,7 +849,6 @@ Despite the tremendous amount of effort that has gone in this area, we
 are no where near the end. There are a number of research questions
 that are open for curious minds to explore. These areas are spelled
 out very clearly by Langley et. al. in \cite{citeulike:4182324}
-
 
 \begin{itemize}
 \item \emph{Architectures need to explore categorization and
@@ -883,25 +915,19 @@ out very clearly by Langley et. al. in \cite{citeulike:4182324}
 
 From an engineering standpoint a cognitive modeller essentially
 building intelligent agents by writing programs on a framework that
-postulates a theory of cognition. There are situations where sometimes
-code between a number of models may be shared either by the same
-person or by some one else at some other location. As of now the only
+postulates a theory of cognition. There are situations where a similar
+task may be modeled by one or more researcher. As of now the only
 way this information is shared is only through means of summer
-schools, websites etc. As a result the cognitive modeling community
-does not have a place where information can be shared centrally. It
-does not have a system where 
+schools, websites etc. This results in duplication of effort and also
+in some cases the models might not be robust.
+
+As far as we know no one has attempted to solve this
+problem. Therefore the aim of this project is to take a step in that
+direction.
 
 % Quicker development times
 % Lesser bugs
 % Greater coherence
 % Areas can be explored more thoroughly because creating models is
 % easy and cheap
-% Sharing knowledge and resources
-
-As far as e know no one has attempted to solve this problem. No of
-cognitive architectures and the aim of this project is to take a step
-in that direction.
-
-
-\textsc{TODO: Mention converging trends in research: Merge stuff from
-  the Chong and David Vernon paper}
+% Sharing knowledge and resource
