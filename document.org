@@ -418,5 +418,27 @@ computations in the brain.
 **** SOAR
 **** EPIC
 *** Challenges facing cognitive architectures
-   
-    
+
+** Collaboration
+*** Why collaboration
+*** Initial collaboration
+*** Types of Collaboration
+*** Biobike
+**** Aims of biobike
+**** Where does biobike fit in
+** System Design
+*** Objectives
+*** Biobike architecture
+*** Operation
+*** Description of modifications to ACT-R
+*** Proof of concept
+**** Objectives
+**** Problem Statement
+**** Possible Solutions and approach
+**** Advantages and draw backs of the approach
+*** Existing issues with the system
+** Conclusion
+** Appendix
+*** Run where the model solves one cross word
+*** Run where the model does not solve the crossword
+
