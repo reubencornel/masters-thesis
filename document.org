@@ -1,3 +1,7 @@
+* Questions that I need to worry about                       :DEFENSE:QUESTIONS:
+** How is data stored in the systems
+   Trivial to write a serialization function for frames
+** TODO ASK Prof: How is conflicts handled?
 * Thesis 							     :THESIS:
 ** Introduction
 *** Cognitive Architectures
@@ -418,5 +422,103 @@ computations in the brain.
 **** SOAR
 **** EPIC
 *** Challenges facing cognitive architectures
+
+** Collaboration
+
+*** Freedom and control in collaborative systems.
+    There are a number of differnty types of tasks that people solve
+    using co-operative systems ranging from highly unstructured
+    tasks(brain storming) to highly routine tasks(for example invoice
+    billing). All of those require differnt paradigms of control. 
+
+    Thus the level of control provided by these systems also acts as a
+    parameter using which we can classify systems. This has to be
+    chosen very carefully because if the control by the system is too
+    tight then people loose the ability to co-operate effectively. 
+
+    There are two main areas the focus in the control of
+    co-operation. 
+**** Speech act systems
+     The theory is based on the fact that language can be considered
+     as series of actions. 
+**** TODO Check out AUSTIN 62, WINOGRAD86 from the paper
+**** Office procedure sytesm
+
+*** Message Systems
+  Underlying basis of this these system is the fact that they operate
+ by exchanging messages. They have their origins in original email
+ systems The major difference between these systems and email is that
+ these systems add additional semantic data to their messages. Most of
+ these systems use the object model to add data to the messages, the
+ messages have different slots to which values are set before they are
+ sent on their way.
+
+ Structured message systems use a philosophy of semi-automation to
+ represent control. Examples of systems that use message systems as
+ models are COSMOS (wilbur 88) and Information Lens (Mallone 87).
+
+**** COSMOS
+*****  Takes a formal approach. Communication is based on something called Communication structures 
+****** Communication structures are a set of rules that that characterize communication activity
+***** Activity on the system is started by a used selecting a specific commuication structure and supplying it with the necessary data
+***** Messages are exchanged between other users whose roles have been specified in the CS
+**** Information lens
+***** Is based on merging Messgae systems with AI Techniques, the idea is to develop a system that minimizes information overload.
+***** They authors of the system believe that system must give recipients the ability to decide what messages make more sense to them.
+***** Uses a number of AI techiniques like frames, production rules and inheritance.
+****** Key ideas
+******* USes frames to represent messages
+******* Consiste set of display oriented editors
+******* frame inheritance is used to allow specialization of message types.
+***** The idea is that the user creates a set of prodcution that perform actions of messages if certain criteria are met.
+***** There was an extension of this in the form of in the form of object lens. 
+
+*** Conferencing Systems
+
+**** The building blocks of current sytmstes are
+
+***** Computerized version of the phone call
+
+***** online file cabinet for topic specific messagesm
+
+**** Users interact through shared information spaces.
+
+**** There are a number of types of shared systems by they are primarily defined
+     by the characteristics of the shared information space
+
+***** The form of interaction in the shared space
+      async over a long period of time or sync in real time.
+
+***** Type of information in the information space.
+      mainly textual but then with the advent of new systems we can have various types of media
+**** Based on these characteristics there are a number of systems have been developed
+***** Traditional conferencing systems
+      consiste of a number of groups called conferences, each
+      consisting of a set of member and sequences of
+      messages. Conferences usually address a single topic. A user can
+      subscribe to a conference of his choice. The system stores the
+      location till where the user has read. All replies are delivered
+      to all users belonging to a conference. Eg: Google groups
+
+      The difference between traditional conferencing systems and
+      mailing groups is that in mailing lists do not allow you to
+      organize comments and genrate new conferences easily.
+
    
-    
+***** Multimedia and desktop conferencing systems 
+      MErging multimedia and desktop systems has led to the creation
+      of a class of CSCW systems called desktop conferencing systems. 
+       	
+
+
+
+
+
+
+
+
+
+
+	 
+	 
+	  
