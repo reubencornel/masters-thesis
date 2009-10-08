@@ -149,11 +149,80 @@ specific data into slots, this data is used by the system to carry out
 further processing by the system. Example of message systems include
 COSMOS\cite{conf/cscw/BowersC88} and Information Lens\cite{Malo87a}. 
 
-Structured message systems 
+COSMOS represented research being carried out in the European CSCW
+community. COSMOS was a project in the UK to design and develop a
+configurable message system that supported structured group work. The
+system was developed with a focus on specifying the users
+communicative work in the form of participants actions. Group activity
+tasks were represented in the system using the concept of
+\emph{communication
+  structures}(CS)\cite{conf/cscw/BowersC88}. Communication structures
+were further described using a structure definition language(SDL). The
+tasks that a COSMOS system was capable of carrying out was defined by
+the communication structures defined in the system. The COSMOS system
+also defines roles for users or agents, message objects, actions,
+rules and actions in context of the work being carried out. Any
+communication activity by the user is instantiated when the user
+creates an instance of a communication structure. The user does this
+by filling in the data required by the communication
+structure. Further communication occurs by an exchange of messages
+between users who compose a specific role mentioned in the
+communication structure.
 
+The Information lens on the other hand take a less formal
+approach\cite{journals/iwc/Rodden91}. The aim of the author to develop
+information systems that minimized information overload on the users
+of the system that was caused by the amount of messages that were sent
+to a user. The key ideas that defined Information lens were
+
+
+\begin{itemize} 
+  \item \emph{ Use of semi-structured messages to represent data:} The messages were represented as a set of semi-structured data
+  called frames. A frame was a template that included information for
+  date, time, place, organizer and any other unstructured data. This
+  idea played an important role because; semi-structured messages make
+  it easier for the computer to parse messages, according to informal
+  studies conducted by the author of the paper\cite{Malo87a} people do
+  most of their processing on a set of unstructured information and
+  finally providing semi-structured fields enables authors to put in
+  more context related information.
+
+\item \emph{The use of production rules:} The system used sets of
+  production rules each of which might contain multiple levels of
+  reasoning that specify the reasoning of messages.
+
+\item \emph{Use of specialized editors for creating and editing
+    message templates and productions: } The authors of the system
+  attempted to make the system more user friendly by providing
+  multiple editors to create and edit message templates and
+  productions.
+\item \emph{Use of frame inheritance:} Using frame inheritance in
+  messages allows messages to be specialized very easily
+\item \emph{Introducing the system slowly to the users:} The authors
+  believed that the introduction and evolution of a group work system
+  can be useful if it is introduced slowly to users and encouraging
+  users to switch to the system by rewarding users who switch to the
+  system by providing additional benefits.
+\end{itemize}
+
+The message templates consisted of forms having fields where
+information could be filled. The messages were edited using a display
+oriented editor. The users constructed the IF part by specifying the
+conditions that were required by a rule to satisfy condition by
+combining specific conditions using logical operators like and, or and
+not. The users used message handling primitives like move, delete,
+save, etc. to specify the action to be taken on that message.
 
 \subsection{Conferencing systems}
+Conferencing systems found their advent in the 1970s when the US
+government was looking for a way to deal with emergencies. EMISARI\cite{Hilt78a}
 
+(Emergency Management Information System and Reference Index) was
+the result of this effort. It consisted of two main ideas that even
+today form the back bone of current conferencing systems. This model
+of communication allowed users to interact through a shared
+information space, but at the same time it allowed user to interact
+individually with one another. 
 \subsection{Meeting Rooms Systems}
 
 \subsection{Co-authoring and Argumentation Systems}
