@@ -14,7 +14,7 @@
 
 all: thesis.dvi
 
-thesis.dvi: thesis.tex Chapter1.tex Chapter2.tex Chapter3.tex Chapter4.tex Chapter5.tex Chapter6.tex Chapter7.tex thesis.bbl 
+thesis.dvi: thesis.tex Chapter1.tex Chapter2.tex Chapter4.tex Chapter5.tex Chapter6.tex Chapter7.tex thesis.bbl 
 	latex thesis.tex
 	latex thesis.tex
 	latex thesis.tex

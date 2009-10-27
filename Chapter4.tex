@@ -353,7 +353,7 @@ who build computational models of their work. Currently these users
 are restricted to sharing knowledge via annual conferences,
 workshops, summer school and model code distributed via web sites. The
 aim of this project is to develop a collaborative modeling environment
-for cognitive scientists in which they can develop and share models. 
+for  in which they can develop and share models. 
 
 % Goals of coglaborate
 % Provide collaboration for people working in the area of cognitive
@@ -361,12 +361,8 @@ for cognitive scientists in which they can develop and share models.
 
 % Features of coglaborate
 
-The current features of coglaborate include
-
-\begin{itemize}
-\item A live listener in a web browser where code can be evaluated.
-\item 
-\end{itemize}
+Coglaborate currently provides the following features, these are
+described in detail in Chapter \ref{chap-five}.
 % Users a provided with a lisp listener where they can evaluate their
 % code directly
 
@@ -378,8 +374,27 @@ The current features of coglaborate include
 
 % Once evaluated any user on the system can search and obtain the code
 %   for it from the frame representation of the model.
- 
 
+\begin{itemize}
+\item A live lisp listener in a web browser where code can be evaluated.
+\item A structured representation for models using frames.
+\item An intuitive method for sharing and examining models at any
+  level of detail.
+\end{itemize}
+
+Coglaborate provides support for collaboration by compiling the user's
+models into a frame based representation. These representations are
+stored in a common area of the memory of the system. Any user who is
+familiar with the name of the model, can search for the model and
+convert the model to code. This code can then be edited and
+recompiled, as a result of this process the original representation is
+modified to reflect the change.
+
+Coglaborate can be classified as a co-authoring system. The rationale
+behind choosing this classification is that different users can build
+the same models incrementally by adding productions or editing
+existing models. The following chapter will examine in detail the
+design and implementation of the system.
 % How does it do it
 % Converts all models into frames when evaluated and as a result
 % anyone else can search for the frame and manipulate it, re-eval it
