@@ -291,25 +291,89 @@ typically arranged in a meeting room having a large projector along
 with a number of individual terminals, figure \ref{meeting_room_fig}
 illustrates this arrangement. 
 
+\begin{figure}[htp]
+  \caption{Arrangement of a meeting room system\cite{journals/iwc/Rodden91}}
+  \centering
+  \includegraphics[scale=.5]{meeting_room_sys.eps}
+  \label{meeting_room_fig}
+\end{figure}
 
+%Describe colab: 
 
-\subsection{Co-authoring and Argumentation Systems}
+%1) Talk about the objectives
 
-\section{Biobike}
+CoLab\cite{Stefik:1987:BCU} is one of the earliest example of a
+meeting room system. It aimed to explore the area of using computers
+in meeting rooms to carry out tasks that generally required media like
+chalk boards. Although the use of chalkboards and similar media
+helped the group focus they had their drawbacks for example; the
+contents of the chalkboard could not be reproduced once erased,
+rearranging items on a chalk board is inconvenient. 
 
-% This section can contain the introduction and objectives of biobike
-% and where biobike fits in with the rest of the collaborative systems.
+%2) Features 
+CoLab attempted to provide a way around these drawbacks by having
+shared memory where participants of a conference interacted with one
+another. This lead to investigating a multi-user interface where users
+could interact with one another using a computer. This further lead to
+investigating the field of What You See Is What I See(WYSIWIS). The
+outcome of this investigation was that implementing strict WYSIWIS
+interfaces was limiting. Instead the designers opted for a more relaxed
+interpretation of WYSIWIS where every user apart from interacting with
+one another in a shared display also had private windows. 
 
+Since CoLab allowed a number of collaborators to interact with one
+another it had consider conflicts between individual users trying to
+modify the same object at the same time. As a result the team
+experimented with a number of mechanisms to maintain
+concurrency, these mechanisms are listed in \cite{Stefik:1987:BCU}.
 
+%3) Describe the components -- Not required, these are tools and as
+%such do not add to the discussion.
+%  3.1) CogNoter
+%  3.2) ArgNoter
 
+\subsection{Co-authoring Systems}
 
-% Briefly describe the main types of systems that help in
-% collaborative work
+A number of projects can be accomplished only by the effort of a
+number of authors. Co-authoring systems are a class of systems that
+help support such activity. A wiki can be considered an example of
+such a system. A wiki Any user can read an article and when required, they
+can modify the content of the article. A wiki also provides space for
+authors to discuss the article by providing a separate space for
+comments. A wiki provides version and configuration control by means
+of saving the updates made to a given document.
 
+\section{Coglaborate}
 
+% Use this section to describe the goals of coglaborate and show which
+% class of systems does coglaborate fall under.
 
+Coglaborate aims to enable support for users 
 
+% Goals of coglaborate
+% Provide collaboration for people working in the area of cognitive
+% modeling
 
+% Features of coglaborate
 
+% Users a provided with a lisp listener where they can evaluate their
+% code directly
 
+% The users use a customized version of ACT-R that insulates models
+% from colliding with each other when running
 
+% The users can evaluate the model immediately and see the result
+% immediately
+
+% Once evaluated any user on the system can search and obtain the code
+%   for it from the frame representation of the model.
+ 
+
+% How does it do it
+% Converts all models into frames when evaluated and as a result
+% anyone else can search for the frame and manipulate it, re-eval it
+% and share it out.
+
+% as a result in its current form Coglaborate is a asynchronous
+% co-authoring system because you can have multiple authors working on
+% a model.
