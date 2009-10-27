@@ -7,66 +7,115 @@
 \label{introCogArch}
 % Introduce cognitive modelling
 The study of the human mind has been one of the largest and most
-laborious enterprises undertaken by man. This study has encompassed many
-centuries and has attracted interest from some of the most brilliant
-philosophers and scientists human kind has had to offer such as
-Aristotle, Plato, Descartes and more recently Allen Newell, Marvin
-Minksy. 
+laborious enterprises undertaken by man. This study has encompassed
+many centuries and has attracted interest from some of the most
+brilliant philosophers and scientists human kind has had to offer,
+from Aristotle, Plato, and Descartes to modern researchers in
+cognitive science, including Allen Newell, John Anderson, and Marvin
+Minksy.
 
 %% Introduce computer science into the picture
 %%  Introduce the various ways by which we have tried to under stand
-The advent of computers allowed researchers to use the superior
-processing power to simulate the working of the
-mind. Some researchers attempted to use a purely connectionist model to
+The development of computers was an important step for theories of
+mind, in that it allowed researchers to begin to simulate the
+structure of thought.  Approaches vary.  Some researchers, such as
+McClelland and Rumelhart~\cite{rumelhart1986researchv1,rumelhart1986researchv2}, have worked with
+abstractions of low-level biological components of the
+brain---artificial neurons---to produce connectionist models of the
+mind.
 %TODO: Cite Rosenblatt
-represent the working of the human mind. Where as
-others, such as Newell and Anderson attempted to use the manipulations
-of symbols partially relying on an underlying connectionist model to
-represent the same.  
+Others, such as Newell and Anderson, have worked at a higher level, focusing
+on the manipulation of symbols as a foundation for thinking.  Beyond
+this broad division there have been many other approaches over the
+past half-century.
 
 %% Introduce cognitive modeling 
 % Introduce the need for architectures
-Despite large advances made towards understanding the principles of
-the human mind in the field of psychology during the 70s, there was little to show
-except for micro theories, such as Fitts law and the Power law of
+Despite large advances made towards understanding the workings of
+the human mind in the field of psychology during the 70s, general
+principles were mainly to be found in micro theories, such as Fitts'
+law and the Power law of Practice.
 %TODO: cite unified theories of cognition here..
-practice, etc. Newell argues in his book \cite{Newell:1990aa} that the aim of psychology is to provide a framework
-that would help explain and predict the behavior of the human mind, and although micro
-theories are useful in explaining certain phenomena they do not provide a
-framework that explains and predicts the behavior of the human
-mind. He advocates the need for a comprehensive theory that would fill
-in this void and attempts to do so by providing a framework called SOAR. 
+In his influential book, {\em Unified Theories of
+  Cognition}~\cite{Newell:1990aa}, Newell argues that the aim of
+psychology is to provide a framework that would help explain and
+predict the behavior of the human mind, and although micro theories
+are useful in explaining certain phenomena they do not provide an
+adequate framework for explaining and predicting human thinking in
+more general terms.  He advocates the need for a comprehensive theory
+that would fill in this void.
 %TODO: cite unified theories of cognition here..
 
-Another cognitive architecture was introduced by John Anderson from
-the Carnegie Mellon University. He was working on a framework that
-tried to provide a working model of the 
-human memory called ACT*. As this work progressed, new modules to
-represent motor and visual faculties were added to this
-framework. This later came to be known as ACT-PM then later ACT-R. 
+One such theory has been under development by Anderson since the
+1970s.  It takes the form of a cognitive architecture, a computational
+simulation of problem solving constrained by empirical findings
+concerning human cognition.  Anderson began with a framework that
+tried to provide a working model of the human memory, called ACT*.  As
+this work progressed, new modules to represent motor and visual
+faculties were added to this framework. This came to be known as
+ACT-PM and eventuall ACT-R.  ACT-R provides the conceptual focus for
+this thesis.
 
 \section {Collaboration}
 % Talk about collaboration
 %% In Collaboration we can also talk about ...
 %% 
-Computer networks allowed researchers
-to investigate the ability to use computers to help people collaborate
-with one another. The original intention was to use computers to replace
-physical apparatus such as white boards in meeting rooms (cite Colab). 
-Researchers discovered paradigms that could be used for to support
-collaborations such as, synchronous and asynchronous collaboration. As
-more work was done in this field the tools such as PREP(cite Issues in
-design computer support for co-authoring and commenting.) a tool that
-supported interaction between authors and commentors,
-Cognoter(Theory and practice of a colab-orative tool) a tool that
-provided a framework to help the decision making process, etc.
+A thriving research community has grown up around the core group of
+ACT-R researchers at Carnegie Mellon University.  There are annual
+workshops, a ``summer school'' to introduce new researchers to the
+framework, an active mailing list, and any number of small
+interdisciplinary groups of collaborators distributed throughout the
+world.  The result has been a continuous stream of refinements to
+ACT-R, both the theory and the software, as well as models,
+experiments, development tools, and the like.
 
-Despite these strides in the area of computer supported collaborative
-work, researchers in the cognitive modeling community 
-shared models through means of conferences, summer schools and
-personal websites. The objective of my research is to provide a
-collaborative environment where cognitive scientists can share
-models, I describe this further in the following section and chapters.
+This provides an opportunity, one identified in a different area of
+computer science, computer-supported collaborative work.
+J. C. R. Licklider described his vision of what he called online
+communities in 1968~\cite{licklider1968computer}:
+
+\begin{quotation}
+ [T]here are at present perhaps only as few as half a dozen
+  interactive multiaccess computer communities. These communities are
+  socio-technical pioneers, in several ways out ahead of the rest of
+  the computer world: What makes them so? First, some of their members
+  are computer scientists and engineers who understand the concept of
+  man-computer interaction and the technology of interactive
+  multiaccess systems. Second, others of their members are creative
+  people in other fields and disciplines who recognize the usefulness
+  and who sense the impact of interactive multiaccess computing upon
+  their work. Third, the communities have large multiaccess computers
+  and have learned to use them. And, fourth, their efforts are
+  regenerative\ldots
+ 
+ What will on-line interactive communities be like? In most
+  fields they will consist of geographically separated members,
+  sometimes grouped in small clusters and sometimes working
+  individually. They will be communities not of common location, but
+  of common interest. In each field, the overall community of interest
+  will be large enough to support a comprehensive system of
+  field-oriented programs and data.
+\end{quotation}
+
+A wide range of tools to support online collaboration has been
+developed over the intervening years.
+%
+% Computer networks allowed researchers to investigate the ability to
+% use computers to help people collaborate with one another. The
+% original intention was to use computers to replace physical apparatus
+% such as white boards in meeting rooms (cite Colab).  Researchers
+% discovered paradigms that could be used for to support collaborations
+% such as, synchronous and asynchronous collaboration. As more work was
+% done in this field the tools such as PREP(cite Issues in design
+% computer support for co-authoring and commenting.) a tool that
+% supported interaction between authors and commentors, Cognoter(Theory
+% and practice of a colab-orative tool) a tool that provided a framework
+% to help the decision making process, etc.
+%
+The objective of my research is to provide a collaborative environment
+where cognitive scientists can share models, to explore the potential
+benefits of this approach to cognitive modeling.  I describe this
+further in the following section and chapters.
 
 \section{Contributions}
 
@@ -74,32 +123,33 @@ models, I describe this further in the following section and chapters.
 % What are the contributions
 % 1) Describe the fact that we are providing a collaborative
 % environment
-I would like to start this section by acknowledging that the overall
-direction for the research was provided by Dr. St. Amant. The aim of
-this project is to provide a collaborative environment for researchers
-who develop computational representations of their work. This is
-achieved by allowing researchers to access ACT-R on top of a web based
-framework where they can create and share models. The benefits of this
-project are:
+The aim of this project is to provide a collaborative environment for
+researchers who develop computational representations of their
+research on cognition, specifically in the ACT-R architecture.  This
+is achieved by allowing researchers to access ACT-R on top of a
+web-based framework where they can create and share models.  The
+benefits of this project are as follows:
 %    The advantages of this are 
 %    -- a) We are providing an environment with a complete setup 
 %       b) Collaboration - sharing of knowledge
 %       c) Hardware resources
 
 \begin{itemize}
-\item We provide a software environment completely setup and ready for
-  use. As a result researcher can get to work with out being concerned
-  about issues regarding software dependencies.
+\item We provide a software environment completely set up and ready
+  for use. As a result, researchers can get to work without being
+  concerned about software dependency issues, a traditional barrier in
+  collaboration as well as in ACT-R modeling.
 \item We attempt to foster collaboration in the cognitive modeling
   community. Researchers can build models and these can be accessed by
-  other individuals and groups, and can be modified and shared back.
-\item By providing a centralized system hardware resources can be
-  shared across a large number of users. This would make it inexpenive
-  to run and be of use to research groups that cannot invest in
-  hardware.
-\item Since users store their models on a centralized
-  system it acts as a repository for models that can be used to
-  learn about cognitive modeling.
+  other individuals and groups, and can be modified and shared in
+  return.
+\item By providing a centralized system, hardware resources can be
+  shared across a large number of users. This should in principle make
+  it inexpenive to run and be of use to research groups that cannot
+  invest in the resources necessary for some cognitive modeling efforts.
+\item Since users store their models on a centralized system, it acts
+  as a repository for models that can be used to learn about cognitive
+  modeling.
 \end{itemize}
 
 
@@ -107,13 +157,14 @@ project are:
 % TODO cite the minsky paper.
 %   Using frames...
 %      The advantages of this.
-I used frames \cite{Minsky1974a} to achieve collaboration
-. A frame is a data structure consisting of slots, where each
-slot can either be another frame or an instance of data. Apart from
-achieving a means to provide collaboration, this data structure lets
-us represent models in a structured manner. This opens up a number of
-avenues for research, the first one that does come to mind is the
-ability to mine models to find patterns in different models and
+Frames~\cite{Minsky1974a} are used as the central representation to
+support collaboration, at the sofware level.  A frame is a data
+structure consisting of slots, where each slot can either be another
+frame or an instance of data. Apart from a means to support
+collaboration, this data structure lets us represent models in a
+structured manner, something that has not been possible before with
+ACT-R.  This opens up a number of further avenues for research, such
+as the ability to mine models to find patterns in different models and
 hence build up a more complete picture of human cognition.
 
 % Talk About the fact that there is no collaboration between researchers
@@ -124,10 +175,13 @@ hence build up a more complete picture of human cognition.
 
 \section{Thesis Organization}
 In Chapter 2 I discuss cognitive architectures and the features of
-various cognitive modeling 
-architectures. Chapter 3 attempts to describe the field of computer supported
-collaborative work. Chapter 4 aims to provide an overview of the
-biobike system. Chapter 5 describes the implementation of the
-system. In chapter 6 I describe how I solved the problem of a synonym
-crossword using this system. We conclude this with a discussion of the
-limitations of this system and the future work for this system.
+various cognitive modeling architectures. Chapter 3 gives a brief
+overview of the field of computer-supported collaborative work,
+concentrating on research relevant to this thesis.  Chapter 4 provides
+an overview of the biobike system, a collaborative platform I have
+adapted to cognitive modeling.  Chapter 5 describes the implementation
+of the system I have built, called Coglaborate.  To demonstrate the
+use of the system, as a proof of concept, I describe how I solved the
+problem of a synonym crossword in chapter 6.  I conclude this thesis
+with a discussion of the limitations of Coglaborate and future work
+for the system.
