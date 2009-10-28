@@ -81,7 +81,7 @@ the following layers\cite{oai:CiteSeerXPSU:10.1.1.75.7132}:
 \begin{itemize}
 \item An knowledge base centered around the frame system
 \item An efficient and highly extensible language that provides an
-  abstraction to the users to work with the system
+  abstraction to the users to work with the system.
 \item A web-based interface to the programming language and to other
   KnowOS services.
 \end{itemize}
@@ -93,7 +93,8 @@ the ability to perform computational biology operations on large data
 sets using a simple language. BioBike ties up a number of knowledge
 bases transparently using a frame based representation to represent
 organisms. Being an implementation of the KnowOS vision it provides
-features customized for molecular biologists. These include\cite{journals/bioinformatics/MassarTES05}
+features customized for molecular biologists. These
+include\cite{journals/bioinformatics/MassarTES05}
 
 \begin{itemize}
 \item A common framework to access genomic, metabolic and experimental data.
@@ -112,6 +113,29 @@ interaction between the system and the user, where the user types in a
 command and can see the results of that action immediately. All
 listeners of the system share the same workspace as a result they can
 share code.
+
+This system provides biologists with: an environment in which they
+interact with computer in the same terms as they would interact with
+their peers; a uniform framework using which they can access knowledge
+from a number of different knowledge bases; a common work area where
+data and results can be shared and an environment where external tools
+can be integrated.
+
+\subsubsection{Design Choices}
+
+When making the decision that decided the basis of the system the only
+other option we had was to implement a similar system from
+scratch. But when considering the capabilities provided by biobike
+such as: a live lisp listener; a system for integrating third party
+tools; its natural ability to lend support for collaboration and the
+robustness of the existing code; made the decision of choosing a
+platform a trivial one.
+
+Further benefits of this decision are related to software engineering
+aspects. That is the code for the system is open sourced under the MIT
+license and is actively maintained. As a result we would be able to
+download updates to the code and apply those changes in a way we see
+fit to the system.
 
 
 \subsection{Frames}
