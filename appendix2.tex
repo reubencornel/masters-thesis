@@ -1,0 +1,474 @@
+\addcontentsline{toc}{subsection}{Appendix A}
+\headsep 0.8in
+\section*{APPENDIX A}
+
+\begin{verbatim}
+(clear-all)
+
+(define-model test-model
+
+     (defun my-string-not-equal(a b)
+       (not (string= a b)))
+
+  (sgp :wnl-chunks wnl :imaginal-delay 0 
+       :bll 0 :er nil :esc nil 
+       :declarative-finst-span 1000 :declarative-num-finsts 1000 
+       :do-not-harvest wn-lexical )
+    
+  (chunk-type goal state number)
+  (chunk-type clue clue-id hint solution model-solution position state type )
+  (chunk-type syn-goal word-str synset-id state clue-id solution model-solution)
+  
+  (add-dm
+   ;;Module chunks
+   (in-crossword isa chunk)
+   ;;model chunks
+   (g1 isa goal state find-clue number 1)
+   (solve-puzzle isa chunk)
+   (fill-horizontal-clues isa chunk)
+   (number-of-horizontal-solutions isa chunk)
+
+   (find-word-definition isa chunk)
+   (find-word-gloss isa chunk)
+   (find-synonyms isa chunk)
+   (say-definition isa chunk)
+
+   (clue-1 isa clue clue-id 1 hint "gold" 
+           solution "gilded" position '(0 . 1) 
+           state not-in-crossword type cross)
+   (clue-4 isa clue clue-id 4 hint "ljad;" 
+           solution "vomit" position '(0 . 1) 
+           state not-in-crossword type cross))
+ 
+ (p find-clue
+     =goal>
+     isa goal
+     state find-clue
+
+     ?crossword>
+     state insertion-not-complete
+
+     ==>
+
+     +retrieval>
+     isa clue
+     state not-in-crossword
+
+     !output! (picking up a new clue)
+
+     +goal>
+     isa syn-goal
+     state add-word
+     )
+
+  (p update-goal-to-get-synonyms
+     
+     =retrieval>
+     isa clue
+     state not-in-crossword
+     hint =word
+     clue-id =id
+     solution =soln
+
+     =goal>
+     isa syn-goal
+     state add-word
+
+     ?wn-lexical>
+     state free
+
+     ==>
+     
+     =goal>
+     state find-word-definition
+     word-str =word
+     clue-id =id
+     solution =soln
+
+     +wn-lexical>
+     isa wnl-clear-context
+     
+     
+     =retrieval>
+     state in-crossword)
+
+  (p find-word-definition
+     =goal> 
+     isa syn-goal
+     state find-word-definition
+     word-str =word
+     
+     ?wn-lexical>
+     state free
+     
+     ?wn-lexical>
+     state success
+     
+     ==>
+     
+     +wn-lexical>
+     isa wnl-request
+     wn-operator s
+     word =word
+     context-criterion set-difference
+     
+     !output! (Looking for sense of =word)
+     
+     =goal>
+     state find-word-gloss
+     )
+  
+  (p find-word-gloss
+     =goal> 
+     isa syn-goal
+     state find-word-gloss
+     word-str =word
+     
+     ?wn-lexical>
+     state free
+     
+     ?wn-lexical>
+     state success
+     
+     =wn-lexical>
+     isa s
+     word =word
+     synset-id =synset-id
+     
+     ==>
+     
+     +wn-lexical>
+     isa wnl-request
+     wn-operator g
+     synset-id =synset-id
+     
+     !output! (Looking for definition of =word)
+     
+     =goal>
+     state say-definition
+     )
+  
+  (p say-definition
+     =goal> 
+     isa syn-goal
+     state say-definition
+     word-str =word
+     
+     ?wn-lexical>
+     state free
+     
+     ?wn-lexical>
+     state success
+     
+     =wn-lexical>
+     isa g
+     gloss =gloss
+     synset-id =synset-id
+     
+     ==>
+     
+     !output! (the definition of =word is =gloss)
+     =goal>
+     state find-synonyms
+     synset-id =synset-id
+     
+     +wn-lexical>
+     isa wnl-request
+     wn-operator s
+     synset-id =synset-id
+     
+     )
+
+
+  (p find-synonyms
+     =goal> 
+     isa syn-goal
+     state find-synonyms
+     synset-id =synset-id
+     
+     ?wn-lexical>
+     state free
+     
+     ?wn-lexical>
+     state success
+     
+     =wn-lexical>
+     isa s
+     word =word
+     synset-id =synset-id
+     
+     ==>
+     
+     !output! (=word is a synonyms)
+
+     +imaginal>
+     isa syn-goal
+     state not-examined
+     synset-id =synset-id
+     word-str =word
+     
+     =goal>
+     state find-word-definition
+     )
+
+  (p do-not-know-word
+     =goal> 
+     isa syn-goal
+     state find-word-gloss
+     word-str =word
+     
+     ?wn-lexical>
+     state free
+     
+     ?wn-lexical>
+     state error
+
+     ?retrieval>
+     state free
+     
+     ==>
+     
+     !output! (I know nothing about =word)
+
+     +retrieval>
+     isa syn-goal
+     state not-examined
+     :recently-retrieved nil
+
+     =goal>
+     state not-examined
+     
+     -imaginal>
+
+     -wn-lexical>
+     )
+
+  (p start-exploring-word
+   
+     =goal>
+     isa syn-goal
+     state not-examined
+   
+
+     =retrieval>
+     isa syn-goal
+     state not-examined
+     synset-id =synset-id
+
+     ?wn-lexical>
+     state free
+
+     ==>
+
+     =retrieval>
+     state examined
+
+     =goal>
+     state explore-word
+     synset-id =synset-id
+   
+     +wn-lexical>
+     isa wnl-clear-context)
+
+  (p explore-word
+
+     =goal>
+     isa syn-goal
+     state explore-word
+     synset-id =synset-id
+
+     ?wn-lexical>
+     state free
+
+     ==>
+
+     +wn-lexical>
+     isa wnl-request
+     wn-operator s
+     synset-id =synset-id
+     context-criterion set-difference
+
+     =goal>
+     state say-word)
+
+  (p no-more-words-in-this-sense
+
+     =goal>
+     isa syn-goal
+     state say-word
+     clue-id =id
+
+     ?wn-lexical>
+     state error
+
+     ?wn-lexical> 
+     state free
+
+     ?retrieval>
+     state free
+     ==>
+
+     ;;use retrieval pick next word
+     +retrieval>
+     isa syn-goal
+     state not-examined
+     :recently-retrieved nil
+
+     !output! (picking up next word)
+   
+   
+     =goal>
+     state examined)
+
+  (p temp-prod
+   
+     =goal>
+     isa syn-goal
+     state examined
+
+     ==>
+
+     =goal>
+     state not-examined)
+
+  (p explored-all-senses
+
+     =goal>
+     isa syn-goal
+     state not-examined
+     clue-id =id
+
+     ?retrieval>
+     state error
+
+     ?wn-lexical>
+     state free
+     ==>
+
+     +goal>
+     isa syn-goal
+     state add-word
+
+     !output! (could not solve clue =id)
+
+     +retrieval>
+     isa clue
+     state not-in-crossword
+     :recently-retrieved nil
+
+     -wn-lexical>
+
+     !output! (explored all senses))
+
+   
+
+  (p say-word
+
+     =wn-lexical>
+     isa s
+     word =word
+     synset-id =synset-id
+
+     =goal>
+     isa syn-goal
+     state say-word
+     solution =soln
+     clue-id =id
+
+     ?retrieval>
+     state free
+
+     !safe-eval! (string-equal =word =soln)
+     
+     ==>
+   
+     !output! (selected word =word)
+     !output! (solution =soln)
+
+     =goal>
+     state update-clue
+     model-solution =soln
+   
+     +retrieval>
+     isa clue
+     clue-id =id
+     state in-crossword
+     :recently-retrieved nil
+     )
+
+  (p update-clue
+
+     =goal>
+     isa syn-goal
+     state update-clue
+     model-solution =soln
+     clue-id =id
+
+     =retrieval>
+     isa clue
+     clue-id =id
+     ==>
+   
+     =retrieval>
+     model-solution =soln
+     state solved
+
+     !output! (solved clue =id)
+
+     =goal>
+     state clear-buffer-and-pick-up-next-clue
+   
+     )
+
+  (p clear-buffer-and-pick-up-next-clue
+   
+     =goal>
+     isa syn-goal
+     state clear-buffer-and-pick-up-next-clue
+   
+     ?retrieval> 
+     state free
+
+     ?wn-lexical>
+     state free
+
+     ==>
+   
+     +goal>
+     isa syn-goal
+     state add-word
+
+     +retrieval>
+     isa clue
+     state not-in-crossword
+     :recently-retrieved nil
+
+     -wn-lexical>
+     )
+
+  (p say-word-1
+
+     =wn-lexical>
+     isa s
+     word =word
+     synset-id =synset-id
+
+     =goal>
+     isa syn-goal
+     solution =soln
+     state say-word
+
+     !safe-eval! (my-string-not-equal =word =soln)
+
+     ==>
+   
+     !output! (word =word)
+
+     =goal>
+     state explore-word)
+  )  
+
+(goal-focus g1)
+(run 40)
+
+\end{verbatim}

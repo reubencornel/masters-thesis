@@ -157,9 +157,13 @@ ACT-R models are lisp data structures. Therefore direct representation
 of the model would have stored the code for the model as is. The
 benefit of the approach lies in the simplicity of the implementation,
 which would have involved storing the code as symbols. But this
-representation would make it exceptionally difficult to write tools
-around the abstraction because the tools would have to parse the model
-before being able to perform any operations.
+representation has a number of disadvantages: writing tools for this
+representation would be exceptionally hard because the tools would
+have to parse the model before being able to perform any operations;
+the representation does not allow us to store meta data; it does not
+allow us to add capabilities for reuse of the model and finally it
+would be quite cumbersome to implement a system of revision control
+for this data structure.
 
 %       - Semantic Nets
 %         - Describe Semantic nets
@@ -173,26 +177,79 @@ actions as nodes. Relationships between the nodes would be shown using
 arcs that describe the relation between various nodes. The advantages
 of using this representation are: tools written for ACT-R can act
 directly on the nodes that represent productions and models; this
-representation would make reuse for 
+representation would make it easy to implement facilities for reuse of
+productions and we can write queries to determine the type of objects
+and inter-relationships. The deficiencies of this representation are
+that implementing a system of revision control would be difficult
+because we would not be able to represent version information; it
+would like the direct representation model we would not be able to add
+capabilities of model reuse.
+
 
 %       - Why frames
 % -     Describe frames
-% Brief description of other possible structures if I had not used frames.
-
-
+% Brief description of other possible structures if I had not used
+% frames.
+The frame data structure was introduced by Marvin
+Minsky\cite{Minsky1974a} in 1975 in one the seminal papers in the area
+of knowledge representation.
 % describe why are frames the sweetest things since sliced bread...
 
 \section{System Design}
 
 \begin{figure}[htp]
   \centering
-  \includegraphics[width=90mm]{SystemOverview.eps}
+  \includegraphics[width=90mm]{SystemOverview}
   \caption{System Design}
   \label{SysOverview}
 \end{figure}
 
 
 \section{Work Flow}
+
+This section illustrates a scenario where a user creates a model and
+evaluates it. Another user comes in searches for the model created by
+this user, navigates around its productions and obtains the code for
+it. 
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=90mm]{UserCreatesModel}
+  \caption{A user creates and evaluates a model}
+  \label{UserCreatesModel}
+\end{figure}
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=90mm]{SearchForModel}
+  \caption{Search results after searching for a model}
+  \label{SearchForModel}
+\end{figure}
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=90mm]{NavigateFrame}
+  \caption{Navigating a model represented as a frame}
+  \label{NavigateFrame}
+\end{figure}
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=90mm]{NavigatingAProduction}
+  \caption{Navigating a production represented as a frame}
+  \label{NavigatingAProduction}
+\end{figure}
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=90mm]{ConvertFrameToImage}
+  \caption{The resultant code after clicking the Frame $->$ Listener
+    link}
+  \label{ConvertFrameToImage}
+\end{figure}
+
+
+
 % Coglaborate
 %       - Describe work flow that shows collaboration occurs with screen shots.
 %       - Describe what was modified and why
