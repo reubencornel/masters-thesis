@@ -15,6 +15,7 @@
 all: thesis.dvi
 
 thesis.dvi: thesis.tex Chapter1.tex Chapter2.tex Chapter4.tex Chapter5.tex Chapter7.tex thesis.bbl 
+	chmod a+x ./bulkepstopdf
 	./bulkepstopdf
 	latex thesis.tex
 	latex thesis.tex
@@ -22,7 +23,6 @@ thesis.dvi: thesis.tex Chapter1.tex Chapter2.tex Chapter4.tex Chapter5.tex Chapt
 	pdflatex thesis.tex
 	pdflatex thesis.tex
 	pdflatex thesis.tex
-	scp thesis.pdf rfcornel@sequoia.csc.ncsu.edu:Sites
 
 thesis.bbl: thesis.bib thesis.aux
 	bibtex thesis
