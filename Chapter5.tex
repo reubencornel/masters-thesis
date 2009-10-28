@@ -90,7 +90,7 @@ the following layers\cite{oai:CiteSeerXPSU:10.1.1.75.7132}:
 %       - Components
 BioBike originally known as BioLingua seeks to provide biologists with
 the ability to perform computational biology operations on large data
-sets using a simple language. Biolingua ties up a number of knowledge
+sets using a simple language. BioBike ties up a number of knowledge
 bases transparently using a frame based representation to represent
 organisms. Being an implementation of the KnowOS vision it provides
 features customized for molecular biologists. These include\cite{journals/bioinformatics/MassarTES05}
@@ -105,6 +105,13 @@ features customized for molecular biologists. These include\cite{journals/bioinf
 \item A wiki through which scientists can collaborate and announce results.
 \end{itemize}
 
+% Talk about the style of interaction and the result
+The BioBike language is built on top of Common Lisp. Users interact
+with the system using a lisp listener. This results in a Unix style
+interaction between the system and the user, where the user types in a
+command and can see the results of that action immediately. All
+listeners of the system share the same workspace as a result they can
+share code.
 
 
 \subsection{Frames}
@@ -114,6 +121,16 @@ features customized for molecular biologists. These include\cite{journals/bioinf
 %       - Ontonlogies
 %       - Frames
 %       - Productions
+
+\section{System Design}
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=90mm]{SystemOverview.eps}
+  \caption{System Design}
+  \label{SysOverview}
+\end{figure}
+
 
 \section{Work Flow}
 % Coglaborate
