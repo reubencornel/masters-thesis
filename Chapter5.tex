@@ -65,7 +65,7 @@ why we chose to stick with the existing decisions.
 \subsection{Choice of platform}
 
 % Bio bike and the vision that it is originally based on
-I chose the BioBike framework as the platform for the system. This
+We chose the BioBike framework as the platform for the system. This
 section examines the basis of that decision by analyzing the
 capabilities of BioBike. BioBike is an instantiation of
 KnowOS\cite{oai:CiteSeerXPSU:10.1.1.75.7132} a concept based on the
@@ -125,7 +125,7 @@ can be integrated.
 
 \subsubsection{Design Choices}
 
-When making the decision that decided the basis of the system the only
+When making the decision about the platform of the system the only
 other option we had was to implement a similar system from
 scratch. But when considering the capabilities provided by biobike
 such as: a live lisp listener; a system for integrating third party
@@ -134,20 +134,51 @@ robustness of the existing code; made the decision of choosing a
 platform a trivial one.
 
 Further benefits of this decision are related to software engineering
-aspects. That is the code for the system is open sourced under the MIT
+aspects. The code for the system is open sourced under the MIT
 license and is actively maintained. As a result we would be able to
 download updates to the code and apply those changes in a way we see
 fit to the system.
 
 \subsection{Choice of structure for representation}
-%       - Why frames
-% -     Describe frames
+% Introduction
+A structured representation of an ACT-R model provides us with an
+abstraction. This abstraction gives us a number of capabilities such
+as: the ability to share models conveniently; writing an ecosystem of
+tools for ACT-R models; the ability to maintain revisions of
+models and the ability to extend it in ways not foreseen when the
+system was originally designed.
 
-% Brief description of other possible structures if I had not used frames.
-%       - Semantic Nets
-%         - Describe Semantic nets
+We had to decide between three main choices of structures for
+representing an ACT-R model. These are a direct representation of the
+model, a semantic network and frames. 
 
 %       - Direct representation: that is store the entire code as some variable
+ACT-R models are lisp data structures. Therefore direct representation
+of the model would have stored the code for the model as is. The
+benefit of the approach lies in the simplicity of the implementation,
+which would have involved storing the code as symbols. But this
+representation would make it exceptionally difficult to write tools
+around the abstraction because the tools would have to parse the model
+before being able to perform any operations.
+
+%       - Semantic Nets
+%         - Describe Semantic nets
+An alternative to the direct representation is using semantic networks
+to represent ACT-R models. Semantic networks is a notation for
+representing knowledge using nodes that usually represent objects,
+concepts or situations in a domain and the arcs represent relations
+between them\cite{Sowa87, Barr81}. A way to represent ACT-R models
+would have represented the model, the productions, conditions and
+actions as nodes. Relationships between the nodes would be shown using
+arcs that describe the relation between various nodes. The advantages
+of using this representation are: tools written for ACT-R can act
+directly on the nodes that represent productions and models; this
+representation would make reuse for 
+
+%       - Why frames
+% -     Describe frames
+% Brief description of other possible structures if I had not used frames.
+
 
 % describe why are frames the sweetest things since sliced bread...
 
