@@ -14,11 +14,15 @@
 
 all: thesis.dvi
 
-thesis.dvi: thesis.tex Chapter1.tex Chapter2.tex Chapter4.tex Chapter5.tex Chapter6.tex Chapter7.tex thesis.bbl 
+thesis.dvi: thesis.tex Chapter1.tex Chapter2.tex Chapter4.tex Chapter5.tex Chapter7.tex thesis.bbl 
+	./bulkepstopdf
 	latex thesis.tex
 	latex thesis.tex
 	latex thesis.tex
-#	scp thesis.dvi rfcornel@sequoia.csc.ncsu.edu:Sites
+	pdflatex thesis.tex
+	pdflatex thesis.tex
+	pdflatex thesis.tex
+	scp thesis.pdf rfcornel@sequoia.csc.ncsu.edu:Sites
 
 thesis.bbl: thesis.bib thesis.aux
 	bibtex thesis
@@ -34,4 +38,4 @@ clean:
 	-rm *.aux
 	-rm *.log
 	-rm *.blg
-	-rm *.lot *.lof *.dvi *.toc *.bbl
+	-rm *.lot *.lof *.dvi *.toc *.bbl *.pdf
