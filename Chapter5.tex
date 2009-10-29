@@ -258,10 +258,16 @@ it.
 
 \begin{figure}[htp]
   \centering
-  \includegraphics[width=100mm]{UserCreatesModel}
+  \includegraphics[width=90mm]{UserCreatesModel}
   \caption{A user creates and evaluates a model}
   \label{UserCreatesModel}
 \end{figure}
+
+A user creates a frame representation by evaluating the code that he
+types into his lisp listener as shown in figure
+\ref{UserCreatesModel}. The lisp listener has two text boxes, the
+large text area is used to type in complete models and the smaller
+text box is used to type in one off commands.
 
 \begin{figure}[htp]
   \centering
@@ -270,6 +276,11 @@ it.
   \label{SearchForModel}
 \end{figure}
 
+Once a frame representation of the model has been created any other
+user can search for the model if he knows the name of the model. This
+is done by clicking the ``Find Frames'' link. The result of the search
+is shown in figure \ref{SearchForModel}.
+
 \begin{figure}[htp]
   \centering
   \includegraphics[width=100mm]{NavigateFrame}
@@ -277,23 +288,36 @@ it.
   \label{NavigateFrame}
 \end{figure}
 
-\begin{figure}[htp]
+Figure \ref{NavigateFrame} shows the frame representation of what the
+model that the user was searching for. Once the user finds the model
+that he was searching for, he can navigate the model by clicking on
+the links inside the frame table.
+
+\begin{figure}[h]
   \centering
   \includegraphics[width=100mm]{NavigatingAProduction}
   \caption{Navigating a production represented as a frame}
   \label{NavigatingAProduction}
 \end{figure}
 
-\begin{figure}[htp]
+Figure \ref{NavigatingAProduction} shows us the frame representation
+of a production, this is obtained by clicking any link in the slot
+value column of the model frame for the slot name ``productions''. The
+user can investigate a production further by clicking on the links in
+the slot value section. 
+
+\begin{figure}[h]
   \centering
   \includegraphics[width=100mm]{ConvertFrameToImage}
-  \caption{The resultant code after clicking the Frame $->$ Listener
+  \caption{The resultant code after clicking the Frame $\rightarrow$ Listener
     link}
   \label{ConvertFrameToImage}
 \end{figure}
 
-As can be seen from the work flow building a model and sharing the
-same with other users is as intuitive as it can be.
+If a user wants to obtain code for the model he can click the
+Frame$\rightarrow$Listener link on the index page of the model. Figure
+\ref{ConvertFrameToImage} shows the resulting code generated as a
+result of clicking the said link.
 
 % Coglaborate
 %       - Describe work flow that shows collaboration occurs with screen shots.
