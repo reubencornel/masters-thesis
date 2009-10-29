@@ -6,13 +6,14 @@
 % Introduction
 
 % Discuss what this chapter will focus on and dive in.
-The purpose of this chapter is three fold: it discusses the motivations
-that governed the design of the system, such as using the
-BioBike\cite{journals/bioinformatics/MassarTES05} chassis and using
+The purpose of this chapter is threefold: it discusses the motivations
+that govern the design of the Coglaborate system, such as using the
+BioBike chassis~\cite{journals/bioinformatics/MassarTES05} and using
 frames as a data structure to represent ACT-R based cognitive models;
 it describes the work flow of the system that enables users to build
-and share models and finally it discusses in detail a medium scale
-model that was built as a proof of concept.
+and share models; finally it discusses in detail a medium-scale model
+that was built as a proof of concept, a demonstration of how
+Coglaborate would be used in practice.
 
 \section{Problem Definition for Coglaborate}
 
@@ -21,170 +22,184 @@ model that was built as a proof of concept.
 
 The primary goal of the Coglaborate system is to provide a
 collaborative tool-based environment for the computational cognitive
-modeling community. Currently there are no known environments that
-provide this facility. Apart from providing collaboration, Coglaborate
-also intends to achieve a number of secondary goals:
+modeling community. Currently there are no such environments that
+provide this facility. Apart from supporting collaboration,
+Coglaborate also targets a number of secondary goals:
 
 % Sand boxing 
 % Resource sharing
 % Tool integration
 % Knowledge agglomeration
 \begin{itemize}
-\item \emph{A sand boxed environment}: Currently there are number of
-  interesting extensions to ACT-R. But occasionally it might be
-  difficult for the users of the extensions to set them up. But with a
-  sand boxed environment, users can connect to it and use the module
-  with out any setup. This has a number of advantages, firstly the
-  users do not have to keep track of the version of the extension and
-  they can focus on completing their tasks rather than having to
-  tinker around the computer.
-\item \emph{Resource Sharing}: When we refer to resource sharing we refer to
-  sharing hardware. With a web based platform that runs on a powerful
-  computer researchers can simulate models that require excessive
-  computational power and time.
-\item \emph{Tool Integration}: If there are computational tools that a model
-  would like to utilize they can be hooked in. For example the R
-  statistical environment can be accessed by hooking in a
-  library. Once loaded in a number of users would be able to access
-  the facilities provided by it.
-\item \emph{Knowledge Agglomeration}: As users model various aspects
-  of cognition we would be able to build a repository that reflects
-  the state of the field.
+\item \emph{A sandbox environment}: Currently there are number of
+  interesting ACT-R extensions available to modelers. But occasionally
+  it might be difficult to set up these extensions.  With a sandbox
+  environment, modelers can connect to it and use the module with out
+  any setup cost. This has a number of advantages.  The users do not
+  have to keep track of the version of the extension and they can
+  focus on completing their tasks rather than having to tinker with
+  their environment.  Further, developers can work to improve existing
+  extensions without as much concern for deployment issues.
+
+\item \emph{Resource Sharing}: When we refer to resource sharing we
+  mean sharing hardware. With a Web-based platform that runs on a
+  powerful computer, researchers can simulate models that require
+  excessive computational power and time.
+
+\item \emph{Tool Integration}: If there are computational tools that a
+  model requires they can be hooked in once, as a shared software
+  resource.  For example, the R statistical environment can be
+  accessed as a library.  Once loaded, the facilities can be accessed
+  by many users, who do not need to modify their local environments.
+
+\item \emph{Knowledge Agglomeration}: As modelers explore various
+  aspects of cognition, they can contribute their results to a general
+  repository that reflects the state of the art.
 \end{itemize}
 
 \section{Design Decisions}
 % Design Decisions
 %       - Why biobike
-There were two major decisions that influenced the design of the
-project: firstly the use of the BioBike chassis as a platform to
-mount the ACT-R framework; and secondly the use of frames as means to
-represent ACT-R based cognitive models in the shared memory. This
-section discusses the alternatives that were analyzed and the reasons
-why we chose to stick with the existing decisions.
+Two major decisions influenced the design of the project: firstly the
+use of the BioBike chassis as a platform to mount the ACT-R framework,
+and secondly the use of frames as means to represent ACT-R based
+cognitive models in the shared memory. This section discusses the
+alternatives that were analyzed and the reasons we made these
+decisions.
 
 \subsection{Choice of platform}
 
 % Bio bike and the vision that it is originally based on
 We chose the BioBike framework as the platform for the system. This
 section examines the basis of that decision by analyzing the
-capabilities of BioBike. BioBike is an instantiation of
-KnowOS\cite{oai:CiteSeerXPSU:10.1.1.75.7132} a concept based on the
-view that knowledge could be treated on par as the rest of the
-elements that make up a computer system. It is well known fact that
-Operating systems provide abstractions to work with the elements of a
-system for example, consider a file. An operating system provide
-operations using which this file can be renamed, copied, deleted
-etc. It also provides further abstractions that allow us to significant
-modifications to raw data. The KnowOS vision extends this analogy to
-the realm of knowledge. An implementation of the KnowOS consists of
-the following layers\cite{oai:CiteSeerXPSU:10.1.1.75.7132}:
+capabilities of BioBike.  BioBike is an instantiation of
+KnowOS~\cite{oai:CiteSeerXPSU:10.1.1.75.7132}, a concept based on
+knowledge being treated on par with other elements that make up a
+computer system.  Operating systems provide useful abstractions for
+users to work with the elements of a system.  A simple example is a
+file, an abstraction over regions of hardware storage.  An operating
+system provide functions by which this file can be renamed, copied,
+deleted, and so forth. It also provides further abstractions that
+allow significant modifications to raw data. The KnowOS vision extends
+this analogy to the realm of knowledge. An implementation of the
+KnowOS consists of the following
+layers~\cite{oai:CiteSeerXPSU:10.1.1.75.7132}:
 
 
 \begin{itemize}
-\item An knowledge base centered around the frame system
-\item An efficient and highly extensible language that provides an
-  abstraction to the users to work with the system.
-\item A web-based interface to the programming language and to other
+\item A knowledge base centered on the frame system.
+\item An efficient and extensible programming language that provides
+  abstractions for users to work with the system.
+\item A Web-based interface to the programming language and to other
   KnowOS services.
 \end{itemize}
 
 % Description of biobike
 %       - Components
-BioBike originally known as BioLingua seeks to provide biologists with
-the ability to perform computational biology operations on large data
-sets using a simple language. BioBike ties up a number of knowledge
-bases transparently using a frame based representation to represent
-organisms. Being an implementation of the KnowOS vision it provides
-features customized for molecular biologists. These
-include\cite{journals/bioinformatics/MassarTES05}
+BioBike (originally known as BioLingua) provides biologists with the
+ability to perform computational biology operations on large data sets
+using a simple language. BioBike ties a number of knowledge bases
+together transparently, using a frame-based representation to
+represent organisms. As an implementation of the KnowOS vision, it
+provides features customized for molecular biologists. These
+include~\cite{journals/bioinformatics/MassarTES05}
 
 \begin{itemize}
 \item A common framework to access genomic, metabolic and experimental data.
-\item A general purpose programming language(lisp) customized to
-  provide transparent access to the underlying knowledge bases.
+\item A general-purpose programming language (Lisp) customized for
+  transparent access to the underlying knowledge bases.
 \item A highly interactive environment where code can be evaluated and
   its results displayed immediately.
-\item A number of general purpose tools that help in analyzing interactions.
+\item A number of general-purpose tools that help in analyzing interactions.
 \item A wiki through which scientists can collaborate and announce results.
 \end{itemize}
 
 % Talk about the style of interaction and the result
 The BioBike language is built on top of Common Lisp. Users interact
-with the system using a lisp listener. This results in a Unix style
+with the system using a Lisp listener. This results in a Unix style of
 interaction between the system and the user, where the user types in a
-command and can see the results of that action immediately. All
-listeners of the system share the same workspace as a result they can
-share code.
+command and can see the results of that action immediately. All Lisp
+listeners of the system share the same workspace, which means that
+they can also share code.
 
-This system provides biologists with: an environment in which they
-interact with computer in the same terms as they would interact with
-their peers; a uniform framework using which they can access knowledge
-from a number of different knowledge bases; a common work area where
-data and results can be shared and an environment where external tools
-can be integrated.
+BioBike provides biologists, in principle, with an environment in
+which they interact with the computer in the same terms as they would
+interact with their peers; with a uniform framework for accessing
+knowledge from a number of different knowledge bases; and with a
+common work area where data and results can be shared and external
+tools can be integrated.  BioBike has been in place over a number
+years and has demonstrated benefits to collaborating teams of
+biologists and computer scientists during that time\cite{journals/bioinformatics/MassarTES05}.
 
 \subsubsection{Design Choices}
 
-When making the decision about the platform of the system the only
-other option we had was to implement a similar system from
-scratch. But when considering the capabilities provided by biobike
-such as: a live lisp listener; a system for integrating third party
-tools; its natural ability to lend support for collaboration and the
-robustness of the existing code; made the decision of choosing a
-platform a trivial one.
-
+When making the decision about the platform of the system, another
+option we had was to implement a similar system from scratch. But when
+we considered the capabilities provided by BioBike (such as a live
+Lisp listener, a system for integrating third-party tools, support for
+collaboration, and a robust code base) this made the decision of
+choosing a platform a trivial one.
+%
 Further benefits of this decision are related to software engineering
-aspects. The code for the system is open sourced under the MIT
-license and is actively maintained. As a result we would be able to
+concerns. The code for the system is open sourced under the MIT
+license and is actively maintained. As a result we will be able to
 download updates to the code and apply those changes in a way we see
 fit to the system.
 
 \subsection{Choice of structure for representation}
 % Introduction
-A structured representation of an ACT-R model provides us with an
-abstraction. This abstraction gives us a number of capabilities such
-as: the ability to share models conveniently; writing an ecosystem of
-tools for ACT-R models; the ability to maintain revisions of
-models and the ability to extend it in ways not foreseen when the
-system was originally designed.
+A structured representation of an ACT-R model is intended to provide
+an abstraction above the level of modeling code An abstraction should
+give a number of benefits: the ability to share models more
+conveniently than by exchanging Lisp code; the potential for an
+``ecosystem'' of tools for to support ACT-R modeling, in construction
+and analysis; and the ability to maintain revisions of
+models\footnote{This is a continuing concern in ACT-R modeling
+  research.  The ACT-R architecture has gone through several major
+  revisions over the years (the current version is ACT-R 6.0, but
+  modeling researchers rarely return to models based on earlier
+  versions to test whether changes in the implicit architectural
+  dependencies have rendered their past work invalid.  Improved
+  modeling abstractions may make this process easier.}
+%
+and the ability to extend ACT-R models in ways explicitly planned for.
 
 We had to decide between three main choices of structures for
-representing an ACT-R model. These are a direct representation of the
-model, a semantic network and frames. 
+representing an ACT-R model: a direct representation of models in the
+ACT-R modeling language, a semantic network, and frames.
 
 %       - Direct representation: that is store the entire code as some variable
-ACT-R models are lisp data structures. Therefore direct representation
-of the model would have stored the code for the model as is. The
-benefit of the approach lies in the simplicity of the implementation,
-which would have involved storing the code as symbols. But this
-representation has a number of disadvantages: writing tools for this
-representation would be exceptionally hard because the tools would
-have to parse the model before being able to perform any operations;
-the representation does not allow us to store meta data; it does not
-allow us to add capabilities for reuse of the model and finally it
-would be quite cumbersome to implement a system of revision control
-for this data structure.
+ACT-R models are essentially Lisp data structures. Therefore the
+direct representation of the model would store the code for the model
+as is. The benefit of this approach lies in the simplicity of the
+implementation, which would have involved storing the code as symbols,
+and the ease with which modeling researchers can understand a familiar
+representation. But this approach has a number of disadvantages.
+Building tools for this representation would be exceptionally hard
+because the tools would have to parse the model before being able to
+perform any operations.  The representation does not allow us to store
+meta data.  It does not allow us to easily add capabilities for reuse
+of the model.  Finally it would be cumbersome to implement a system of
+revision control for this data structure.
 
 %       - Semantic Nets
 %         - Describe Semantic nets
 An alternative to the direct representation is using semantic networks
-to represent ACT-R models. Semantic networks is a notation for
-representing knowledge using nodes that usually represent objects,
-concepts or situations in a domain and the arcs represent relations
-between them\cite{Sowa87, Barr81}. A way to represent ACT-R models
-would have represented the model, the productions, conditions and
-actions as nodes. Relationships between the nodes would be shown using
-arcs that describe the relation between various nodes. The advantages
-of using this representation are: tools written for ACT-R can act
-directly on the nodes that represent productions and models; this
-representation would make it easy to implement facilities for reuse of
-productions and we can write queries to determine the type of objects
-and inter-relationships. The deficiencies of this representation are
-that implementing a system of revision control would be difficult
-because we would not be able to represent version information; it
-would like the direct representation model we would not be able to add
-capabilities of model reuse.
-
+to represent ACT-R models. Semantic networks are a notation for
+representing knowledge, using nodes to represent objects, concepts or
+situations in a domain, and using arcs to represent relations between
+them~\cite{Sowa87,Barr81}. This would mean representing the internal
+components of ACT-R models as node: the productions, and the
+conditions and actions they contain, as well as models themselves.
+The advantages of using this representation are that tools written for
+ACT-R could act directly on the nodes representing productions and
+models; the representation would make it easy to implement facilities
+for reuse of productions; queries could be constructed to determine
+the type of objects and their relationships. The deficiencies of this
+representation are that implementing a system of revision control
+would be difficult because we would not be able to represent version
+information in a straightforward way.  It would also be difficult to
+add capabilities of model reuse.
 
 %       - Why frames
 % -     Describe frames
@@ -192,21 +207,27 @@ capabilities of model reuse.
 % frames.
 
 The frame data structure was introduced by Marvin
-Minsky\cite{Minsky1974a} in 1975 in one the seminal papers in the area
-of knowledge representation. Frames are structures that can represent
-objects, situations and concepts. Frames are arranged in a
+Minsky~\cite{Minsky1974a} in 1975, in one the seminal papers in the
+area of knowledge representation. Frames are structures that can
+represent objects, situations and concepts. Frames are arranged in a
 hierarchical taxonomy where every frame is linked with its parent
 frame. The parent frame represents a more general concept than its
 child\cite{karp-93}. A frame is made up of a number of slots. Slots
 define the properties of the object being represented by the
 frame. Slots are sometimes also used to represent relationships
 between two frames. This representation provides us with a number of
-advantages: Unlike semantic networks we have all related data stored
-in a single frame; frames are dynamic and they allow slots and their
-values to be updated very easily; since frames are structured writing
-tools to help perform various forms of analysis would be easy and
-finally in the future frames might help in analyzing more complex
-forms of reuse of cognitive models.
+advantages.  Unlike semantic networks we have all related data stored
+in a single frame; frames are dynamic and allow slots and their values
+to be updated very easily.  Since frames are structured, it is easy to
+write tools to help perform various forms of analysis.  Finally, in
+the future frames might help in analyzing more complex forms of reuse
+of cognitive models.
+
+In knowledge representation research it is common to find integrations
+of frames and semantic networks; for example, a semantic network might
+include frames rather than atomic symbolic concepts in its nodes.  The
+distinctions made in the above discussion are between their ``core''
+properties.
 
 % Describe frames in reasonable amount of detail.
 
@@ -223,10 +244,10 @@ forms of reuse of cognitive models.
 
 This section aims to explain how various components of the system work
 together to have the desired effect. Figure \ref{SysOverview} provides
-us with a high level of the system.  This section will examine each
-component in detail. The system currently runs on a server running
-GNU/Linux as a result we have a secure, robust and stable platform to
-base our system.
+a high level overview of the system.  This section will examine each
+component in detail.  The system currently runs on a server running
+GNU\slash Linux.  As a result we have a secure, robust, and stable
+platform on which to base our system.
 
 %\subsubsection{Operating System}
 % there obviously is no need to introduce the operating system. 
@@ -250,7 +271,24 @@ GNU Public License.
 % Do I advocate the use of lisp here or do I just describe the version
 % being used and its benefits
 
+
+
 \subsubsection{Translation Layer}
+
+This is a conceptual layer that represents the implementation of the
+ideas suggested in this project. This layer consists of two main
+sections: a section that converts ACT-R model data structures into
+frames and a section that converts frames back into ACT-R
+models. Since the code in this section is trivial, this section aims
+to explain the structure of the frames that are created. Every frame
+has a few elements in common that describe: the type of object that the
+current frame represents and the name of the object that the frame
+represents. The structure of all the frames created by the code is
+described below.
+
+\begin{itemize}
+\item \emph{The model frame:} This frame consists of 
+\end{itemize}
 
 %Describe what happens here....draw diagrams to show frames from
 %various levels...for example frames that represent productions,
@@ -301,7 +339,7 @@ model that the user was searching for. Once the user finds the model
 that he was searching for, he can navigate the model by clicking on
 the links inside the frame table.
 
-\begin{figure}[h]
+\begin{figure}[htp]
   \centering
   \includegraphics[width=100mm]{NavigatingAProduction}
   \caption{Navigating a production represented as a frame}
@@ -314,7 +352,7 @@ value column of the model frame for the slot name ``productions''. The
 user can investigate a production further by clicking on the links in
 the slot value section. 
 
-\begin{figure}[h]
+\begin{figure}[htp]
   \centering
   \includegraphics[width=100mm]{ConvertFrameToImage}
   \caption{The resultant code after clicking the Frame $\rightarrow$ Listener
@@ -340,3 +378,10 @@ result of clicking the said link.
 %        - Approach taken
 %        - What can be deduced from it.
 
+An evaluation of the collaborative aspects of the use of Coglaborate
+are unfortunately beyond the scope of this thesis.  Some evidence for
+this capability is provided by experience with BioBike; some
+similarities in the benefits can be expected.  Nevertheless an
+illustration of the use of Coglaborate to solve a medium-sized problem
+should give insight into some of the strengths and weaknesses of the
+approach.
