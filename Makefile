@@ -14,6 +14,9 @@
 
 all: thesis.dvi
 
+reuben: thesis.dvi
+	scp thesis.pdf rfcornel@sequoia.csc.ncsu.edu:Sites
+
 thesis.dvi: thesis.tex Chapter1.tex Chapter2.tex Chapter4.tex Chapter5.tex Chapter7.tex thesis.bbl 
 	chmod a+x ./bulkepstopdf
 	./bulkepstopdf

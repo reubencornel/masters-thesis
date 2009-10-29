@@ -190,9 +190,26 @@ capabilities of model reuse.
 % -     Describe frames
 % Brief description of other possible structures if I had not used
 % frames.
+
 The frame data structure was introduced by Marvin
 Minsky\cite{Minsky1974a} in 1975 in one the seminal papers in the area
-of knowledge representation.
+of knowledge representation. Frames are structures that can represent
+objects, situations and concepts. Frames are arranged in a
+hierarchical taxonomy where every frame is linked with its parent
+frame. The parent frame represents a more general concept than its
+child\cite{karp-93}. A frame is made up of a number of slots. Slots
+define the properties of the object being represented by the
+frame. Slots are sometimes also used to represent relationships
+between two frames. This representation provides us with a number of
+advantages: Unlike semantic networks we have all related data stored
+in a single frame; frames are dynamic and they allow slots and their
+values to be updated very easily; since frames are structured writing
+tools to help perform various forms of analysis would be easy and
+finally in the future frames might help in analyzing more complex
+forms of reuse of cognitive models.
+
+% Describe frames in reasonable amount of detail.
+
 % describe why are frames the sweetest things since sliced bread...
 
 \section{System Design}
@@ -204,12 +221,11 @@ of knowledge representation.
   \label{SysOverview}
 \end{figure}
 
-
 \section{Work Flow}
 
 This section illustrates a scenario where a user creates a model and
 evaluates it. Another user comes in searches for the model created by
-this user, navigates around its productions and obtains the code for
+the first user, navigates around its productions and obtains the code for
 it. 
 
 \begin{figure}[htp]
@@ -248,7 +264,8 @@ it.
   \label{ConvertFrameToImage}
 \end{figure}
 
-
+As can be seen from the work flow building a model and sharing the
+same with other users is as intuitive as it can be.
 
 % Coglaborate
 %       - Describe work flow that shows collaboration occurs with screen shots.
