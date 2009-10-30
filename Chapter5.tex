@@ -253,6 +253,23 @@ platform on which to base our system.
 % there obviously is no need to introduce the operating system. 
 % The system currently runs on a GNU/Linux based machine. 
 
+\subsubsection{The User}
+
+The user interacts with the system through a web browser. When a user
+logs in he is put into the ACT-R package. This is done because it was
+not possible to export all the required variables and functions into
+the user package. This is because ACT-R either lets us export all its
+symbols into to the \texttt{cl-user} package or the \texttt{act-r}
+package. 
+
+The only thing different about the models being written to run on
+their own system and those that are run on the Coglaborate system is
+that the users have to wrap their code with a call to the
+\texttt{with-user-meta-process} macro. This macro creates new meta
+process for the user and lets them run the model in that ACT-R meta
+process so as to avoid conflicts with other users running their models
+in ACT-R. 
+
 \subsubsection{Application Server}
 
 % Describe the application server. Dont know if I have to describe the
@@ -270,6 +287,17 @@ GNU Public License.
 
 % Do I advocate the use of lisp here or do I just describe the version
 % being used and its benefits
+
+\subsubsection{ACT-R}
+
+When a user evaluates a model it is compiled by the ACT-R model into a
+thunk. My code is plugged into the parser of the ACT-R compiler so
+that we can access the data structure that is generated as the model
+is parsed. This data structure is then converted into frames. A
+detailed description of the structure of the frames can be found in
+the following sections.
+
+
 
 
 \subsubsection{Translation Layer}
@@ -315,17 +343,18 @@ described below.
   represented by these frames.
 \end{itemize}
 
+The names of the all frames except the name of the frame that represents
+the model are appended with a random symbol so as to avoid name
+clashes. 
+
 %Describe what happens here....draw diagrams to show frames from
 %various levels...for example frames that represent productions,
-%models, actions and conditions. 
-When a user evaluates a model it is compiled by the ACT-R model into a
-$<$SOME SORT OF THUNK$>$. My code is plugged into the parser of the
-ACT-R compiler so that we can access the data structure that is
-generated. This data structure is then converted into frames. 
+%models, actions and conditions.
 
 When a user clicks a link representing the frame a function named
 html-for-browse-frame is called. This function searches for the frame
 and then converts it to code which is then returned to the browser.
+
 
 \section{Work Flow}
 
@@ -482,25 +511,86 @@ slots of the buffer.
 % Explain how constraints are be maintained.
 %TODO: Draw a diagram that shows an abstract representation of the
 %crossword puzzle.
-The data structure for the clues is exceedingly simple. 
+The data structure for the clues is exceedingly simple. The data
+structure is a list of clues(which are represented as chunks), where
+every clue is a list that consists of the starting co-ordinates of the
+word, the direction(either across or down), the clue string, a
+location to put in a solution and the actual solution itself. The data
+structure is manipulated using a the \texttt{Crossword} module. The
+crossword module has the ability: to set words in the specified
+location; to verify if the crossword still maintains constraints and
+to query various parameters of a specific clue.
 
 % Describe the productions
 % Describe the algorithm
+When the model(the source code of the model is available in appendix
+A) is evaluated it initializes three chunk definitions: a chunk type
+to maintain the state of the goal buffer initially; a chunk type that
+defines the clue and a chunk type that maintains the state of the goal
+buffer as we actually get into the process of solving the
+crossword. It sets up a few parameters so as to prevent the decay of
+crossword chunks in the memory. We then check the memory to see if we
+can find any clues that have not been added to the data structure. If
+we find a chunk that has not been added to the crossword we add it
+in. Once added in we update the goal to find all the synsets of the
+word. This is done by querying the WordNet module. For every synset
+found we create a chunk using the \texttt{imaginal} module. If we
+cannot find the word we display an error message. For every chunk that
+we had created earlier, we query WordNet to obtain all the words
+in the synset if the word we have found matches the solution we set it
+in the clue and mark the clue as solved. This process repeats till all
+the clues have been solved or have been marked as being unsolvable.
 
-
+%TODO: do I put in a high level view of the algorithm?
+The output trace of this model is available in Appendix B. It shows
+the trace for two words: one where we are able to solve the clue the
+other being unsolvable. The trace clearly shows the working of the
+algorithm in explicit detail.
 
 \subsection{Conclusions}
 
 % Talk about why the system is usable
+The proof of concept demonstrates that we have a system that can be
+used in the real world. We can assert this claim with confidence
+because we have been able to write and run a medium scale model on the
+system. 
 
 % Show that the objectives that we set out to meet have been met.
+We can further assert that we have met most of the objectives that we
+had set for ourselves through this model: we set up an environment
+where any other researcher can work with the WordNet module, we also
+wrote up a module that was required for the data structure; we can
+demonstrate the capability of resource sharing, running the model on
+my personal computer brought my computer down to a crawl because the
+WordNet module loads all the chunks into memory, whereas the model ran
+fine when run off the server and although the model did not make use
+of any third party tools, the system has a regular expression library
+and a package management, Another System Definition Facility(ASDF), 
+system integrated into it.
 
-% Talk about the difficulties faced
+% Effort.
+The project added about 1000 lines of code to the existing code
+base. That figure does not include the lines of code of the model. The
+challenges faced during the development of the project involved:
+deciding the structure of the frames so that we have a right level of
+granularity and at the same time we don't loose any information
+related to the productions; designing a way so that using the system
+is as intuitive to the user as can be; figuring out a way to provide
+collaboration using frames; analyzing the ACT-R compiler to identify
+locations where the translation layer would hook in and, identifying
+and fixing a couple of existing bugs in the existing system.
 
 An evaluation of the collaborative aspects of the use of Coglaborate
 are unfortunately beyond the scope of this thesis.  Some evidence for
 this capability is provided by experience with BioBike; some
 similarities in the benefits can be expected.  Nevertheless an
 illustration of the use of Coglaborate to solve a medium-sized problem
-should give insight into some of the strengths and weaknesses of the
-approach.
+should gives us insight into some of the strengths and weaknesses of
+the approach.
+
+
+
+
+
+
+
