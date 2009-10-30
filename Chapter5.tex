@@ -266,11 +266,10 @@ clients; a comprehensive test suite to verify the functionality of the
 client, server, proxy and SSL. It is licensed under the Lisp Lesser
 GNU Public License. 
 
-\subsubsection{Lisp}
+%\subsubsection{Lisp}
 
 % Do I advocate the use of lisp here or do I just describe the version
 % being used and its benefits
-
 
 
 \subsubsection{Translation Layer}
@@ -286,14 +285,47 @@ current frame represents and the name of the object that the frame
 represents. The structure of all the frames created by the code is
 described below.
 
+%TODO: Put in a diagram that shows these frames in a hierarchical fashion
+
 \begin{itemize}
-\item \emph{The model frame:} This frame consists of 
+\item \emph{The model frame:} A model frame represents an ACT-R
+  model. It consists of a code slot that holds all the code that is
+  required by the model: this includes code for initialization of the
+  model and miscellaneous utility functions that may be required by
+  the model. It has a slot for productions that are a part of the
+  model.
+\item \emph{The production frame:} A production frame consists of a
+  conditions slot, which defines the conditions that are required for
+  the condition to fire, and a actions slot which lists all the
+  actions that will be executed if that production is fired.
+\item \emph{The buffer test frames:} Every production in ACT-R consists
+  of a number of conditions. Each condition consists of a number of
+  tests. Each buffer test frame represents one such test. This frame
+  has a slot to represent individual clauses within the test.
+\item \emph{The conditions frames:} The conditions frames represent an
+  individual clause it consists of a test field that represents the
+  buffer variable it is testing and a value field that represents a
+  value against which we are testing it. This field can also hold
+  variable as in ACT-R productions.
+\item \emph{The buffer actions frames:} ACT-R productions can perform
+  a number of actions that can either modify, clear or retrieve a
+  chunk in a buffer. These actions are represented by these frames.
+\item \emph{The action frames:} Individual clauses that represent the
+  modifications that are required to be made to the buffer are
+  represented by these frames.
 \end{itemize}
 
 %Describe what happens here....draw diagrams to show frames from
 %various levels...for example frames that represent productions,
 %models, actions and conditions. 
+When a user evaluates a model it is compiled by the ACT-R model into a
+$<$SOME SORT OF THUNK$>$. My code is plugged into the parser of the
+ACT-R compiler so that we can access the data structure that is
+generated. This data structure is then converted into frames. 
 
+When a user clicks a link representing the frame a function named
+html-for-browse-frame is called. This function searches for the frame
+and then converts it to code which is then returned to the browser.
 
 \section{Work Flow}
 
@@ -372,11 +404,98 @@ result of clicking the said link.
 %         - Describe how the reverse procedure is implemented
 
 \section{Proof of concept}
+
 % Proof of concept
 %        - Problem description
 %        - Approaches
 %        - Approach taken
 %        - What can be deduced from it.
+
+% Explain the need 
+% What are we trying to prove by this proof of concept
+
+% 1) The system can handle medium sized models
+
+% 2) It provides us with the benefits we set out when we set out to
+% develop this project
+
+To evaluate the capabilities of the system we built a simple but a
+medium scale models. The essence of this exercise are two fold:
+firstly we show that the system is capable of performing a non-trivial
+cognitive modeling exercise and secondly to demonstrate the level of
+maturity of the system. This section discusses the problem description,
+the approaches that we have chosen and what we can deduce from this.
+
+\subsection{Problem description}
+
+% Give a brief description of the problem
+%Describe the crossword
+%describe synonyms
+A crossword puzzle is a puzzle in which words or phrases are entered
+into an interlocking grid either horizontally or vertically. The words
+are determined by a series of clues that define the word or the
+phrase. Two or more words are synonyms if they can be exchanged in the
+same context while maintaining the meaning of the context. Our proof
+of concept problem is a crossword puzzle where the clues and the
+solutions are defined as being synonyms of each other.
+
+
+%Describe why is this a good idea
+This problem is an appropriate problem to choose for the following
+reasons: it demonstrates that this system is a practical system and is
+ready for the outside world, albeit the code needs little bit of
+polishing; it demonstrates that users can use this system to write and
+test sand boxed act-r modules and finally it places considerable
+demands on the hardware of the computer, in terms of memory and
+CPU. As a consequence we can demonstrate that we have achieved most of
+the objectives we had in mind for the system.
+
+\subsection{Implementation}
+
+% Start up by describing wordnet
+The data that helps us determine the solution to our clues is provided
+by WordNet\cite{journals/cacm/Miller95}. Miller defines WordNet in the
+following terms:
+
+\begin{quote}
+  WordNet is an online lexical database designed for use under
+  program control. English nouns, verbs, adjectives, and adverbs are
+  organized into sets of synonyms, each representing a lexicalized
+  concept. Semantic relations link the synonym sets. 
+\end{quote}
+
+% Describe the WordNet module
+We use a module(WNLexical) that enables ACT-R to make use of the
+WordNet lexical database. The module does so by converting the WordNet
+database into set of s-expressions that can be read in by the
+WNLexical module and stored as ACT-R chunks. The WNLexical module
+exposes its functionality through the means of an ACT-R buffer, aptly
+named \texttt{wn-lexical}. This buffer can query the WordNet database
+for synonyms, antonyms, hyponyms, meronyms, glossaries of words
+etc. The results of these queries are available from accessing the
+slots of the buffer.
+
+
+% Describe the data strcutre module,
+%%% Discuss its capabilitis
+%%% Dicusss the interfaces it exposes
+% Explain how constraints are be maintained.
+%TODO: Draw a diagram that shows an abstract representation of the
+%crossword puzzle.
+The data structure for the clues is exceedingly simple. 
+
+% Describe the productions
+% Describe the algorithm
+
+
+
+\subsection{Conclusions}
+
+% Talk about why the system is usable
+
+% Show that the objectives that we set out to meet have been met.
+
+% Talk about the difficulties faced
 
 An evaluation of the collaborative aspects of the use of Coglaborate
 are unfortunately beyond the scope of this thesis.  Some evidence for
