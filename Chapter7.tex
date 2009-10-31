@@ -4,39 +4,48 @@
 
 % Talk about 
 % What are the implications of the 
-When we decided to embark on this project we set pretty high goals for
-our selves. We ended up achieving most of the original objectives of
-the project. This chapter discusses the utility of the project, the
-challenges we faced and tries to envision a way forward for this project.
+This project began with very ambitious goals, but in the end most of
+the original objectives were achieved.  This chapter discusses the
+utility of the project, the challenges that were faced, and a way
+to move forward on this work.
 
 \section{Discussion}
 
-The readers of this report may inquire about the utility of this
-undertaking. We can say with confidence that this project would add
-tremendous value to the community. It would provide a central location
-where student and researchers can learn from one another; it would
-provide the support and resources need to carry out ambitious
-cognitive modeling projects that in some cases might not be possible
-due to constraints on hardware or software infrastructure and finally
-it would foster a strong culture of collaboration the community.
+Readers may wonder about the utility of this undertaking. We have some
+confidence that this project will add value to the cognitive modeling
+community. It provides a central location where students and
+researchers can learn from one another; it improves support and
+resources available for ambitious cognitive modeling projects that in
+some cases might not be possible otherwise, due to constraints on
+hardware or software infrastructure; finally it has the potential to
+foster a stronger culture of collaboration among community members.
 
 \subsection{Challenges and future work}
 
 %Talk about the limitations of the system
 
-Unlike the graphical interface to ACT-R, Coglaborate does not provide
-the user with the ability to step through productions and view the
-contents of the buffers as the model is being executed. This as a
-result may make it difficult to deal with bugs in models. 
+Coglaborate has some limitations.
+%
+There exists a graphical user interface to ACT-R, which we have
+mentioned only briefly.  Coglaborate, in its current state, does not
+provide all of the same functionality of this interface.  For example,
+Coglaborate does not enable the user to step through productions or
+view the contents of buffers as a model is being executed.  The
+existing graphical user interface may thus make it easier to build and
+debug models.  However, Coglaborate offers compensating advantages,
+and it could easily be extended to incorporate existing development
+aids.
 %  - Lack of a stepper
 %  - Buffer, production viewer
 
 % Persistence
-Like BioBike, Coglaborate provides apparent persistence. This is
-primarily because existing database systems do not permit us to store
-lisp objects to the disk. But recently Allegro has introduced an
-object persistence library called Allegro Cache as part of its
-platform. Therefore adding persistence in the future would be trivial.
+Like BioBike, Coglaborate provides persistence that is only apparent;
+objects persist over the lifetime of the active Lisp environment.  The
+practical limitation here is the lack of standardization between
+database systems that support persistence and Lisp environments in
+common use.  Recently Allegro has introduced an object persistence
+library called Allegro Cache as part of its platform; adding
+persistence in the future should be a simple matter of programming.
 
 %  - As of now no clean way to provide support for module that require
 %  visual support except through means of collaboration.
@@ -48,37 +57,46 @@ platform. Therefore adding persistence in the future would be trivial.
 The current version of the system uses an abstraction of ACT-R called
 meta processes to provide isolation between models, although as of now
 it serves its purpose, true isolation could be achieved by permitting
-the application server let every user spawn a new lisp process if
+the application server let every user spawn a new Lisp process if
 required. This facility would make the system more robust and might
-help in case we might need to perform load balancing operations.
+help load balancing is needed in the future.
 
-The system can be tested for effectiveness by opening out to the
-community, obtaining the feedback and improving it. This way we can
-test the effectiveness of collaboration in cognitive modeling in the
-real world.
-
+Other limitations remain to be discovered.  We believe that the system
+can best be tested for effectiveness by opening it up the community,
+obtaining the feedback and improving it. This way we can test the
+effectiveness of collaboration in cognitive modeling in the real
+world.
 
 \subsection{Implications of this work}
 
-When creating a representation for ACT-R models I realized that we
-could use this representation to open up a number of other
-possibilities. This section discusses two such possibilities.
+On creating a frame-based abstraction for ACT-R models it quickly
+became clear that this representation could be used to explore a
+number of other possibilities. This section discusses two such
+possibilities.
 
 % Talk about what areas of research this opens up and the implications
-As observed by Langley et. al. in \cite{citeulike:4182324} one issue
-facing cognitive modeling is the issue of providing software
-reuse. This project promotes reuse of models but in perhaps the most
-naive manner possible. A more interesting research problem would be to
-investigate software reuse as provided by object oriented programming
-systems. That is we can develop features such that models can inherit
-behavior from other more general models, this way we would be able
-identify general patterns that emerge from human cognition.
+As observed by Langley et al.~\cite{citeulike:4182324}, an important
+issue facing cognitive modeling is support for software reuse. This
+project promotes reuse of models in the sense that the representation
+allows for models to be represented, analyzed, and distributed in a
+much more transparent fashion than in their current representation as
+Lisp code.  Today, it is impossible to determine the similarity
+between two ACT-R models except through code inspection and ad hoc
+judgments.  The frame-based representation introduced in this research
+makes more sophisticated analysis possible: comparison of the use of
+buffers across productions, for example.  Such analyses remain for
+future work.
 
-Another area of interest that we envision for this system would be
-investigation into creating a user interface that would allow
-cognitive scientists to create models with out actually having the
-learn lisp. This way we can provide a gentler learning curve for
-people working with ACT-R.
+Another interesting research direction would be to investigate software
+reuse as provided by object-oriented programming environments.  That
+is, we can develop features such that models can inherit behavior from
+other more general models.  This way we should be able identify
+general patterns that emerge from human cognition.
+
+Yet another area of interest for this system is the investigation of
+user interfaces that allow cognitive scientists to create models
+without actually having to learn Lisp. This could lead to a gentler
+learning curve for people working with ACT-R.
 % Software reuse as in an object oriented way. This way we would
 % be able to get more general models and hence theories that would
 % help us identify patterns

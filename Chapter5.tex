@@ -154,9 +154,39 @@ fit to the system.
 An ACT-R model is a representation of a hypothesis of how a specific
 aspect of human functions. As described in Chapter
 \ref{The_nature_of_cognition} the ACT-R theory postulates the
-existence of two types of knowledge namely: declarative knowledge\cite{actr-tut}, is
-the type of knowledge that a person is supposed to know when solving a
-problem and procedural memory
+existence of two types of knowledge namely: declarative
+knowledge\cite{actr-tut}, is the type of knowledge that a person is
+supposed to know when solving a problem and procedural memory, is the
+knowledge that governs our behavior.
+
+Declarative memory in ACT-R is represented by
+chunks\cite{actr-tut}. Every chunk is composed of slots and values, it
+is these slots and values that define the characteristics of
+chunks. Chunk types are entities that define the slots for
+chunks. They serve the purpose of categorizing
+chunks\cite{actr-tut}. A chunk type is defined using the
+\texttt{chunk-type} macro. Chunks are added to the declarative memory
+using the \texttt{add-dm} macro. 
+
+
+\begin{figure}
+\label{production_fig}
+\centering
+\begin{center}
+\begin{verbatim}
+                 (p name ``optional documentation string''
+                    buffer tests
+                   ==>
+                    buffer changes and requests)
+\end{verbatim}
+\end{center}
+\caption{General form of a production\cite{actr-tut}}
+\end{figure}
+
+Productions are generally of the form as shown in figure
+\ref{production_fig}. They consist of condition-action pair. The
+condition tests the buffers to see if the chunks in the buffers, if
+the value of the chunks 
 
 \subsubsection{Representation of the model}
 A structured representation of an ACT-R model is intended to provide
