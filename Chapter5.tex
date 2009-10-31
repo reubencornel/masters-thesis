@@ -78,7 +78,7 @@ knowledge being treated on par with other elements that make up a
 computer system.  Operating systems provide useful abstractions for
 users to work with the elements of a system.  A simple example is a
 file, an abstraction over regions of hardware storage.  An operating
-system provide functions by which this file can be renamed, copied,
+system provides functions by which this file can be renamed, copied,
 deleted, and so forth. It also provides further abstractions that
 allow significant modifications to raw data. The KnowOS vision extends
 this analogy to the realm of knowledge. An implementation of the
@@ -160,7 +160,7 @@ supposed to know when solving a problem and procedural memory, is the
 knowledge that governs our behavior.
 
 Declarative memory in ACT-R is represented by
-chunks\cite{actr-tut}. Every chunk is composed of slots and values, it
+chunks\cite{actr-tut}. Every chunk is composed of slots and values; it
 is these slots and values that define the characteristics of
 chunks. Chunk types are entities that define the slots for
 chunks. They serve the purpose of categorizing
@@ -184,10 +184,91 @@ using the \texttt{add-dm} macro.
 
 Productions are generally of the form as shown in figure
 \ref{production_fig}. They consist of condition-action pair. The
-conditions tests the values in buffers, buffers are interface between
+conditions tests the values in \emph{buffers}, buffers are interface between
 ACT-R's procedural module and other components, if the buffer tests
 are satisfied the production applies and the actions in the
-productions are executed. 
+productions are executed.
+
+\begin{figure}
+  \centering
+\begin{verbatim}
+                (define-model count
+                    (chunk-type count-order first second)
+                    (chunk-type count-from start end count)
+
+                    (add-dm
+                         (b ISA count-order first 1 second 2)
+                         (c ISA count-order first 2 second 3)
+                         (d ISA count-order first 3 second 4)
+                         (e ISA count-order first 4 second 5)
+                         (f ISA count-order first 5 second 6)
+                         (first-goal ISA count-from start 2 end 4))
+
+                   (p start
+                      =goal>
+                       ISA         count-from
+                       start       =num1
+                       count       nil
+                     ==>
+                      =goal>
+                       count       =num1
+                     +retrieval>
+                       ISA         count-order
+                       first       =num1)
+                   .
+                   . 
+                   .
+                )
+
+\end{verbatim}
+  \label{act-r-model}
+  \caption{Example of a simple ACT-R model}
+\end{figure}
+
+Consider an example ACT-R model, this example has been taken
+from\cite{actr-tut}, shown in figure \ref{act-r-model}. This is a
+model that simulates how to count. As described earlier we define
+chunk types using the \texttt{chunk-type} command. In this model we
+use two chunk type definitions: a count order chunk type that declares
+the order in which numbers are meant to appear and a count-from chunk
+type that helps us define the numbers from and to we are counting. The
+definition of chunk-type for \texttt{count-from} defines the number we
+are supposed to start counting at indicated by the slot
+\texttt{start}. The number we are supposed to stop counting at is
+defined by the slot \texttt{end}. The slot \texttt{count} helps us
+maintain state in the model by storing the number we are currently
+at. 
+
+The call to \texttt{add-dm} adds chunks into the declarative
+memory. The chunk definitions define the type of chunk and specify
+slots and their values.
+
+A production called \texttt{start} is defined. This production has one
+condition and two actions separated by \texttt{==>}. We deal with two
+buffers in this production namely: the \texttt{goal} buffer, that
+helps up maintain the state of model and the \texttt{retrieval} buffer
+that helps us retrieve chunks from the declarative memory. In any
+production test, the start of a condition is identified by the symbol
+\texttt{=} followed by the name of the buffer and ends with the symbol
+\texttt{>}. The condition must always test the type of chunk in the
+buffer that is done using the \texttt{ISA} test. In the tests terms
+starting with an \texttt{=} sign are variables, the scope of these
+variables extend only to the current production. Anything else in the
+terms is a hard value against which we test the production.
+
+The actions section the production can define three types of actions
+that can be performed on the buffers: buffer modification, where we
+modify the contents of a slot of a chunk in the buffer; buffer
+retrieval request, where we request the buffer to pick up a chunk from
+the declarative memory and a buffer clear, where we clear the chunk
+from a buffer. These operations are indicated by the symbols:
+\texttt{=}, for buffer modification; \texttt{+} for buffer retrieval
+and \texttt{-} for clearing a buffer. These symbols are followed by
+the name of the buffer on which these operations will be performed
+followed by the \texttt{>} symbol. Specific actions or values are
+defined in the lines the follow this line. These definitions can be
+seen in figure \ref{act-r-model}.
+  
 
 \subsubsection{Representation of the model}
 A structured representation of an ACT-R model is intended to provide
@@ -297,12 +378,19 @@ platform on which to base our system.
 
 \subsubsection{The User}
 
-The user interacts with the system through a web browser. When a user
-logs in he is put into the ACT-R package. This is done because it was
-not possible to export all the required variables and functions into
-the user package. This is because ACT-R either lets us export all its
-symbols into to the \texttt{cl-user} package or the \texttt{act-r}
-package. 
+The user of this system would be a researcher who uses ACT-R for
+modeling cognitive tasks. He typically would use a text editor to
+create his models and a graphical user interface provided by ACT-R to
+run his model. His tasks essentially consist of defining knowledge
+structures that define the model like chunk-types, chunks and
+productions that define the cognitive task.
+
+The user interacts with the coglaborate system through a web
+browser. When a user logs in he is put into the ACT-R package. This is
+done because it was not possible to export all the required variables
+and functions into the user package. This is because ACT-R either lets
+us export all its symbols into to the \texttt{cl-user} package or the
+\texttt{act-r} package.
 
 The only thing different about the models being written to run on
 their own system and those that are run on the Coglaborate system is
@@ -310,7 +398,7 @@ that the users have to wrap their code with a call to the
 \texttt{with-user-meta-process} macro. This macro creates new meta
 process for the user and lets them run the model in that ACT-R meta
 process so as to avoid conflicts with other users running their models
-in ACT-R. 
+in ACT-R.
 
 \subsubsection{Application Server}
 
@@ -395,7 +483,7 @@ clashes.
 
 When a user clicks a link representing the frame a function named
 html-for-browse-frame is called. This function searches for the frame
-and then converts it to code which is then returned to the browser.
+and then converts it to code that is then returned to the browser.
 
 
 \section{Work Flow}
@@ -426,8 +514,8 @@ text box is used to type in one off commands.
 \end{figure}
 
 Once a frame representation of the model has been created any other
-user can search for the model if he knows the name of the model. This
-is done by clicking the ``Find Frames'' link. The result of the search
+user can search for the model if he knows the name of the
+model. Clicking the ``Find frames'' link does this. The result of the search
 is shown in figure \ref{SearchForModel}.
 
 \begin{figure}[htp]
@@ -450,7 +538,7 @@ the links inside the frame table.
 \end{figure}
 
 Figure \ref{NavigatingAProduction} shows us the frame representation
-of a production, this is obtained by clicking any link in the slot
+of a production; this is obtained by clicking any link in the slot
 value column of the model frame for the slot name ``productions''. The
 user can investigate a production further by clicking on the links in
 the slot value section. 
@@ -558,7 +646,7 @@ structure is a list of clues(which are represented as chunks), where
 every clue is a list that consists of the starting co-ordinates of the
 word, the direction(either across or down), the clue string, a
 location to put in a solution and the actual solution itself. The data
-structure is manipulated using a the \texttt{Crossword} module. The
+structure is manipulated using the \texttt{Crossword} module. The
 crossword module has the ability: to set words in the specified
 location; to verify if the crossword still maintains constraints and
 to query various parameters of a specific clue.
@@ -622,24 +710,28 @@ system has a regular expression library and a package management,
 Another System Definition Facility(ASDF), system integrated into it.
 
 % Effort.
-The project added about 1000 lines of code to the existing code
-base. That figure does not include the lines of code of the model. The
-challenges faced during the development of the project involved:
-deciding the structure of the frames so that we have a right level of
-granularity and at the same time we don't loose any information
-related to the productions; designing a way so that using the system
-is as intuitive to the user as can be; figuring out a way to provide
-collaboration using frames; analyzing the ACT-R compiler to identify
-locations where the translation layer would hook in and, identifying
-and fixing a couple of existing bugs in the existing system.
+The project added about one thousand lines of code to the existing
+code base. That figure does not include the lines of code of the
+model. The challenges faced during the development of the project
+involved: deciding the structure of the frames so that we have a right
+level of granularity and at the same time we don't loose any
+information related to the productions; designing a way so that using
+the system is as intuitive to the user as can be; figuring out a way
+to provide collaboration using frames; analyzing the ACT-R compiler to
+identify locations where the translation layer would hook in and,
+identifying and fixing two existing bugs in the system. The model
+consists of sixteen productions with a total of about four hundred and
+sixty lines of code.
 
 An evaluation of the collaborative aspects of the use of Coglaborate
 are unfortunately beyond the scope of this thesis.  Some evidence for
 this capability is provided by experience with BioBike; some
 similarities in the benefits can be expected.  Nevertheless an
 illustration of the use of Coglaborate to solve a medium-sized problem
-should gives us insight into some of the strengths and weaknesses of
+should give us insight into some of the strengths and weaknesses of
 the approach.
+
+
 
 
 

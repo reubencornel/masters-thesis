@@ -32,7 +32,7 @@ it deals with the brain at the lowest level.
 %
 Computer science contributes knowledge representation, which is used
 to develop theories to represent the way knowledge is stored,
-artificial intelligence, which is used to analyse and create methods
+artificial intelligence, which is used to analyze and create methods
 for problem solving, and the theory of computation, which is used as a
 means to understand foundational limits on cognition as
 information processing.
@@ -52,7 +52,7 @@ the following questions.
 \begin{itemize}
 \item \emph{What is knowledge and how can it be categorized?}  Since the aim
   of cognitive science is to understand the working of the human mind
-  it is essential the nature of knowledge is understood because human
+  it is essential the nature of knowledge be understood because human
   beings function by processing information. Therefore it is
   imperative that we understand what knowledge is and the different
   forms of knowledge that are available.
@@ -61,8 +61,7 @@ the following questions.
   millennia we are still not certain of its characteristics.  For
   example, Brachman and Levesque~\cite{brachman-levesque:2004a}
   describe knowledge as a function that maps a ``knower'' to a
-  proposition. A proposition is a statement that determines the truth
-  value of the belief of the knower. But they also acknowledge that
+  proposition. A proposition is a statement that determines the truth-value of the belief of the knower. But they also acknowledge that
   not all knowledge is of this form, for example, ``how to'' knowledge
   that enables someone to ride a bicycle.
 
@@ -117,9 +116,9 @@ would require.  A cognitive system must
   human cognition functions in a haphazard manner. But Newell makes it
   clear that he is referring to the view that a cognitive system can
   be viewed as an instance of a universal computer, specifically a
-  turing machine, despite its occasional failings and lack of infinite
+  Turing machine, despite its occasional failings and lack of infinite
   memory. He further explains that this view does not indicate the
-  inablity to perform special operations, for example, vision. He
+  inability to perform special operations, for example, vision. He
   explains that, like computers with special processing units, the
   cognitive system can be made up of special purpose systems that
   specialize in a certain task. As an example consider a chemist who
@@ -132,13 +131,13 @@ would require.  A cognitive system must
   is important because otherwise a system could lead us to wrong
   assumptions about how humans think.
 
-\item {\em Exhibit rational adaptive behaviour:} It must be able to
+\item {\em Exhibit rational adaptive behavior:} It must be able to
   explain this because humans perform computations, in the words of
   Newell\cite{Newell:1990aa}, are for ``the service of goals and
   rationally related to obtaining things that let the organism survive
   and propagate.''
 
-\item {\em Display dynamic behaviour:} Humans operate in an
+\item {\em Display dynamic behavior:} Humans operate in an
   environment that is ever changing. They draw in this information
   from their environment and act on it appropriately. For example, if
   you are driving a car and at some moment a deer decides to sprint in
@@ -186,7 +185,7 @@ knowledge is vertical and cannot be integrated as easily.
 \section{Approaches towards explaining cognition}
 There are many theories on the nature of cognition, each taking a
 position on what constitutes cognitive functions and how they are
-carried out. But these approches can be bifurcated into approaches
+carried out. But these approaches can be bifurcated into approaches
 that adhere to the \emph{cognitivist
   approach}~\cite{DBLP:journals/tec/VernonMS07}, theories that view
 cognition as information processes manipulating symbols, and those
@@ -208,7 +207,7 @@ contentful, representational, and can be described
 formally\cite{103009}. Knowledge derived from these computations can
 be stored and used later to improve the reasoning of the system. The
 cognitivist view of perception is that it functions to generate an
-appropriate representation of the the world around the system, which
+appropriate representation of the world around the system, which
 the system can then reason about~\cite{DBLP:journals/tec/VernonMS07}.
 
 The task of building models in cognitivist systems is generally done
@@ -271,7 +270,7 @@ gap''\cite{DBLP:journals/tec/VernonMS07}.
      individual computational units. This implies that learning in
      connectionist models can be viewed more as a skill-building
      exercise, rather than an exercise in knowledge acquisition as in
-     the case of the congitivist approaches~\cite{DBLP:journals/tec/VernonMS07}.
+     the case of the cognitivist approaches~\cite{DBLP:journals/tec/VernonMS07}.
      
      The main attraction of connectionism is that it provides neural
      plausibility\cite{103009} to theories of cognitive science in its
@@ -343,7 +342,7 @@ we will also look at some sample cognitive architectures.
 In this section I will describe a number of popular cognitive
 architectures that are currently in use. I will later compare them
 based on a number of criteria that reflect the functions that a
-congitive architecture is supposed to perform.
+cognitive architecture is supposed to perform.
 
 % General template
 % Describe architecure
@@ -467,16 +466,16 @@ define the characteristics of \soar are these:
 % Describe the motivations behind SOAR, the technical ideas that
 % constitute 
 \begin{itemize}
-\item \emph{Physical symbol system hypothesis} : General intelligence
+\item \emph{Physical symbol system hypothesis}: General intelligence
   can be realized with a symbolic system\cite{Newell1980135}.
 \item \emph{Goal structure hypothesis}: Control of general
   intelligence is maintained by a symbolic goal system.
 \item \emph{Uniform elementary-representation hypothesis}: There is a
   single representation for declarative knowledge.
 \item \emph{Problem space hypothesis}: problem spaces are the
-  fundamental organizational unit of all goal directed behaviour.
+  fundamental organizational unit of all goal directed behavior.
 \item \emph{Production system hypothesis}: Production systems are the
-  appropriate encoding for long term knowledge.
+  appropriate encoding for long-term knowledge.
 \item \emph{Universal sub-goaling hypothesis}: Any decision can be an
   object of goal-oriented attention.
 \item \emph{Automatic sub-goaling hypothesis}: All goals arise
@@ -536,7 +535,7 @@ given circumstance.  Preferences in the memory are used to compare a
 selected set of operators with one another in an attempt to pick 
 the best operator. Actions in productions are instrumental in creating
 productions. These remain active as long as the production is deemed
-suitable for the situtation and are removed once the production is no longer
+suitable for the situation and are removed once the production is no longer
 valid.
 
 \emph{Working Memory} (WM) describes memory that hold information
@@ -547,7 +546,7 @@ that hold specific information about a specific identifier. Elements
 in working memory are created by the action of productions, a state
 created as a result of an \emph{impasse}, or because of the action of
 external I/O systems. Information from the working memory is removed
-only when it becomes irrelevant to the existing situtation. This
+only when it becomes irrelevant to the existing situation. This
 architecture can be seen in figure \ref{SOAR_ARCH}.
 
 \begin{figure}[htp]
@@ -570,7 +569,7 @@ memory. The {\em decide} phase makes a decision about what the system should
 do next. If all the processes of the decide step converge to a
 decision, then that decision is placed in the working memory with the
 assertion that this decision would be the next step. The {\em act} phase
-involes actually realizing the step. 
+involves actually realizing the step. 
 % Give an overview of chunking
  
 During the decision phase it is possible that the
@@ -579,7 +578,7 @@ called an \emph{impasse}. In the event that an impasse is detected, a
 substate of the current state is created whose goal is to resolve the
 inconsistency. New productions are produced as a result of this
 problem-solving activity. The conditions of the new productions
-consist of information about the the state of working memory before the
+consist of information about the state of working memory before the
 impasse; the actions consist of  new information obtained from
 resolving the impasse. If a similar situation is encountered in the
 future, the conditions are matched and the corresponding actions are
@@ -620,7 +619,7 @@ machinery. The motivations for developing this architecture are
   cognitive modeling perspective, an executive process is one that
   controls all other cognitive processes. Kieras and Meyer intended to
   study this aspect of cognition. They assert that the best way to do
-  so is to study human performance in a environment that entails
+  so is to study human performance in an environment that entails
   execution of multiple tasks, and that human cognitive capability is
   constrained only by the physical limitations.
 \end{itemize}
@@ -771,43 +770,43 @@ Lebiere~\cite{CambridgeJournals:207162}.
 \caption{Comparison of various cognitive architectures}
 \label{tab:architecture-comparison}
   \begin{tabular}{p{3cm}p{4cm}p{4cm}p{4cm}p{4cm}}
-  \hline
-  Parameters & ACT-R & EPIC & SOAR & CLARION \\
-  \hline
-  & & & &\\
-  Representation of knowledge in memory & Knowledge represented as chunks. Memory consist of a
-  working memory and long term memory.& Long term and short term
-  memory where information was stored as productions in long term
-  memory & Knowledge in both the short term and long term memory
-  represented as production rules& Procedural at the bottom level and
-  declarative at the top  \\
-  & & & &\\
-  Goals  & Maintained by the goal buffer & Priority based task
-  deferment~\cite{Pew:1998aa}& Represented as states & Goal stack or list \\
-  & & & &\\
-  Problem Solving  & Based on selection and execution of production
-  and the underlying neural network.& Problem solving based on &Search
-  of the solution space& Combination of calculated Q-Values and rules\\
-  & & & &\\
-  Planning  & Creation of sub-goals&General planning & Selection of
-  productions that leads the system closer to achieving its
-  goals. &Search through the Q-Value space \\
-  & & & &\\
-  Learning   & Production compilation&No learning & Learning through
-  chunking & Reinforcement learning and rule extraction \\
-  & & & &\\
-  Perception & Provides vision and auditory faculties through the
-  relevant buffers& Perceptual processors for auditory, visual and
-  tactile faculties & (No explicit commitments.) & Input in terms of dimension/value pairs\\
-  & & & &\\
-  Motor & Provides motor control through the manual and vocal modules&
-  manual, vocal and oculo-motor processors
-  & (No explicit commitments.) &\\
-  & & & &\\
-  Mapping to neuro-biology & Study currently on
-  that maps regions of the brain to specific modules& No mapping& No
-  mapping& based on neural network but no reference to the brain anatomy\cite{Chong:2007aa} \\
-  & & & &\\
+    \hline
+    Parameters & ACT-R & EPIC & SOAR & CLARION \\
+    \hline
+    & & & &\\
+    Representation of knowledge in memory & Knowledge represented as chunks. Memory consists of a
+    working memory and long-term memory.& Long-term and short-term
+    memory where information was stored as productions in long-term
+    memory & Knowledge in both the short term and long term memory
+    represented as production rules& Procedural at the bottom level and
+    declarative at the top  \\
+    & & & &\\
+    Goals  & Maintained by the goal buffer & Priority based task
+    deferment~\cite{Pew:1998aa}& Represented as states & Goal stack or list \\
+    & & & &\\
+    Problem Solving  & Based on selection and execution of production
+    and the underlying neural network.& Problem solving based on &Search
+    of the solution space& Combination of calculated Q-Values and rules\\
+    & & & &\\
+    Planning  & Creation of sub-goals&General planning & Selection of
+    productions that leads the system closer to achieving its
+    goals. &Search through the Q-Value space \\
+    & & & &\\
+    Learning   & Production compilation&No learning & Learning through
+    chunking & Reinforcement learning and rule extraction \\
+    & & & &\\
+    Perception & Provides vision and auditory faculties through the
+    relevant buffers& Perceptual processors for auditory, visual and
+    tactile faculties & (No explicit commitments.) & Input in terms of dimension/value pairs\\
+    & & & &\\
+    Motor & Provides motor control through the manual and vocal modules&
+    manual, vocal and oculo-motor processors
+    & (No explicit commitments.) &\\
+    & & & &\\
+    Mapping to neuro-biology & Study currently on
+    that maps regions of the brain to specific modules& No mapping& No
+    mapping& based on neural network but no reference to the brain anatomy\cite{Chong:2007aa} \\
+    & & & &\\
 
 \end{tabular}
 \end{table}
@@ -859,7 +858,7 @@ out clearly by Langley et al.~\cite{citeulike:4182324}:
 \item \emph{Accurately reflecting perceptive abilities of physical
     agents}: Most architectures tend to ignore the fact that a human
   has limited abilities to gather information relevant to a given
-  task. Architectures need to replicate this behaviour if we are to
+  task. Architectures need to replicate this behavior if we are to
   acquire a greater understanding of human cognition.
 
 % People Need to focus more on episodic knowledge
@@ -868,7 +867,7 @@ out clearly by Langley et al.~\cite{citeulike:4182324}:
   participation\cite{09011999}; for example, the memory associations
   of one person's eighteenth birthday may be completely different from
   those of another.  The focus on problem solving and skills has
-  distracted cognitive architecture researchers from studing the
+  distracted cognitive architecture researchers from studying the
   complete nature of episodic memory.
 
 % Extend frameworks to build knowledge formalisms to enable
@@ -886,7 +885,7 @@ out clearly by Langley et al.~\cite{citeulike:4182324}:
 
 % No cognitive architectures handle interaction between body and mind.
 \item \emph{Study of body-mind interaction}: Despite the large number
-  of topics addressed in cognitive architecture reseach, the area of
+  of topics addressed in cognitive architecture research, the area of
   body-mind interaction has not been explored in detail.
 
 % Emotions, no architectures handle that
@@ -914,7 +913,7 @@ out clearly by Langley et al.~\cite{citeulike:4182324}:
 
 The challenges described above are conceptual, but they also have an
 engineering component.  From an engineering standpoint, a cognitive
-modeller essentially builds intelligent agents by writing programs
+modeler essentially builds intelligent agents by writing programs
 within a framework that postulates a theory of cognition. There are
 situations where a similar task may be modeled by one or more
 researchers.  In the current state of affairs, collaboration happens
