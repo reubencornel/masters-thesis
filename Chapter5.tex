@@ -148,6 +148,17 @@ fit to the system.
 
 \subsection{Choice of structure for representation}
 % Introduction
+
+\subsubsection{The anatomy of an ACT-R model}
+
+An ACT-R model is a representation of a hypothesis of how a specific
+aspect of human functions. As described in Chapter
+\ref{The_nature_of_cognition} the ACT-R theory postulates the
+existence of two types of knowledge namely: declarative knowledge\cite{actr-tut}, is
+the type of knowledge that a person is supposed to know when solving a
+problem and procedural memory
+
+\subsubsection{Representation of the model}
 A structured representation of an ACT-R model is intended to provide
 an abstraction above the level of modeling code An abstraction should
 give a number of benefits: the ability to share models more
@@ -319,7 +330,7 @@ described below.
 \item \emph{The model frame:} A model frame represents an ACT-R
   model. It consists of a code slot that holds all the code that is
   required by the model: this includes code for initialization of the
-  model and miscellaneous utility functions that may be required by
+  model; chunk definitions for the model and miscellaneous utility functions that may be required by
   the model. It has a slot for productions that are a part of the
   model.
 \item \emph{The production frame:} A production frame consists of a
@@ -494,7 +505,7 @@ following terms:
 \end{quote}
 
 % Describe the WordNet module
-We use a module(WNLexical) that enables ACT-R to make use of the
+We use a module(WNLexical\cite{emond2006wn}) that enables ACT-R to make use of the
 WordNet lexical database. The module does so by converting the WordNet
 database into set of s-expressions that can be read in by the
 WNLexical module and stored as ACT-R chunks. The WNLexical module
@@ -557,16 +568,27 @@ system.
 
 % Show that the objectives that we set out to meet have been met.
 We can further assert that we have met most of the objectives that we
-had set for ourselves through this model: we set up an environment
+had set for ourselves through this model. We set up an environment
 where any other researcher can work with the WordNet module, we also
-wrote up a module that was required for the data structure; we can
-demonstrate the capability of resource sharing, running the model on
-my personal computer brought my computer down to a crawl because the
-WordNet module loads all the chunks into memory, whereas the model ran
-fine when run off the server and although the model did not make use
-of any third party tools, the system has a regular expression library
-and a package management, Another System Definition Facility(ASDF), 
-system integrated into it.
+wrote up a module that was required for the data structure. 
+
+We can demonstrate the capability of resource sharing, running the
+model on my personal computer brought my computer down to a crawl
+because the WordNet module loads all the chunks into memory, whereas
+the model ran fine when executed on the server.
+
+We demonstrated we could share software resources, as a result we gain
+a saving in the amount of effort spent, for example it took me a while
+to figure out that there was a bug in the version of the
+WN-Lexical module and I had to upgrade the module. Now consider
+the amount of effort wasted by numerous other researchers working with
+the same module. With a system like Coglaborate we would require to
+expend that amount of effort only once and the entire community would
+be benefited.
+
+Although the model did not make use of any third party tools the
+system has a regular expression library and a package management,
+Another System Definition Facility(ASDF), system integrated into it.
 
 % Effort.
 The project added about 1000 lines of code to the existing code

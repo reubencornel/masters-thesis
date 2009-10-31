@@ -1,2 +1,86 @@
+% -*- Mode: latex; mode: linkd; mode: auto-fill; mode: flyspell;-*-
 \chapter{Conclusion}
 \label{chap-seven}
+
+% Talk about 
+% What are the implications of the 
+When we decided to embark on this project we set pretty high goals for
+our selves. We ended up achieving most of the original objectives of
+the project. This chapter discusses the utility of the project, the
+challenges we faced and tries to envision a way forward for this project.
+
+\section{Discussion}
+
+The readers of this report may inquire about the utility of this
+undertaking. We can say with confidence that this project would add
+tremendous value to the community. It would provide a central location
+where student and researchers can learn from one another; it would
+provide the support and resources need to carry out ambitious
+cognitive modeling projects that in some cases might not be possible
+due to constraints on hardware or software infrastructure and finally
+it would foster a strong culture of collaboration the community.
+
+\subsection{Challenges and future work}
+
+%Talk about the limitations of the system
+
+Unlike the graphical interface to ACT-R, Coglaborate does not provide
+the user with the ability to step through productions and view the
+contents of the buffers as the model is being executed. This as a
+result may make it difficult to deal with bugs in models. 
+%  - Lack of a stepper
+%  - Buffer, production viewer
+
+% Persistence
+Like BioBike, Coglaborate provides apparent persistence. This is
+primarily because existing database systems do not permit us to store
+lisp objects to the disk. But recently Allegro has introduced an
+object persistence library called Allegro Cache as part of its
+platform. Therefore adding persistence in the future would be trivial.
+
+%  - As of now no clean way to provide support for module that require
+%  visual support except through means of collaboration.
+
+%  - System needs a bit of polish, a few minor bugs
+%  - A better way to provide isolation apart from meta processes
+%    - A means by which we could spawn new lisp processes that could
+%    sandbox the whole environment.
+The current version of the system uses an abstraction of ACT-R called
+meta processes to provide isolation between models, although as of now
+it serves its purpose, true isolation could be achieved by permitting
+the application server let every user spawn a new lisp process if
+required. This facility would make the system more robust and might
+help in case we might need to perform load balancing operations.
+
+The system can be tested for effectiveness by opening out to the
+community, obtaining the feedback and improving it. This way we can
+test the effectiveness of collaboration in cognitive modeling in the
+real world.
+
+
+\subsection{Implications of this work}
+
+When creating a representation for ACT-R models I realized that we
+could use this representation to open up a number of other
+possibilities. This section discusses two such possibilities.
+
+% Talk about what areas of research this opens up and the implications
+As observed by Langley et. al. in \cite{citeulike:4182324} one issue
+facing cognitive modeling is the issue of providing software
+reuse. This project promotes reuse of models but in perhaps the most
+naive manner possible. A more interesting research problem would be to
+investigate software reuse as provided by object oriented programming
+systems. That is we can develop features such that models can inherit
+behavior from other more general models, this way we would be able
+identify general patterns that emerge from human cognition.
+
+Another area of interest that we envision for this system would be
+investigation into creating a user interface that would allow
+cognitive scientists to create models with out actually having the
+learn lisp. This way we can provide a gentler learning curve for
+people working with ACT-R.
+% Software reuse as in an object oriented way. This way we would
+% be able to get more general models and hence theories that would
+% help us identify patterns
+
+% Collaboration - 
