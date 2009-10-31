@@ -168,7 +168,6 @@ chunks\cite{actr-tut}. A chunk type is defined using the
 \texttt{chunk-type} macro. Chunks are added to the declarative memory
 using the \texttt{add-dm} macro. 
 
-
 \begin{figure}
 \label{production_fig}
 \centering
@@ -185,8 +184,10 @@ using the \texttt{add-dm} macro.
 
 Productions are generally of the form as shown in figure
 \ref{production_fig}. They consist of condition-action pair. The
-condition tests the buffers to see if the chunks in the buffers, if
-the value of the chunks 
+conditions tests the values in buffers, buffers are interface between
+ACT-R's procedural module and other components, if the buffer tests
+are satisfied the production applies and the actions in the
+productions are executed. 
 
 \subsubsection{Representation of the model}
 A structured representation of an ACT-R model is intended to provide
