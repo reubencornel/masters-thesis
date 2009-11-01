@@ -35,7 +35,10 @@ thesis.aux: thesis.tex
 
 presentation: Presentation.tex
 	latex Presentation.tex
+	pdflatex Presentation.tex
 	latex Presentation.tex
+	pdflatex Presentation.tex
+
 
 clean:
 	-rm *.aux

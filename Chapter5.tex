@@ -590,7 +590,7 @@ the approaches that we have chosen and what we can deduce from this.
 % Give a brief description of the problem
 %Describe the crossword
 %describe synonyms
-A crossword puzzle is a puzzle in which words or phrases are entered
+A crossword is a puzzle in which words or phrases are entered
 into an interlocking grid either horizontally or vertically. The words
 are determined by a series of clues that define the word or the
 phrase. Two or more words are synonyms if they can be exchanged in the
@@ -600,14 +600,14 @@ solutions are defined as being synonyms of each other.
 
 
 %Describe why is this a good idea
-This problem is an appropriate problem to choose for the following
-reasons: it demonstrates that this system is a practical system and is
-ready for the outside world, albeit the code needs little bit of
-polishing; it demonstrates that users can use this system to write and
-test sand boxed act-r modules and finally it places considerable
-demands on the hardware of the computer, in terms of memory and
-CPU. As a consequence we can demonstrate that we have achieved most of
-the objectives we had in mind for the system.
+This problem is appropriate for the following reasons: it demonstrates
+that this system is a practical and is ready for the outside
+world, albeit the code needs little bit of polishing; it demonstrates
+that users can use this system to write and test sand boxed act-r
+modules and finally it places considerable demands on the hardware of
+the computer, in terms of memory and CPU. As a consequence we can
+demonstrate that we have achieved most of the objectives we had in
+mind for the system.
 
 \subsection{Implementation}
 
@@ -681,8 +681,8 @@ algorithm in explicit detail.
 
 % Talk about why the system is usable
 The proof of concept demonstrates that we have a system that can be
-used in the real world. We can assert this claim with confidence
-because we have been able to write and run a medium scale model on the
+used in the real world.  We can assert this claim with some confidence
+because we have been able to write and run a medium-scale model on the
 system. 
 
 % Show that the objectives that we set out to meet have been met.
@@ -691,19 +691,19 @@ had set for ourselves through this model. We set up an environment
 where any other researcher can work with the WordNet module, we also
 wrote up a module that was required for the data structure. 
 
-We can demonstrate the capability of resource sharing, running the
-model on my personal computer brought my computer down to a crawl
-because the WordNet module loads all the chunks into memory, whereas
-the model ran fine when executed on the server.
+We can demonstrate the capability of resource sharing.  Running the
+model on my personal computer brought my computer to a crawl because
+the WordNet module loads all the chunks into memory, whereas the model
+runs fine when executed on the server.
 
-We demonstrated we could share software resources, as a result we gain
-a saving in the amount of effort spent, for example it took me a while
-to figure out that there was a bug in the version of the
-WN-Lexical module and I had to upgrade the module. Now consider
-the amount of effort wasted by numerous other researchers working with
-the same module. With a system like Coglaborate we would require to
-expend that amount of effort only once and the entire community would
-be benefited.
+We have demonstrated that we can share software resources.  As a
+result we gain a saving in the amount of effort spent.  For example,
+it took me a while to figure out that there was a bug in the version
+of the WN-Lexical module, and I had to upgrade the module.  Now
+consider the amount of effort wasted by numerous other researchers
+working with the same module. With a system like Coglaborate we would
+require to expend that amount of effort only once and the entire
+community would be benefited.
 
 Although the model did not make use of any third party tools the
 system has a regular expression library and a package management,
@@ -711,25 +711,35 @@ Another System Definition Facility(ASDF), system integrated into it.
 
 % Effort.
 The project added about one thousand lines of code to the existing
-code base. That figure does not include the lines of code of the
-model. The challenges faced during the development of the project
-involved: deciding the structure of the frames so that we have a right
-level of granularity and at the same time we don't loose any
-information related to the productions; designing a way so that using
-the system is as intuitive to the user as can be; figuring out a way
-to provide collaboration using frames; analyzing the ACT-R compiler to
-identify locations where the translation layer would hook in and,
-identifying and fixing two existing bugs in the system. The model
-consists of sixteen productions with a total of about four hundred and
-sixty lines of code.
+code base of ACT-R and BioBike. That figure does not include the lines
+of code of the model. The challenges faced during the development of
+the project involved 
+\begin{itemize}
+
+\item Deciding on the structure of the frames so that we
+have the right level of granularity and at the same time we don't lose
+any information related to the productions;
+
+\item Developing an interface and workflow consistent with existing
+  practices within the cognitive modeling community;
+
+\item Figuring out a way to support collaboration using frames;
+
+\item Analyzing the ACT-R compiler to identify locations where the
+  translation layer would hook in;
+
+\item Identifying and fixing two existing bugs in the system. 
+\end{itemize}
+
+The model consists of sixteen productions with a total of about four
+hundred and sixty lines of code.
 
 An evaluation of the collaborative aspects of the use of Coglaborate
-are unfortunately beyond the scope of this thesis.  Some evidence for
-this capability is provided by experience with BioBike; some
-similarities in the benefits can be expected.  Nevertheless an
-illustration of the use of Coglaborate to solve a medium-sized problem
-should give us insight into some of the strengths and weaknesses of
-the approach.
+are unfortunately beyond the scope of this thesis.  Evidence for this
+capability is provided by experience with BioBike; some similarities
+in the benefits can be expected.  Nevertheless an illustration of the
+use of Coglaborate to solve a medium-sized problem should give us
+insight into some of the strengths and weaknesses of the approach.
 
 
 

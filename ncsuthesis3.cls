@@ -352,8 +352,8 @@
     {{\@title} \par}
     \bigskip \medskip
     by \par
-    \bigskip \medskip
-    \fmfont	
+%     \bigskip \medskip
+%     \fmfont	
     {{\@author} \par}
     \bigskip \medskip
     A thesis submitted to the Graduate Faculty of \par
