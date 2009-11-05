@@ -39,9 +39,12 @@ presentation: Presentation.tex
 	latex Presentation.tex
 	pdflatex Presentation.tex
 
+upload_presentation: presentation
+	scp Presentation.pdf rfcornel@sequoia.csc.ncsu.edu:Sites
+
 
 clean:
 	-rm *.aux
 	-rm *.log
 	-rm *.blg
-	-rm *.lot *.lof *.dvi *.toc *.bbl *.pdf
+	-rm *.lot *.lof *.dvi *.toc *.bbl *.pdf *.nav *.snm *.out

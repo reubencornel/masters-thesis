@@ -24,9 +24,12 @@ foster a stronger culture of collaboration among community members.
 
 %Talk about the limitations of the system
 
-Coglaborate has some limitations.
+Coglaborate has limitations, both from an engineering and a conceptual
+viewpoint.
+
+To begin with the engineering limitations,
 %
-There exists a graphical user interface to ACT-R, which we have
+there exists a graphical user interface to ACT-R, which we have
 mentioned only briefly.  Coglaborate, in its current state, does not
 provide all of the same functionality of this interface.  For example,
 Coglaborate does not enable the user to step through productions or
@@ -59,7 +62,30 @@ meta processes to provide isolation between models, although as of now
 it serves its purpose, true isolation could be achieved by permitting
 the application server let every user spawn a new Lisp process if
 required. This facility would make the system more robust and might
-help load balancing is needed in the future.
+help if load balancing is needed in the future.
+
+There are two main conceptual limitations to the work.
+%
+First, Coglaborate relies on BioBike as a platform to support
+collaboration, but there are many other possible approaches that have
+not been explored in this research.  For example, because ACT-R models
+are software, some level of collaboration could be supported by
+systems for collaborative software development and management,
+beginning with something as simple as a configuration management tool.
+We believe that BioBike and Coglaborate gain power from the KnowOS
+concept, but this project has not directly explored the relative
+advantages compared with more conventional techniques in software
+engineering.
+%
+Second, Coglaborate's support for collaboration, in the current state
+of its implementation, operates at a relatively granular level.
+Models, tools, and architecture extensions can be added to the system
+by individual users, so that they can be more easily used by others.
+There is no support for multi-user model development or integration of
+multiple smaller models into larger ones, however.  Even though we are
+confident that analysis tools (made possible by Coglaborate's model
+representation) could contribute to such collaboration, these tools
+remain to be written.
 
 Other limitations remain to be discovered.  We believe that the system
 can best be tested for effectiveness by opening it up the community,
