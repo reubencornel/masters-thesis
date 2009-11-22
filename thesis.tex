@@ -24,10 +24,14 @@
 \usepackage{mathrsfs}
 \usepackage{appendix}
 \usepackage{longtable}
-
+\usepackage{fancyhdr}
+\usepackage{changepage}
+\usepackage{rotating}
+\usepackage{lscapenum}
 
 % ,graphicx,lscape,dectab,harvard} %latex2e
 % \input \path psfig.sty %an excellent utility for including figures-Terry
+
 
 \setlength\topskip{24pt}
 
@@ -107,19 +111,21 @@
 
 %\vspace{0.2in}
 
-
-%\appendix
+\pagebreak
+\appendix
 % JSB - This next command  is to add an appendix to the table of contents.
-%\addappheadtotoc
+\addappheadtotoc
 
-%\begin{center}
-% {\Huge{\bf Appendices}}
-%\end{center}
+\begin{center}
+{\Huge{\bf Appendices}}
+\end{center}
+
 % End of hack to get 'Appendices'
 % written on a separate page
 %===================================================
 
 % EA - of course include your appendix file
+
 \include{appendix2}
 \include{appendix1}
 

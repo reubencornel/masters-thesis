@@ -19,7 +19,7 @@ reuben: thesis.dvi
 
 thesis.dvi: thesis.tex Chapter1.tex Chapter2.tex Chapter4.tex Chapter5.tex Chapter7.tex thesis.bbl 
 	chmod a+x ./bulkepstopdf
-	./bulkepstopdf
+#	./bulkepstopdf
 	latex thesis.tex
 	latex thesis.tex
 	latex thesis.tex
@@ -47,4 +47,5 @@ clean:
 	-rm *.aux
 	-rm *.log
 	-rm *.blg
-	-rm *.lot *.lof *.dvi *.toc *.bbl *.pdf *.nav *.snm *.out
+	-rm *.lot *.lof *.dvi *.toc *.bbl *.nav *.snm *.out
+	-rm thesis.pdf

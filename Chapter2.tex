@@ -764,54 +764,74 @@ selected based on the work of Anderson and
 Lebiere~\cite{CambridgeJournals:207162}.
 
 
-\begin{landscape}
-\begin{table}
-  \centering
-\caption{Comparison of various cognitive architectures}
-\label{tab:architecture-comparison}
-  \begin{tabular}{p{3cm}p{4cm}p{4cm}p{4cm}p{4cm}}
-    \hline
-    Parameters & ACT-R & EPIC & SOAR & CLARION \\
-    \hline
-    & & & &\\
-    Representation of knowledge in memory & Knowledge represented as chunks. Memory consists of a
-    working memory and long-term memory.& Long-term and short-term
-    memory where information was stored as productions in long-term
-    memory & Knowledge in both the short term and long term memory
-    represented as production rules& Procedural at the bottom level and
-    declarative at the top  \\
-    & & & &\\
-    Goals  & Maintained by the goal buffer & Priority based task
-    deferment~\cite{Pew:1998aa}& Represented as states & Goal stack or list \\
-    & & & &\\
-    Problem Solving  & Based on selection and execution of production
-    and the underlying neural network.& Problem solving based on &Search
-    of the solution space& Combination of calculated Q-Values and rules\\
-    & & & &\\
-    Planning  & Creation of sub-goals&General planning & Selection of
-    productions that leads the system closer to achieving its
-    goals. &Search through the Q-Value space \\
-    & & & &\\
-    Learning   & Production compilation&No learning & Learning through
-    chunking & Reinforcement learning and rule extraction \\
-    & & & &\\
-    Perception & Provides vision and auditory faculties through the
-    relevant buffers& Perceptual processors for auditory, visual and
-    tactile faculties & (No explicit commitments.) & Input in terms of dimension/value pairs\\
-    & & & &\\
-    Motor & Provides motor control through the manual and vocal modules&
-    manual, vocal and oculo-motor processors
-    & (No explicit commitments.) &\\
-    & & & &\\
-    Mapping to neuro-biology & Study currently on
-    that maps regions of the brain to specific modules& No mapping& No
-    mapping& based on neural network but no reference to the brain anatomy\cite{Chong:2007aa} \\
-    & & & &\\
+\begin{lscapenum}  
+  \begin{table}
+    \centering
+    \label{tab:architecture-comparison}
+    \caption{Comparison of various cognitive architectures}
 
-\end{tabular}
-\end{table}
-\end{landscape}
+    \begin{tabular}{p{2.5cm}p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}
+      \hline
+      Parameters & ACT-R & EPIC & SOAR & CLARION \\
+      \hline
+      & & & &\\
+      Representation of knowledge in memory & Knowledge represented as chunks. Memory consists of a
+      working memory and long-term memory.& Long-term and short-term
+      memory where information was stored as productions in long-term
+      memory & Knowledge in both the short term and long term memory
+      represented as production rules& Procedural at the bottom level and
+      declarative at the top  \\
+      & & & &\\
+      Goals  & Maintained by the goal buffer & Priority based task
+      deferment~\cite{Pew:1998aa}& Represented as states & Goal stack or list \\
+      & & & &\\
+      Problem Solving  & Based on selection and execution of production
+      and the underlying neural network.& Problem solving based on &Search
+      of the solution space& Combination of calculated Q-Values and rules\\
+      & & & &\\
+      Planning  & Creation of sub-goals&General planning & Selection of
+      productions that leads the system closer to achieving its
+      goals. &Search through the Q-Value space \\
+      & & & &\\
+      Learning   & Production compilation&No learning & Learning through
+      chunking & Reinforcement learning and rule extraction \\
+      & & & &\\
+      
+    \end{tabular}
+  \end{table}
 
+\pagebreak
+
+%  \thispagestyle{fancy}
+  \begin{table}
+    \centering
+
+    \begin{tabular}{p{2.5cm}p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}
+      \multicolumn{5}{c}{Table 2.1: Comparison of various cognitive architectures}\\
+      \hline
+      Parameters & ACT-R & EPIC & SOAR & CLARION \\
+      \hline
+      & & & &\\
+      
+      Perception & Provides vision and auditory faculties through the
+      relevant buffers& Perceptual processors for auditory, visual and
+      tactile faculties & (No explicit commitments.) & Input in terms of dimension/value pairs\\
+      & & & &\\
+      
+      Motor & Provides motor control through the manual and vocal modules&
+      manual, vocal and oculo-motor processors
+      & (No explicit commitments.) &\\
+      & & & &\\
+      Mapping to neuro-biology & Study currently on
+      that maps regions of the brain to specific modules& No mapping& No
+      mapping& based on neural network but no reference to the brain anatomy\cite{Chong:2007aa} \\
+      & & & &\\
+
+    \end{tabular}
+  \end{table}
+\end{lscapenum}
+
+%\portrait
 % Things to be concerned about
 %    Type of system: Symbolic, Connectionist or both
 % 1) Perception: How an architecture gets its input

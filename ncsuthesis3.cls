@@ -351,7 +351,7 @@
     \fmfont
     {{\@title} \par}
     \bigskip \medskip
-    by \par
+    by\\ %\par
 %     \bigskip \medskip
 %     \fmfont	
     {{\@author} \par}
@@ -360,7 +360,7 @@
     North Carolina State University \par
 % EJA - Changed 'satisfaction' to 'fullfillment' in next line
 % per thesis editor March 27, 2007
-    in partial fullfillment of the \par
+    in partial fulfillment of the \par
     requirements for the Degree of \par
     {\@degree} \par
     \bigskip \medskip
@@ -373,7 +373,7 @@
     {\@degreeyear}
 \vspace{.75in}
 \par
-{{Approved By:}} \par
+{{APPROVED BY:}} \par
 
 \end{center}
 \vspace{.5in}
